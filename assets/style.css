@@ -1,6 +1,64 @@
-.nabar-nav{
-   
-   
+footer {
+  background: linear-gradient(to bottom, #6B5D50 0%, #1A0F0A 100%);
+  padding: 4rem 0 0;
 }
-    
-   
+footer .logo {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+@media (max-width: 768px) {
+  footer .logo {
+    width: 80px;
+  }
+}
+footer .icon-social {
+  color: #FDDF44;
+  font-size: 1.8rem;
+  margin: 0 0.8rem;
+  transition: all 0.3s ease;
+}
+footer .icon-social:hover {
+  color: #D29748;
+  transform: scale(1.1);
+}
+footer .phone-number {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+footer .phone-number:hover {
+  color: #D29748;
+  transform: translateX(3px);
+}
+footer h3 {
+  color: white;
+  font-family: "Playfair", serif;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+footer h4 {
+  color: #D29748;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+footer p {
+  color: white;
+  opacity: 0.9;
+}
+footer .copyright {
+  border-top: 3px solid #D29748;
+  border-bottom: 3px solid #D29748;
+  color: white;
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}/*# sourceMappingURL=style.css.map */

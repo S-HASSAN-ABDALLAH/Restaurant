@@ -1,0 +1,104 @@
+//  _variables.scss
+$color-gold:#D29748;
+$color-text:#090606;
+// $color-footer-bg: #2A1810;
+$color-footer-top:#6B5D50;
+$color-footer-bottom:#1A0F0A;
+$color-icon:#FDDF44;
+$color-text-footer: white;
+$font-family:"Playfair", serif;
+$font-size-footer: 1.2rem;
+$logo-header-width:150px;
+$logo-footer-width-desktop: 100px;
+$logo-footer-width-mobile: 80px;
+
+//style.scss
+footer{
+background: linear-gradient(
+    to bottom,
+    $color-footer-top 0%,
+    $color-footer-bottom 100%
+);
+padding: 4rem 0 0;
+
+.logo{
+    width: $logo-footer-width-desktop;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    @media (max-width: 768px) {
+        width: $logo-footer-width-mobile;
+       }
+    }
+
+
+.icon-social {
+    color: $color-icon;
+    font-size: 1.8rem;
+        margin: 0 0.8rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            color: $color-gold;
+             transform: scale(1.1);
+        }
+    }
+
+    // .TripAdvisor-link{
+        // color: $color-icon;
+    // font-size: 1.8rem;
+        // margin: 0 0.8rem;
+        // transition: all 0.3s ease;
+        
+        // &:hover {
+            // color: $color-gold;
+            //  transform: scale(1.1);
+        // }
+    // }
+
+.phone-number {
+        color: $color-text-footer;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    
+        
+        &:hover {
+            color: $color-gold;
+            transform: translateX(3px);
+        }
+    }
+h3{
+    color:$color-text-footer;
+    font-family: $font-family;
+    font-size: $font-size-footer;
+    margin-top: 1.5rem;
+}
+
+h4 {
+        color: $color-gold;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        color: $color-text-footer;
+        opacity: 0.9;
+    }
+    
+.copyright{
+    border-top: 3px solid $color-gold;
+    border-bottom: 3px solid $color-gold;
+    color:$color-text-footer;
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+}
