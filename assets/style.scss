@@ -1,7 +1,6 @@
 //  _variables.scss
 $color-gold:#D29748;
 $color-text:#090606;
-// $color-footer-bg: #2A1810;
 $color-navbar-bg: #E5E5E5;
 $color-navbar-hover: #B8860B;
 $color-footer-top:#6B5D50;
@@ -14,35 +13,34 @@ $logo-header-width:150px;
 $logo-footer-width-desktop: 100px;
 $logo-footer-width-mobile: 80px;
 
-//style.scss
-
-// header.scss (nouveau fichier ou dans style.scss)
-// _variables.scss (inchangé)
 
 // style.scss
+// ==========================================
+// NAVBAR - VERSION AMÉLIORÉE
+// ==========================================
 .navbar {
     background: linear-gradient(135deg, $color-navbar-bg 0%, #D0D0D0 100%);
-    padding: 1.5rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2.2rem 0; // ← CHANGÉ: 1.5rem → 2rem
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); // ← CHANGÉ: ombre plus prononcée
     border-bottom: 3px solid $color-gold;
 }
 
 .navbar-nav {
     width: 100%;
     align-items: center;
-    gap: 6rem;
+    gap: 5rem; 
 }
 
 .nav-link {
     color: $color-gold !important;
     font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;;
     font-weight: 400;
-    padding: 0 3rem !important;
+    padding: 0 2rem !important; // ← CHANGÉ: 3rem → 2rem
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap; // ← AJOUTÉ: empêche le texte de se couper
     
-    // Ligne sous les liens normaux seulement
     &:not(.dropdown-toggle)::after {
         content: '';
         position: absolute;
@@ -64,7 +62,6 @@ $logo-footer-width-mobile: 80px;
     }
 }
 
-// Dropdown toggle avec flèche
 .dropdown-toggle {
     &::after {
         display: inline-block;
@@ -77,21 +74,11 @@ $logo-footer-width-mobile: 80px;
         vertical-align: middle;
     }
     
-    &:hover::after,
     &[aria-expanded="true"]::after {
         transform: rotate(180deg);
     }
 }
 
-// HOVER: Menu s'ouvre au survol sur desktop
-@media (min-width: 992px) {
-    .dropdown:hover > .dropdown-menu {
-        display: block;
-        animation: fadeInDown 0.3s ease;
-    }
-}
-
-// Animation d'ouverture
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -103,43 +90,65 @@ $logo-footer-width-mobile: 80px;
     }
 }
 
-// Style du menu déroulant
 .dropdown-menu {
     background-color: rgba(42, 24, 16, 0.95);
     border: 1px solid $color-gold;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    margin-top: 0.5rem;
+    margin-top: 0.8rem; // ← CHANGÉ: 0.5rem → 0.8rem
+    border-radius: 8px; // ← AJOUTÉ: coins arrondis
+    
+    &.show {
+        animation: fadeInDown 0.3s ease;
+    }
 }
 
 .dropdown-item {
     color: $color-gold !important;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 1.5rem; // ← CHANGÉ: 0.8rem → 1rem
     transition: all 0.3s ease;
+    font-size: 1.1rem; // ← AJOUTÉ: taille plus grande
     
     &:hover {
         background-color: rgba(212, 167, 116, 0.2);
         color: white !important;
         transform: translateX(5px);
     }
+    
+    &:first-child {
+        border-radius: 8px 8px 0 0; // ← AJOUTÉ
+    }
+    
+    &:last-child {
+        border-radius: 0 0 8px 8px; // ← AJOUTÉ
+    }
 }
 
 .navbar-brand img {
-    width: 70px;
+    width: 70px; // ← CHANGÉ: 70px → 75px (légèrement plus grand)
     height: 70px;
     object-fit: cover;
     border-radius: 50%;
     background-color: $color-gold;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(212, 167, 116, 0.3);
+    box-shadow: 0 3px 10px rgba(212, 167, 116, 0.4); // ← CHANGÉ: ombre plus visible
     border: 2px solid rgba(255, 255, 255, 0.3);
     
     &:hover {
         transform: scale(1.08);
-        box-shadow: 0 4px 16px rgba(212, 167, 116, 0.5);
+        box-shadow: 0 5px 20px rgba(212, 167, 116, 0.6); // ← CHANGÉ
     }
 }
 
-
+// Responsive
+@media (max-width: 991px) {
+    .navbar-nav {
+        gap: 1.5rem;
+    }
+    
+    .nav-link {
+        padding: 0.8rem 1rem !important;
+    }
+}
 
 
 
