@@ -3,7 +3,7 @@ footer {
   padding: 4rem 0 0;
 }
 footer .logo {
-  width: 100px;
+  width: 150px;
   height: auto;
   display: block;
   margin: 0 auto 1rem;
@@ -12,6 +12,15 @@ footer .logo {
   footer .logo {
     width: 80px;
   }
+}
+footer .uber-logo {
+  width: 120px;
+  height: auto;
+  margin: 1rem 0;
+  transition: transform 0.3s ease;
+}
+footer .uber-logo:hover {
+  transform: scale(1.05);
 }
 footer .icon-social {
   color: #FDDF44;
@@ -22,6 +31,16 @@ footer .icon-social {
 footer .icon-social:hover {
   color: #D29748;
   transform: scale(1.1);
+}
+footer .tripadvisor-img {
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+footer .tripadvisor-img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 footer .phone-number {
   color: white;
@@ -61,4 +80,18 @@ footer .copyright {
   background-color: rgba(0, 0, 0, 0.4);
   font-size: 0.9rem;
   letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+  footer {
+    padding: 3rem 0 0;
+  }
+  footer .col-12 {
+    margin-bottom: 2rem;
+  }
+  footer h3 {
+    font-size: 1.1rem;
+  }
+  footer .uber-logo {
+    width: 100px;
+  }
 }/*# sourceMappingURL=style.css.map */

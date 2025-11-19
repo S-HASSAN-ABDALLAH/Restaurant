@@ -9,7 +9,7 @@ $color-text-footer: white;
 $font-family:"Playfair", serif;
 $font-size-footer: 1.2rem;
 $logo-header-width:150px;
-$logo-footer-width-desktop: 100px;
+$logo-footer-width-desktop: 150px;
 $logo-footer-width-mobile: 80px;
 
 //style.scss
@@ -31,6 +31,17 @@ padding: 4rem 0 0;
        }
     }
 
+    .uber-logo {
+    width: 120px;
+    height: auto;
+    margin: 1rem 0;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
 
 .icon-social {
     color: $color-icon;
@@ -44,17 +55,17 @@ padding: 4rem 0 0;
         }
     }
 
-    // .TripAdvisor-link{
-        // color: $color-icon;
-    // font-size: 1.8rem;
-        // margin: 0 0.8rem;
-        // transition: all 0.3s ease;
+    .tripadvisor-img {
+        width: 50px;
+        height: 50px;
+        transition: all 0.3s ease;
+        display: inline-block;
         
-        // &:hover {
-            // color: $color-gold;
-            //  transform: scale(1.1);
-        // }
-    // }
+        &:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+    }
 
 .phone-number {
         color: $color-text-footer;
@@ -99,6 +110,19 @@ h4 {
     background-color: rgba(0, 0, 0, 0.4);
     font-size: 0.9rem;
     letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    padding: 3rem 0 0;
+    .col-12 {
+        margin-bottom: 2rem;;
+    }
+    h3{
+        font-size: 1.1rem;
+    }
+    .uber-logo {
+        width: 100px;
+    }
 }
 
 }
