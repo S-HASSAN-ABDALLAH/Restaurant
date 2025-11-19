@@ -1,9 +1,11 @@
 footer {
   background: linear-gradient(to bottom, #6B5D50 0%, #1A0F0A 100%);
   padding: 4rem 0 0;
+  border-top: 3px solid #D29748;
+  box-shadow: 0 -2px 10px rgba(212, 167, 116, 0.3);
 }
 footer .logo {
-  width: 150px;
+  width: 100px;
   height: auto;
   display: block;
   margin: 0 auto 1rem;
@@ -14,7 +16,7 @@ footer .logo {
   }
 }
 footer .uber-logo {
-  width: 120px;
+  width: 100px;
   height: auto;
   margin: 1rem 0;
   transition: transform 0.3s ease;
@@ -27,10 +29,11 @@ footer .icon-social {
   font-size: 1.8rem;
   margin: 0 0.8rem;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 footer .icon-social:hover {
   color: #D29748;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 footer .tripadvisor-img {
   width: 50px;
@@ -39,7 +42,7 @@ footer .tripadvisor-img {
   display: inline-block;
 }
 footer .tripadvisor-img:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   filter: brightness(1.2);
 }
 footer .phone-number {
@@ -48,6 +51,7 @@ footer .phone-number {
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 footer .phone-number:hover {
   color: #D29748;
@@ -57,22 +61,27 @@ footer h3 {
   color: white;
   font-family: "Playfair", serif;
   font-size: 1.2rem;
-  margin-top: 1.5rem;
+  margin-top: 0.8rem;
 }
 footer h4 {
   color: #D29748;
   font-size: 1rem;
   font-weight: 600;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+}
+footer h4 i {
+  margin-right: 0.5rem;
 }
 footer p {
   color: white;
   opacity: 0.9;
+  line-height: 1.6;
 }
 footer .copyright {
   border-top: 3px solid #D29748;
   border-bottom: 3px solid #D29748;
+  box-shadow: 0 -2px 6px rgba(212, 167, 116, 0.25), 0 2px 6px rgba(212, 167, 116, 0.25);
   color: white;
   text-align: center;
   margin-top: 3rem;
@@ -92,6 +101,6 @@ footer .copyright {
     font-size: 1.1rem;
   }
   footer .uber-logo {
-    width: 100px;
+    width: 80px;
   }
 }/*# sourceMappingURL=style.css.map */
