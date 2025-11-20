@@ -13,33 +13,57 @@ $logo-header-width:150px;
 $logo-footer-width-desktop: 100px;
 $logo-footer-width-mobile: 80px;
 
-
-// style.scss
 // ==========================================
-// NAVBAR - VERSION AMÉLIORÉE
+// NAVBAR DESKTOP
 // ==========================================
 .navbar {
-    background: linear-gradient(135deg, $color-navbar-bg 0%, #D0D0D0 100%);
-    padding: 2.2rem 0; // ← CHANGÉ: 1.5rem → 2rem
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15); // ← CHANGÉ: ombre plus prononcée
-    border-bottom: 3px solid $color-gold;
+    background: transparent;
+    backdrop-filter: none;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    
+    padding: 2rem 0;
+    box-shadow: none;
+    border-bottom: none;
+    
+    transition: all 0.4s ease;
+    
+    &.scrolled {
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid rgba(210, 151, 72, 0.3);
+        padding: 1.5rem 0;
+    }
+}
+
+.navbar .container {
+    max-width: 100%;
+    padding: 0 2rem;
 }
 
 .navbar-nav {
     width: 100%;
     align-items: center;
-    gap: 5rem; 
+    gap: 5rem;
 }
 
 .nav-link {
     color: $color-gold !important;
     font-family: 'Playfair Display', serif;
-    font-size: 1.25rem;;
-    font-weight: 400;
-    padding: 0 2rem !important; // ← CHANGÉ: 3rem → 2rem
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95);
+    padding: 0.5rem 1.5rem !important;
     transition: all 0.3s ease;
     position: relative;
-    white-space: nowrap; // ← AJOUTÉ: empêche le texte de se couper
+    white-space: nowrap;
     
     &:not(.dropdown-toggle)::after {
         content: '';
@@ -48,13 +72,14 @@ $logo-footer-width-mobile: 80px;
         left: 50%;
         width: 0;
         height: 2px;
-        background: $color-gold;
+        background: white;
         transition: all 0.3s ease;
         transform: translateX(-50%);
     }
     
     &:hover {
-        color: $color-navbar-hover !important;
+        color: white !important;
+        transform: translateY(-2px);
     }
     
     &:not(.dropdown-toggle):hover::after {
@@ -79,6 +104,35 @@ $logo-footer-width-mobile: 80px;
     }
 }
 
+.navbar-brand img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 15px rgba(212, 167, 116, 0.6);
+    border: 2px solid $color-gold;
+    
+    &:hover {
+        transform: scale(1.08);
+        box-shadow: 0 5px 25px rgba(212, 167, 116, 0.8);
+        border-color: $color-gold;
+    }
+}
+
+.dropdown-menu {
+    background-color: rgba(42, 24, 16, 0.95);
+    border: 1px solid $color-gold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 0.8rem;
+    border-radius: 8px;
+    
+    &.show {
+        animation: fadeInDown 0.3s ease;
+    }
+}
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -90,23 +144,11 @@ $logo-footer-width-mobile: 80px;
     }
 }
 
-.dropdown-menu {
-    background-color: rgba(42, 24, 16, 0.95);
-    border: 1px solid $color-gold;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    margin-top: 0.8rem; // ← CHANGÉ: 0.5rem → 0.8rem
-    border-radius: 8px; // ← AJOUTÉ: coins arrondis
-    
-    &.show {
-        animation: fadeInDown 0.3s ease;
-    }
-}
-
 .dropdown-item {
     color: $color-gold !important;
-    padding: 1rem 1.5rem; // ← CHANGÉ: 0.8rem → 1rem
+    padding: 1rem 1.5rem;
     transition: all 0.3s ease;
-    font-size: 1.1rem; // ← AJOUTÉ: taille plus grande
+    font-size: 1.1rem;
     
     &:hover {
         background-color: rgba(212, 167, 116, 0.2);
@@ -115,85 +157,364 @@ $logo-footer-width-mobile: 80px;
     }
     
     &:first-child {
-        border-radius: 8px 8px 0 0; // ← AJOUTÉ
+        border-radius: 8px 8px 0 0;
     }
     
     &:last-child {
-        border-radius: 0 0 8px 8px; // ← AJOUTÉ
+        border-radius: 0 0 8px 8px;
     }
 }
 
-.navbar-brand img {
-    width: 70px; // ← CHANGÉ: 70px → 75px (légèrement plus grand)
-    height: 70px;
-    object-fit: cover;
-    border-radius: 50%;
-    background-color: $color-gold;
+// ==========================================
+// NAVBAR MOBILE - OPTION C (RECOMMANDÉE) ⭐⭐⭐⭐⭐
+// ==========================================
+
+.navbar-toggler {
+    border: 2px solid $color-gold;
+    padding: 0.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(212, 167, 116, 0.4); // ← CHANGÉ: ombre plus visible
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    
+    &:focus {
+        box-shadow: 0 0 0 3px rgba(210, 151, 72, 0.4);
+        outline: none;
+    }
     
     &:hover {
-        transform: scale(1.08);
-        box-shadow: 0 5px 20px rgba(212, 167, 116, 0.6); // ← CHANGÉ
-    }
-}
-
-// Responsive
-@media (max-width: 991px) {
-    .navbar-nav {
-        gap: 1.5rem;
+        background: rgba(210, 151, 72, 0.2);
+        border-color: white;
     }
     
-    .nav-link {
-        padding: 0.8rem 1rem !important;
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D29748' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        width: 1.5rem;
+        height: 1.5rem;
     }
 }
 
+@media (max-width: 991px) {
+    
+    // Navbar mobile
+    .navbar {
+        background: rgba(0, 0, 0, 0.8) !important;
+        padding: 0.8rem 0;
+    }
+    
+    .navbar .container {
+        padding: 0 1rem;
+    }
+    
+    // Menu déroulant OPTIMISÉ
+    .navbar-collapse {
+        // Fond avec blur
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.98) 0%,
+            rgba(0, 0, 0, 0.95) 100%
+        );
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        
+        // Position et taille
+        margin-top: 0.5rem;
+        padding: 1rem 0;
+        border-radius: 15px;
+        border: 1px solid rgba(210, 151, 72, 0.25);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+        
+        // ✅ Hauteur max + scroll
+        max-height: 65vh;
+        overflow-y: auto;
+        overflow-x: hidden;
+        
+        // Scroll personnalisé
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: rgba(210, 151, 72, 0.5);
+            border-radius: 10px;
+            
+            &:hover {
+                background: rgba(210, 151, 72, 0.8);
+            }
+        }
+        
+        // Animation
+        &.show {
+            animation: menuSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    }
+    
+    @keyframes menuSlideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-15px) scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    
+    // Liste
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+    
+    // Items
+    .nav-item {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(210, 151, 72, 0.08);
+        
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    
+    // Liens
+    .nav-link {
+        padding: 0.9rem 1.2rem !important;
+        font-size: 1rem;
+        color: rgba(210, 151, 72, 0.95) !important;
+        text-align: center;
+        transition: all 0.2s ease;
+        text-shadow: none;
+        
+        &:hover, &:active {
+            background: rgba(210, 151, 72, 0.12);
+            color: white !important;
+            transform: none;
+        }
+        
+        &::after {
+            display: none;
+        }
+    }
+    
+    // Logo dans menu
+    .navbar-brand {
+        padding: 0.8rem 0 !important;
+        display: flex;
+        justify-content: center;
+        
+        img {
+            width: 55px;
+            height: 55px;
+            filter: drop-shadow(0 0 15px rgba(210, 151, 72, 0.6));
+            transition: all 0.3s ease;
+            
+            &:hover {
+                transform: scale(1.05);
+                filter: drop-shadow(0 0 20px rgba(210, 151, 72, 0.8));
+            }
+        }
+    }
+    
+    // Dropdown mobile
+    .dropdown-menu {
+        background: rgba(15, 10, 8, 0.98);
+        border: 1px solid rgba(210, 151, 72, 0.15);
+        position: static !important;
+        transform: none !important;
+        margin: 0;
+        padding: 0.5rem 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .dropdown-item {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.85) !important;
+        text-align: center;
+        
+        &:hover {
+            background: rgba(210, 151, 72, 0.15);
+            color: $color-gold !important;
+            transform: none;
+        }
+    }
+    
+    .dropdown-toggle::after {
+        color: $color-gold;
+        margin-left: 0.5rem;
+    }
+}
 
-
-
-
-
-footer{
-background: linear-gradient(to bottom,$color-footer-top 0%, $color-footer-bottom 100%);
-padding: 4rem 0 0;
-// 1. Bordure TOP du footer avec effet brillant
-border-top: 3px solid $color-gold;
-box-shadow: 0 -2px 10px rgba(212, 167, 116, 0.3);
-
-.logo{
-    width: $logo-footer-width-desktop;
-    height: auto;
-    display: block;
-    margin: 0 auto 1rem;
-
+// ==========================================
+// HERO SECTION
+// ==========================================
+.hero-section {
+    margin-top: 0;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/images/HeroAccueill.webp);
+    background-size: cover;
+    background-position: 50% 50%;  // ✅ Centre exact (citadelle au milieu)
+    background-repeat: no-repeat;
+    
+    // Overlay pour lisibilité
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+        z-index: 1;
+    }
+    
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    // Responsive mobile
+    @media (max-width: 991px) {
+        padding-top: 100px;
+        min-height: calc(100vh - 100px);
+    }
+    
     @media (max-width: 768px) {
-        width: $logo-footer-width-mobile;
-       }
+        padding-top: 90px;
+        background-position: center 40%;
+        
+        .container {
+            padding: 0 1.5rem;
+        }
+    }
+}
+
+.hero-title {
+    color: white !important;
+    font-family: $font-family;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    
+    @media (max-width: 1200px) {
+        font-size: 2.8rem;
+    }
+    
+    @media (max-width: 768px) {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        padding: 0 0.5rem;
+    }
+}
+
+.hero-subtitle {
+    color: white;
+    font-family: $font-family;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    margin-bottom: 2.5rem;
+    
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
+    }
+}
+
+.btn-hero {
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $color-text;
+    background-color: $color-gold;
+    border: 2px solid $color-gold;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(210, 151, 72, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: $font-family;
+    
+    &:hover {
+        background-color: transparent;
+        color: white;
+        border-color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
+    }
+    
+    @media (max-width: 768px) {
+        padding: 0.8rem 2rem;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+// ==========================================
+// FOOTER
+// ==========================================
+footer {
+    background: linear-gradient(to bottom, $color-footer-top 0%, $color-footer-bottom 100%);
+    padding: 4rem 0 0;
+    border-top: 3px solid $color-gold;
+    box-shadow: 0 -2px 10px rgba(212, 167, 116, 0.3);
+
+    .logo {
+        width: $logo-footer-width-desktop;
+        height: auto;
+        display: block;
+        margin: 0 auto 1rem;
+
+        @media (max-width: 768px) {
+            width: $logo-footer-width-mobile;
+        }
     }
 
     .uber-logo {
-    width: 100px;
-    height: auto;
-    margin: 1rem 0;
-    transition: transform 0.3s ease;
-    
-    &:hover {
-        transform: scale(1.05);
+        width: 100px;
+        height: auto;
+        margin: 1rem 0;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.05);
+        }
     }
-}
 
-   .icon-social {
-    color: $color-icon;
-    font-size: 1.8rem;
+    .icon-social {
+        color: $color-icon;
+        font-size: 1.8rem;
         margin: 0 0.8rem;
         transition: all 0.3s ease;
-         display: inline-block;
+        display: inline-block;
         
         &:hover {
             color: $color-gold;
-             transform: scale(1.15);
+            transform: scale(1.15);
         }
     }
 
@@ -209,13 +530,13 @@ box-shadow: 0 -2px 10px rgba(212, 167, 116, 0.3);
         }
     }
 
-.phone-number {
+    .phone-number {
         color: $color-text-footer;
         text-decoration: none;
         font-size: 1.1rem;
         font-weight: 600;
         transition: all 0.3s ease;
-     display: inline-block;
+        display: inline-block;
         
         &:hover {
             color: $color-gold;
@@ -223,14 +544,14 @@ box-shadow: 0 -2px 10px rgba(212, 167, 116, 0.3);
         }
     }
 
-h3{
-    color:$color-text-footer;
-    font-family: $font-family;
-    font-size: $font-size-footer;
-    margin-top: 0.8rem;
-}
+    h3 {
+        color: $color-text-footer;
+        font-family: $font-family;
+        font-size: $font-size-footer;
+        margin-top: 0.8rem;
+    }
 
-h4 {
+    h4 {
         color: $color-gold;
         font-size: 1rem;
         font-weight: 600;
@@ -246,36 +567,49 @@ h4 {
         color: $color-text-footer;
         opacity: 0.9;
         line-height: 1.6;
-        
     }
     
-.copyright{
-     // 2 & 3. Bordures du copyright avec effet brillant
-    border-top: 3px solid $color-gold;
-    border-bottom: 3px solid $color-gold;
-     box-shadow: 
-            0 -2px 6px rgba(212, 167, 116, 0.25),  // Ombre en haut
-            0 2px 6px rgba(212, 167, 116, 0.25);   // Ombre en bas
-    color:$color-text-footer;
-    text-align: center;
-    margin-top: 3rem;
-    padding: 1.5rem 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+    .copyright {
+        border-top: 3px solid $color-gold;
+        border-bottom: 3px solid $color-gold;
+        box-shadow: 
+            0 -2px 6px rgba(212, 167, 116, 0.25),
+            0 2px 6px rgba(212, 167, 116, 0.25);
+        color: $color-text-footer;
+        text-align: center;
+        margin-top: 3rem;
+        padding: 1.5rem 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+
+    // Texte caché pour lecteurs d'écran
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-@media (max-width: 768px) {
-    padding: 3rem 0 0;
-    .col-12 {
-        margin-bottom: 2rem;;
+    @media (max-width: 768px) {
+        padding: 3rem 0 0;
+        
+        .col-12 {
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.1rem;
+        }
+        
+        .uber-logo {
+            width: 80px;
+        }
     }
-    h3{
-        font-size: 1.1rem;
-    }
-    .uber-logo {
-        width: 80px;
-    }
-}
-
 }
