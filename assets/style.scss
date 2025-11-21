@@ -488,70 +488,126 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 // ========================================
 //  Section 2: L'ESPRIT D'ALEP
 // ========================================
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 .esprit-alep {
     background-color: $color-section-bg;
-    padding: 3rem 0;
-    
+    padding: 5rem 0;
+   
     h2 {
         color: $color-title;
-        font-weight: bold;
-        font-size: $title-font-size;
-        font-family: $font-family;
-        margin-bottom: 1rem;
-        
-        @media (max-width: 768px) {
+    font-family: $font-family;
+    font-size: $title-font-size;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.5px; 
+    animation: fadeInUp 0.8s ease-out;  
+     position: relative;  
+    
+    @media (max-width: 768px) {
             font-size: $title-font-size-mobile;
             text-align: center;
-        }
+
+           
     }
+}
     
-    .title-underline {
-        width: 80px;
-        height: 3px;
-        background-color: $color-gold;
-        margin-bottom: 2rem;
-        border-radius: 2px;
-        
+   .title-underline {
+    width: 150px;   
+    height: 5px;    
+    background: $color-gold;  
+    margin-bottom: 2rem;
+    border-radius: 3px;
+
+    
         @media (max-width: 768px) {
             margin: 0 auto 2rem auto;
         }
     }
     
     p {
-        color: $color-text-gray;
-        font-size: $text-font-size;
-        line-height: 1.8;
+    color: darken($color-text-gray, 15%);    
+    font-size: 1.15rem;
+    line-height: 1.9;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    max-width: 500px; 
+
         
         @media (max-width: 768px) {
             text-align: center;
             padding: 0 1rem;
+            margin: 0 auto;
         }
     }
+
+       .image-container {
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    img {
+        border: 5px solid $color-gold !important;
+        box-shadow: 
+            0 0 0 10px rgba(199, 62, 42, 0.1),  
+            0 20px 40px rgba(0,0,0,0.15) !important;
+   
     
-    .image-container {
-        text-align: center;
-        
-        img {
-            width: $img-size-desktop;
-            height: $img-size-desktop;
-            object-fit: cover;
-            border: 5px solid $color-white;
-            box-shadow: $box-shadow;
-            transition: transform 0.3s ease;
-            
-            &:hover {
-                transform: scale(1.05);
-            }
-            
-            @media (max-width: 768px) {
+             @media (max-width: 768px) {
                 width: $img-size-mobile;
                 height: $img-size-mobile;
                 margin-top: 2rem;
             }
         }
     }
+
+       .btn-discover {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 2.5rem;
+    color: $color-gold;
+    background: transparent;
+    border: 2px solid $color-gold;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    
+    i {
+        margin-left: 8px;
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover {
+        background: $color-gold;
+        color: white;
+        transform: translateY(-2px);
+        
+        i {  // السهم يتحرك مع الهوفر
+            transform: translateX(5px);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        display: block;
+        width: fit-content;
+        margin: 1.5rem auto 0;
+    }
 }
+        }
+    
+
 
 // ==========================================
 // FOOTER
