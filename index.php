@@ -57,44 +57,8 @@
 <body>
 
 <!-- NAVBAR -->
-<header>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-lg-0 d-flex justify-content-center align-items-center">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Accueil</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">MEZZÉS</a></li>
-              <li><a class="dropdown-item" href="#">ASSIETTES</a></li>
-              <li><a class="dropdown-item" href="#">SANDWICHS</a></li>
-              <li><a class="dropdown-item" href="#">DESSERTS & BOISSONS</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="navbar-brand" href="#">
-              <img src="../Restaurant/assets/images/Logo.webp" alt="Logo">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">À propos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
+ <?php include "includes/header.php"; ?>
+
 
 <!-- HERO SECTION -->
 <section class="hero-section">
@@ -119,23 +83,62 @@
     <div class="title-underline"></div>
     <p>Au Barbecue d'Alep, nous célébrons la cuisine du cœur : grillades parfumées, mezzés faits maison, accueil chaleureux. Un lieu où la tradition rencontre la passion.</p>
     <a href="a-propos.html" class="btn-discover">En savoir plus <i class="fas fa-arrow-right"></i></a>
-</div>
+            </div>
             <!-- Colonne image -->
             <div class="col-12 col-md-6 text-center image-container">
                 <img src="../Restaurant/assets/images/Restaurant d'Alep.webp" 
-                     alt="Intérieur du restaurant" 
+                     alt="Intérieur du restaurant"loading="lazy" 
                      class="img-fluid rounded-circle">
             </div>
         </div>
-
-</a>
+    
     </div>
 </section>
 
-<!-- FOOTER  -->
-<!-- <footer>
-    ...
-</footer> -->
+<section class="nos-incontournables">
+  <div class="container">
+    <div class="text-center py-5">
+      <h2>Nos Incontournables</h2>
+    </div>
+  <div class="row justify-content-center py-5">
+    <div class="col-4">
+      <div class="card" style="width: 18rem;">
+         <img src="../Restaurant/assets/images/Végétarien & Végan.webp" class="card-img-top" alt="...">
+         <div class="card-body">
+              <h5 class="card-title text-center">Végétarien & Végan</h5>
+    
+         </div>
+      </div>
+    </div>
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <img src="../Restaurant/assets/images/SANDWICHS.jpeg" class="card-img-top" alt="...">
+             <div class="card-body">
+                  <h5 class="card-title text-center">SANDWICHES</h5>
+    
+            </div>
+        </div>
+    </div>
+
+     <div class="col-4">
+          <div class="card" style="width: 18rem;">
+                <img src="../Restaurant/assets/images/GRILLADES.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                      <h5 class="card-title text-center">GRILLADES</h5>
+                </div>
+          </div>
+    </div>
+
+    </div>
+    <div class="text-center py-4">
+      <a class="btn btn-outline-warning" href="#">Voir le Menu</a>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<?php include "includes/footer.php"; ?>
 
 <!-- Bootstrap JS  -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

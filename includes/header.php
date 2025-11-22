@@ -36,7 +36,7 @@
           </li>
           <li class="nav-item">
             <a class="navbar-brand" href="#">
-              <img src="../assets/images/Logo.webp" alt="Logo">
+              <img src="../Restaurant/assets/images/Logo.webp" alt="Logo"loading="lazy">
             </a>
           </li>
           <li class="nav-item">
@@ -52,5 +52,16 @@
 </header>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>   
 
+<!-- Script navbar transparent → opaque au scroll -->
+<script>
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+</script>
 </body>
 </html>
