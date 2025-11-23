@@ -606,13 +606,310 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
         }
-    
-.nos-incontournables{
-    background-image: url(/Restaurant/assets/images/BgNosIncontournables.webp);
+
+     // قسم Nos Incontournables
+.nos-incontournables {
+    padding: 120px 0 100px 0; // padding كبير أعلى وأسفل
+    background-color: #1a1611;
+    background-image: url('../assets/images/BgNosIncontournables.webp');
     background-size: cover;
     background-position: center;
-    background-color: black;
+    
+    background-repeat: no-repeat;
+    position: relative;
+    
+    // طبقة شفافة
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+    
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    // العنوان مع مسافة كافية
+    .section-title {
+        padding-top: 20px;
+        padding-bottom: 80px; // مسافة كبيرة تحت العنوان
+        
+        h2 {
+            font-size: 50px;
+            color: #d4a574;
+            font-weight: 300;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            letter-spacing: 4px;
+            margin: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            
+            @media (max-width: 768px) {
+                font-size: 36px;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    
+    // حاوي البطاقات
+    .cards-container {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 30px; // زيادة المسافة بين البطاقات
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        .card-column {
+            flex: 0 0 auto;
+            width: calc(33.333% - 30px);
+            max-width: 380px; // زيادة العرض قليلاً
+            display: flex;
+            
+            @media (max-width: 991px) {
+                width: calc(50% - 15px);
+            }
+            
+            @media (max-width: 576px) {
+                width: 100%;
+                max-width: 400px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    
+    // البطاقات
+    .food-card {
+         padding: 30px 20px;
+        width: 100%;
+        border-radius: 15px;
+        overflow: hidden;
+        background: linear-gradient(to bottom, 
+        #f8f5f0,  // بيج فاتح جداً
+        #f2ebe3   // بيج كريمي
+    );
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s ease;
+        box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 1px 0 rgba(212, 165, 116, 0.2) inset; // إضافة ظل داخلي ذهبي خفيف
+    
+        height: 100%;
+       
+        
+        &:hover {
+            transform: translateY(-10px) ;
+           box-shadow: 
+            0 20px 50px rgba(212, 165, 116, 0.4),
+            0 1px 0 rgba(212, 165, 116, 0.3) inset;
+            
+            .card-image-wrapper img {
+                transform: scale(1.08);
+            }
+            
+            h5 {
+                color: #d4a574;
+                
+            }
+        }
+        
+        // حاوي الصورة - ارتفاع ثابت
+        .card-image-wrapper {
+            width: 100%;
+            height: 300px; // ارتفاع ثابت لجميع الصور
+            overflow: hidden;
+            position: relative;
+            
+            // خلفية متدرجة أنيقة للجميع
+            background: linear-gradient(135deg, 
+                #faf7f3 0%, 
+                #f5ede5 100%
+            );
+            
+            // تخصيص لكل بطاقة
+            &:has(img[alt*="végétarien"]) {
+                background: linear-gradient(135deg, #f9f6f2 0%, #f4ede4 100%);
+            }
+            
+            &:has(img[alt*="Sandwiches"]) {
+                // البطاقة الوسطى تبقى كما هي (الصورة تملأ كامل المساحة)
+                background: #2c1810;
+            }
+            
+            &:has(img[alt*="Grillades"]) {
+                background: linear-gradient(135deg, #faf8f4 0%, #f5ede5 100%);
+            }
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; // مهم جداً للحفاظ على نفس الحجم
+                object-position: center;
+                transition: transform 0.6s ease;
+            }
+        }
+        
+        // محتوى البطاقة
+        .card-content {
+            padding: 25px 20px;
+            background: #fafafa;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90px; // ارتفاع أدنى ثابت
+            
+           h5 {
+            font-size: 17px; // حجم أصغر قليلاً
+            font-weight: 700; // أكثر سُمكاً
+            color: #2c2c2c;
+            text-transform: uppercase;
+            letter-spacing: 2px; // زيادة التباعد بين الأحرف
+            margin: 0;
+            transition: color 0.3s ease;
+            font-family: 'Playfair Display', serif; // استخدام خط أنيق
+            position: relative;
+            
+            // خط زخرفي تحت العنوان
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background: #d4a574;
+                transition: width 0.3s ease;
+            }
+        }
+    }
+    
+    &:hover {
+        .card-content h5::after {
+            width: 60px;
+        }
+    }
 }
+    
+    // حاوي الزر مع مسافة كافية
+    .button-container {
+        padding-top: 40px; // مسافة فوق الزر
+        padding-bottom: 20px;
+        
+        .btn-menu {
+            display: inline-block;
+            color: #d4a574;
+            border: 2px solid #d4a574;
+            background: transparent;
+            padding: 15px 50px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: #d4a574;
+                color: #000;
+                transform: translateY(-3px);
+                box-shadow: 0 10px 25px rgba(212, 165, 116, 0.5);
+            }
+        }
+    }
+    
+    // للتأكد من المحاذاة الصحيحة
+    @media (min-width: 992px) {
+        .cards-container {
+            justify-content: space-between;
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+        }
+    }
+    
+    // Responsive تحسينات
+    @media (max-width: 991px) {
+        padding: 80px 0;
+        
+        .section-title {
+            padding-bottom: 50px;
+        }
+        
+        .food-card .card-image-wrapper {
+            height: 280px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        padding: 60px 0;
+        
+        .section-title {
+            padding-bottom: 40px;
+            
+            h2 {
+                font-size: 32px;
+            }
+        }
+        
+        .cards-container {
+            gap: 20px;
+        }
+        
+        .food-card .card-image-wrapper {
+            height: 250px;
+        }
+        
+        .button-container {
+            padding-top: 30px;
+            
+            .btn-menu {
+                padding: 12px 35px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .nos-incontournables {
+        .cards-container {
+            gap: 25px;
+            
+            .card-column {
+                width: 90%;
+                max-width: 350px;
+            }
+        }
+        
+        .food-card {
+            .card-content h5 {
+                font-size: 15px;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+}
+// .nos-incontournables{
+//     background-image: url(/Restaurant/assets/images/BgNosIncontournables.webp);
+//     background-size: cover;
+//     background-position: center;
+//     background-color: black;
+// }
 
 // ==========================================
 // FOOTER

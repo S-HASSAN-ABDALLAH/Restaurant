@@ -496,12 +496,241 @@
 }
 
 .nos-incontournables {
-  background-image: url(/Restaurant/assets/images/BgNosIncontournables.webp);
+  padding: 120px 0 100px 0;
+  background-color: #1a1611;
+  background-image: url("../assets/images/BgNosIncontournables.webp");
   background-size: cover;
   background-position: center;
-  background-color: black;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.nos-incontournables::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.nos-incontournables .container {
+  position: relative;
+  z-index: 2;
+}
+.nos-incontournables .section-title {
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
+.nos-incontournables .section-title h2 {
+  font-size: 50px;
+  color: #d4a574;
+  font-weight: 300;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  letter-spacing: 4px;
+  margin: 0;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 768px) {
+  .nos-incontournables .section-title h2 {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+}
+.nos-incontournables .cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nos-incontournables .cards-container .card-column {
+  flex: 0 0 auto;
+  width: calc(33.333% - 30px);
+  max-width: 380px;
+  display: flex;
+}
+@media (max-width: 991px) {
+  .nos-incontournables .cards-container .card-column {
+    width: calc(50% - 15px);
+  }
+}
+@media (max-width: 576px) {
+  .nos-incontournables .cards-container .card-column {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+  }
+}
+.nos-incontournables .food-card {
+  padding: 30px 20px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #f8f5f0, #f2ebe3);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(212, 165, 116, 0.2) inset;
+  height: 100%;
+}
+.nos-incontournables .food-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(212, 165, 116, 0.4), 0 1px 0 rgba(212, 165, 116, 0.3) inset;
+}
+.nos-incontournables .food-card:hover .card-image-wrapper img {
+  transform: scale(1.08);
+}
+.nos-incontournables .food-card:hover h5 {
+  color: #d4a574;
+}
+.nos-incontournables .food-card .card-image-wrapper {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #faf7f3 0%, #f5ede5 100%);
+}
+.nos-incontournables .food-card .card-image-wrapper:has(img[alt*=végétarien]) {
+  background: linear-gradient(135deg, #f9f6f2 0%, #f4ede4 100%);
+}
+.nos-incontournables .food-card .card-image-wrapper:has(img[alt*=Sandwiches]) {
+  background: #2c1810;
+}
+.nos-incontournables .food-card .card-image-wrapper:has(img[alt*=Grillades]) {
+  background: linear-gradient(135deg, #faf8f4 0%, #f5ede5 100%);
+}
+.nos-incontournables .food-card .card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: transform 0.6s ease;
+}
+.nos-incontournables .food-card .card-content {
+  padding: 25px 20px;
+  background: #fafafa;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+}
+.nos-incontournables .food-card .card-content h5 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2c2c2c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  transition: color 0.3s ease;
+  font-family: "Playfair Display", serif;
+  position: relative;
+}
+.nos-incontournables .food-card .card-content h5::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #d4a574;
+  transition: width 0.3s ease;
+}
+.nos-incontournables .food-card:hover .card-content h5::after {
+  width: 60px;
+}
+.nos-incontournables .button-container {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.nos-incontournables .button-container .btn-menu {
+  display: inline-block;
+  color: #d4a574;
+  border: 2px solid #d4a574;
+  background: transparent;
+  padding: 15px 50px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.nos-incontournables .button-container .btn-menu:hover {
+  background: #d4a574;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212, 165, 116, 0.5);
+}
+@media (min-width: 992px) {
+  .nos-incontournables .cards-container {
+    justify-content: space-between;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 991px) {
+  .nos-incontournables {
+    padding: 80px 0;
+  }
+  .nos-incontournables .section-title {
+    padding-bottom: 50px;
+  }
+  .nos-incontournables .food-card .card-image-wrapper {
+    height: 280px;
+  }
+}
+@media (max-width: 576px) {
+  .nos-incontournables {
+    padding: 60px 0;
+  }
+  .nos-incontournables .section-title {
+    padding-bottom: 40px;
+  }
+  .nos-incontournables .section-title h2 {
+    font-size: 32px;
+  }
+  .nos-incontournables .cards-container {
+    gap: 20px;
+  }
+  .nos-incontournables .food-card .card-image-wrapper {
+    height: 250px;
+  }
+  .nos-incontournables .button-container {
+    padding-top: 30px;
+  }
+  .nos-incontournables .button-container .btn-menu {
+    padding: 12px 35px;
+    font-size: 14px;
+  }
 }
 
+@media (max-width: 576px) {
+  .nos-incontournables .cards-container {
+    gap: 25px;
+  }
+  .nos-incontournables .cards-container .card-column {
+    width: 90%;
+    max-width: 350px;
+  }
+  .nos-incontournables .food-card .card-content h5 {
+    font-size: 15px;
+    letter-spacing: 1.5px;
+  }
+}
 footer {
   background: linear-gradient(to bottom, #6B5D50 0%, #1A0F0A 100%);
   padding: 4rem 0 0;

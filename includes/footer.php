@@ -1,30 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO -->
-    <title>Contact & Infos - Barbecue d'Alep | Restaurant Syrien Grenoble</title>
-    <meta name="description" content="Barbecue d'Alep à Grenoble: téléphone 09 88 01 42 72, adresse 7 Rue Raoul Blanchard. Horaires, livraison Uber Eats et réseaux sociaux.">
-    
-    <!-- Préconnexions -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/style.css">
-</head>
-<body>
-    <footer>
+
+
+<footer>
 <div class="container">
     <div class="row text-center">
         <div class="col-12 col-md-4">
-            <img class="logo" src="../assets/images/Logo.webp" alt="Barbecue d'Alep">
+            <img class="logo" src="./assets/images/Logo.webp" alt="Barbecue d'Alep">
            <p class="footer-description">
         Restaurant syrien authentique à Grenoble
     </p>
@@ -48,7 +28,7 @@
             <h3>LIVRAISON & RÉSEAUX</h3>
             <h4><i class="fa-solid fa-motorcycle"></i> Livraison rapide via Uber Eats</h4>
             <a href="https://www.ubereats.com/fr/store/barbecue-dalep/5R3ZDI_aTUC5uBllhX6DFg?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjglMjBBbGwlQzMlQTllJTIwZHUlMjBQYXJjJTIwR2VvcmdlcyUyMFBvbXBpZG91JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWEwNjRiN2YtMTMwYy1iOTgwLWYxODQtNTZhZWJhNDZiOThiJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0NS4xNzY4NTMlMkMlMjJsb25naXR1ZGUlMjIlM0E1LjcyMDM2NyU3RA%3D%3D" class="uber-link">
-            <img src="../assets/images/Ubereat.webp" alt="Uber Eats" class="uber-logo"></a>
+            <img src="./assets/images/Ubereat.webp" alt="Uber Eats" class="uber-logo"></a>
             <h3>Suivez-nous</h3>
             <a class="icon-social" 
             href="https://www.facebook.com/p/Barbecue-dAlep-100035121283153/"
@@ -61,7 +41,7 @@
             aria-label="Consultez nos avis sur TripAdvisor"
             title="TripAdvisor"
             target="_blank">
-            <img src="../assets/images/TripAdvisor1.webp" alt="Logo TripAdvisor - Consultez nos avis"  class="tripadvisor-img"> </a>
+            <img src="./assets/images/TripAdvisor1.webp" alt="Logo TripAdvisor - Consultez nos avis"  class="tripadvisor-img"> </a>
             <a class="icon-social" 
             href="https://www.instagram.com/barbecue_dalep/"
             aria-label="Suivez-nous sur Instagram" 
@@ -74,11 +54,9 @@
     </div>
 </div>
 <div class="copyright">
-    <p>© 2025 Barbecue d’Alep - Tous droits réservés</p>
+    <p>©️ 2025 Barbecue d’Alep - Tous droits réservés</p>
 
 </div>
 
 <script src="https://kit.fontawesome.com/7d16ed7181.js" crossorigin="anonymous" async></script>
  </footer>
-</body>
-</html>

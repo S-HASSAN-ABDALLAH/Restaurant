@@ -46,7 +46,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
     
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/style.css">
@@ -95,53 +95,78 @@
     </div>
 </section>
 
+<!-- Section 3: Nos Incontournables -->
 <section class="nos-incontournables">
-  <div class="container">
-    <div class="text-center py-5">
-      <h2>Nos Incontournables</h2>
-    </div>
-  <div class="row justify-content-center py-5">
-    <div class="col-4">
-      <div class="card" style="width: 18rem;">
-         <img src="../Restaurant/assets/images/Végétarien & Végan.webp" class="card-img-top" alt="...">
-         <div class="card-body">
-              <h5 class="card-title text-center">Végétarien & Végan</h5>
-    
-         </div>
-      </div>
-    </div>
-    <div class="col-4">
-        <div class="card" style="width: 18rem;">
-            <img src="../Restaurant/assets/images/SANDWICHS.jpeg" class="card-img-top" alt="...">
-             <div class="card-body">
-                  <h5 class="card-title text-center">SANDWICHES</h5>
-    
+    <div class="container">
+        <!-- العنوان مع padding كافي -->
+        <div class="row">
+            <div class="col-12 text-center section-title">
+                <h2>Nos Incontournables</h2>
+            </div>
+        </div>
+        
+        <!-- البطاقات مع مسافات مناسبة -->
+        <div class="row cards-container">
+            <!-- بطاقة نباتية -->
+            <div class="col-lg-4 col-md-6 col-sm-12 card-column">
+                <div class="food-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/Végétarien & Végan.webp" 
+                             alt="Plats végétariens et végans"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h5>Végétarien & Végan</h5>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- بطاقة السندويشات -->
+            <div class="col-lg-4 col-md-6 col-sm-12 card-column">
+                <div class="food-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/SANDWICHS.jpeg" 
+                             alt="Sandwiches syriens"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h5>SANDWICHES</h5>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- بطاقة المشويات -->
+            <div class="col-lg-4 col-md-6 col-sm-12 card-column">
+                <div class="food-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/GRILLADES1.webp" 
+                             alt="Grillades au charbon de bois"
+                             loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h5>GRILLADES</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- زر القائمة مع padding كافي -->
+        <div class="row">
+            <div class="col-12 text-center button-container">
+                <a class="btn-menu" href="menu.php">
+                    Voir le Menu Complet
+                </a>
             </div>
         </div>
     </div>
-
-     <div class="col-4">
-          <div class="card" style="width: 18rem;">
-                <img src="../Restaurant/assets/images/GRILLADES.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                      <h5 class="card-title text-center">GRILLADES</h5>
-                </div>
-          </div>
-    </div>
-
-    </div>
-    <div class="text-center py-4">
-      <a class="btn btn-outline-warning" href="#">Voir le Menu</a>
-    </div>
-  </div>
-</div>
-
 </section>
 
 <?php include "includes/footer.php"; ?>
 
-<!-- Bootstrap JS  -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Font Awesome Kit -->
+<script src="https://kit.fontawesome.com/7d16ed7181.js" crossorigin="anonymous"></script>
 
 <!-- Script navbar transparent → opaque au scroll -->
 <script>
