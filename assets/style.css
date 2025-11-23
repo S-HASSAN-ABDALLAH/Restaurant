@@ -596,15 +596,6 @@
   position: relative;
   background: linear-gradient(135deg, #faf7f3 0%, #f5ede5 100%);
 }
-.nos-incontournables .food-card .card-image-wrapper:has(img[alt*=végétarien]) {
-  background: linear-gradient(135deg, #f9f6f2 0%, #f4ede4 100%);
-}
-.nos-incontournables .food-card .card-image-wrapper:has(img[alt*=Sandwiches]) {
-  background: #2c1810;
-}
-.nos-incontournables .food-card .card-image-wrapper:has(img[alt*=Grillades]) {
-  background: linear-gradient(135deg, #faf8f4 0%, #f5ede5 100%);
-}
 .nos-incontournables .food-card .card-image-wrapper img {
   width: 100%;
   height: 100%;
@@ -673,15 +664,6 @@
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(212, 165, 116, 0.5);
 }
-@media (min-width: 992px) {
-  .nos-incontournables .cards-container {
-    justify-content: space-between;
-    max-width: 1140px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 15px;
-  }
-}
 @media (max-width: 991px) {
   .nos-incontournables {
     padding: 80px 0;
@@ -718,19 +700,327 @@
   }
 }
 
-@media (max-width: 576px) {
-  .nos-incontournables .cards-container {
-    gap: 25px;
-  }
-  .nos-incontournables .cards-container .card-column {
-    width: 90%;
-    max-width: 350px;
-  }
-  .nos-incontournables .food-card .card-content h5 {
-    font-size: 15px;
-    letter-spacing: 1.5px;
+.nos-services {
+  padding: 80px 0;
+  background-color: #f8f5f0;
+}
+.nos-services .section-title {
+  text-align: center;
+  font-size: 48px;
+  color: #d4a574;
+  margin-bottom: 60px;
+  font-family: "Playfair Display", serif;
+}
+.nos-services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.nos-services .service-card {
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.nos-services .service-card:hover .service-icon {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+}
+.nos-services .service-card .service-icon {
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.nos-services .service-card .service-icon i {
+  font-size: 40px;
+  color: #d4a574;
+  transition: all 0.3s ease;
+}
+.nos-services .service-card .service-name {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+@media (max-width: 992px) {
+  .nos-services .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 }
+@media (max-width: 576px) {
+  .nos-services {
+    padding: 60px 0;
+  }
+  .nos-services .section-title {
+    font-size: 36px;
+  }
+  .nos-services .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+}
+
+.avis-clients {
+  padding: 100px 0;
+  background-color: #5d4a3a;
+  background-image: url("../assets/images/Avis.webp");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  position: relative;
+  overflow: hidden;
+}
+.avis-clients::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(93, 74, 58, 0.5);
+  z-index: 1;
+}
+.avis-clients .container {
+  position: relative;
+  z-index: 2;
+}
+.avis-clients .avis-header {
+  margin-bottom: 60px;
+}
+.avis-clients .avis-header h2 {
+  font-size: 48px;
+  color: #d4a574;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 768px) {
+  .avis-clients .avis-header h2 {
+    font-size: 32px;
+  }
+}
+.avis-clients .avis-header .rating-score .score {
+  font-size: 64px;
+  color: #d4a574;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .avis-clients .avis-header .rating-score .score {
+    font-size: 48px;
+  }
+}
+.avis-clients .avis-header .rating-score .stars {
+  margin-bottom: 15px;
+}
+.avis-clients .avis-header .rating-score .stars i {
+  font-size: 32px;
+  color: #d4a574;
+  margin: 0 5px;
+}
+@media (max-width: 768px) {
+  .avis-clients .avis-header .rating-score .stars i {
+    font-size: 24px;
+    margin: 0 3px;
+  }
+}
+.avis-clients .avis-header .rating-score .based-on {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+.avis-clients .avis-header .rating-score .based-on i {
+  color: #4CAF50;
+  margin-right: 6px;
+  font-size: 14px;
+}
+.avis-clients .avis-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.avis-clients .avis-cards-container .avis-card-column {
+  flex: 0 0 auto;
+  width: calc(33.333% - 20px);
+  max-width: 380px;
+  margin-bottom: 30px;
+}
+@media (max-width: 991px) {
+  .avis-clients .avis-cards-container .avis-card-column {
+    width: calc(50% - 15px);
+  }
+}
+@media (max-width: 576px) {
+  .avis-clients .avis-cards-container .avis-card-column {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+.avis-clients .avis-card {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.avis-clients .avis-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
+}
+.avis-clients .avis-card .card-stars {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.avis-clients .avis-card .card-stars i {
+  font-size: 24px;
+  color: #d4a574;
+  margin-right: 5px;
+}
+.avis-clients .avis-card .avis-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+  flex-grow: 1;
+  font-family: "Playfair Display", serif;
+}
+.avis-clients .avis-card .author-name {
+  font-size: 15px;
+  color: #666;
+  font-weight: 600;
+  margin: 0;
+  font-style: italic;
+}
+.avis-clients .btn-all-reviews {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 15px 40px;
+  background: transparent;
+  border: 2px solid #d4a574;
+  color: #d4a574;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Playfair Display", serif;
+}
+.avis-clients .btn-all-reviews i {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+.avis-clients .btn-all-reviews:hover {
+  background: #d4a574;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212, 165, 116, 0.4);
+}
+.avis-clients .btn-all-reviews:hover i {
+  transform: translateX(5px);
+}
+.avis-clients .decoration-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.avis-clients .decoration-icons .like-icon {
+  position: absolute;
+  top: 15%;
+  left: 8%;
+  font-size: 80px;
+  color: rgba(169, 169, 169, 0.3);
+  transform: rotate(-15deg);
+}
+@media (max-width: 768px) {
+  .avis-clients .decoration-icons .like-icon {
+    font-size: 50px;
+    left: 5%;
+  }
+}
+.avis-clients .decoration-icons .heart-icon {
+  position: absolute;
+  bottom: 15%;
+  right: 8%;
+  font-size: 70px;
+  color: rgba(169, 169, 169, 0.3);
+  transform: rotate(15deg);
+}
+@media (max-width: 768px) {
+  .avis-clients .decoration-icons .heart-icon {
+    font-size: 45px;
+    right: 5%;
+  }
+}
+.avis-clients .decoration-icons .star-icon {
+  position: absolute;
+  color: rgba(212, 165, 116, 0.2);
+}
+.avis-clients .decoration-icons .star-icon.star-1 {
+  top: 10%;
+  right: 15%;
+  font-size: 50px;
+  animation: float 6s ease-in-out infinite;
+}
+.avis-clients .decoration-icons .star-icon.star-2 {
+  bottom: 20%;
+  left: 15%;
+  font-size: 40px;
+  animation: float 5s ease-in-out infinite 1s;
+}
+.avis-clients .decoration-icons .star-icon.star-3 {
+  top: 50%;
+  right: 5%;
+  font-size: 35px;
+  animation: float 7s ease-in-out infinite 2s;
+}
+@media (max-width: 768px) {
+  .avis-clients .decoration-icons .star-icon {
+    display: none;
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+@media (max-width: 991px) {
+  .avis-clients {
+    padding: 80px 0;
+  }
+}
+@media (max-width: 576px) {
+  .avis-clients {
+    padding: 60px 0;
+  }
+  .avis-clients .avis-cards-container {
+    gap: 20px;
+  }
+}
+
 footer {
   background: linear-gradient(to bottom, #6B5D50 0%, #1A0F0A 100%);
   padding: 4rem 0 0;

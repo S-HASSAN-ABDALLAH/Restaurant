@@ -1,81 +1,98 @@
-//  _variables.scss
-$color-gold:#D29748;
-$color-text:#090606;
-$color-navbar-bg: #E5E5E5;
-$color-navbar-hover: #B8860B;
-$color-footer-top:#6B5D50;
-$color-footer-bottom:#1A0F0A;
-$color-icon:#FDDF44;
-$color-text-footer: white;
-$font-family:"Playfair", serif;
-$font-size-footer: 1.2rem;
-$logo-header-width:150px;
-$logo-footer-width-desktop: 100px;
-$logo-footer-width-mobile: 80px;
-// === Variables L'esprit d'Alep ===
-$color-section-bg: #f8f9fa;
-$color-title: #333333;
-$color-text-gray: #666666;
-$color-white: #ffffff;
-$title-font-size: 2.5rem;
-$title-font-size-mobile: 1.8rem;
-$text-font-size: 1.1rem;
-$img-size-desktop: 400px;
-$img-size-mobile: 300px;
-$box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+// ==========================================
+// VARIABLES GLOBALES
+// ==========================================
+// Couleurs principales
+$color-gold: #D29748;              // Couleur dorée principale (or)
+$color-text: #090606;              // Couleur du texte principal (noir)
+$color-navbar-bg: #E5E5E5;         // Fond de la navbar (gris clair)
+$color-navbar-hover: #B8860B;      // Couleur hover navbar (or foncé)
+$color-footer-top: #6B5D50;        // Couleur haut du footer (marron)
+$color-footer-bottom: #1A0F0A;     // Couleur bas du footer (marron foncé)
+$color-icon: #FDDF44;              // Couleur des icônes (jaune)
+$color-text-footer: white;         // Couleur du texte footer (blanc)
+
+// Typographie
+$font-family: "Playfair", serif;   // Police principale
+$font-size-footer: 1.2rem;         // Taille du texte footer
+
+// Logos
+$logo-header-width: 150px;                    // Largeur logo header
+$logo-footer-width-desktop: 100px;            // Largeur logo footer desktop
+$logo-footer-width-mobile: 80px;              // Largeur logo footer mobile
+
+// Variables pour la section "L'esprit d'Alep"
+$color-section-bg: #f8f9fa;        // Fond de section (gris très clair)
+$color-title: #333333;             // Couleur des titres (gris foncé)
+$color-text-gray: #666666;         // Couleur texte gris
+$color-white: #ffffff;             // Blanc
+$title-font-size: 2.5rem;          // Taille titre desktop
+$title-font-size-mobile: 1.8rem;   // Taille titre mobile
+$text-font-size: 1.1rem;           // Taille texte
+$img-size-desktop: 400px;          // Taille image desktop
+$img-size-mobile: 300px;           // Taille image mobile
+$box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 
 // ==========================================
 // NAVBAR DESKTOP
 // ==========================================
 .navbar {
+    // Fond transparent au départ
     background: transparent;
     backdrop-filter: none;
     
+    // Position fixée en haut de la page
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1000;           // Au-dessus de tout
     width: 100%;
     
+    // Espacement
     padding: 2rem 0;
     box-shadow: none;
     border-bottom: none;
     
+    // Transition fluide
     transition: all 0.4s ease;
     
+    // État après scroll (fond noir avec blur)
     &.scrolled {
         background: rgba(0, 0, 0, 0.85);
         backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);  // Pour Safari
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         border-bottom: 1px solid rgba(210, 151, 72, 0.3);
         padding: 1.5rem 0;
     }
 }
 
+// Conteneur de la navbar
 .navbar .container {
     max-width: 100%;
     padding: 0 2rem;
 }
 
+// Navigation principale
 .navbar-nav {
     width: 100%;
     align-items: center;
-    gap: 5rem;
+    gap: 5rem;               // Espace entre les liens
 }
 
+// Liens de navigation
 .nav-link {
     color: $color-gold !important;
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 500;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95);  // Ombre pour lisibilité
     padding: 0.5rem 1.5rem !important;
     transition: all 0.3s ease;
     position: relative;
-    white-space: nowrap;
+    white-space: nowrap;     // Pas de retour à la ligne
     
+    // Ligne sous le lien (sauf pour dropdown)
     &:not(.dropdown-toggle)::after {
         content: '';
         position: absolute;
@@ -88,17 +105,21 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         transform: translateX(-50%);
     }
     
+    // Effet hover
     &:hover {
         color: white !important;
-        transform: translateY(-2px);
+        transform: translateY(-2px);  // Légère élévation
     }
     
+    // Ligne apparaît au hover
     &:not(.dropdown-toggle):hover::after {
         width: 80%;
     }
 }
 
+// Menu déroulant (dropdown)
 .dropdown-toggle {
+    // Flèche personnalisée
     &::after {
         display: inline-block;
         margin-left: 0.5rem;
@@ -110,21 +131,24 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         vertical-align: middle;
     }
     
+    // Rotation de la flèche quand ouvert
     &[aria-expanded="true"]::after {
         transform: rotate(180deg);
     }
 }
 
+// Logo dans la navbar
 .navbar-brand img {
     width: 70px;
     height: 70px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 50%;      // Forme circulaire
     background-color: transparent;
     transition: all 0.3s ease;
     box-shadow: 0 3px 15px rgba(212, 167, 116, 0.6);
     border: 2px solid $color-gold;
     
+    // Effet zoom au hover
     &:hover {
         transform: scale(1.08);
         box-shadow: 0 5px 25px rgba(212, 167, 116, 0.8);
@@ -132,6 +156,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
+// Menu déroulant (dropdown menu)
 .dropdown-menu {
     background-color: rgba(42, 24, 16, 0.95);
     border: 1px solid $color-gold;
@@ -139,11 +164,13 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     margin-top: 0.8rem;
     border-radius: 8px;
     
+    // Animation d'apparition
     &.show {
         animation: fadeInDown 0.3s ease;
     }
 }
 
+// Animation fade in down
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -155,22 +182,26 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
+// Items du dropdown
 .dropdown-item {
     color: $color-gold !important;
     padding: 1rem 1.5rem;
     transition: all 0.3s ease;
     font-size: 1.1rem;
     
+    // Effet hover
     &:hover {
         background-color: rgba(212, 167, 116, 0.2);
         color: white !important;
-        transform: translateX(5px);
+        transform: translateX(5px);  // Déplacement vers la droite
     }
     
+    // Coins arrondis pour premier item
     &:first-child {
         border-radius: 8px 8px 0 0;
     }
     
+    // Coins arrondis pour dernier item
     &:last-child {
         border-radius: 0 0 8px 8px;
     }
@@ -180,6 +211,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 // NAVBAR MOBILE
 // ==========================================
 
+// Bouton hamburger
 .navbar-toggler {
     border: 2px solid $color-gold;
     padding: 0.5rem 0.75rem;
@@ -187,16 +219,19 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     border-radius: 8px;
     transition: all 0.3s ease;
     
+    // État focus
     &:focus {
         box-shadow: 0 0 0 3px rgba(210, 151, 72, 0.4);
         outline: none;
     }
     
+    // Effet hover
     &:hover {
         background: rgba(210, 151, 72, 0.2);
         border-color: white;
     }
     
+    // Icône hamburger (SVG inline)
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D29748' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         width: 1.5rem;
@@ -204,42 +239,44 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
+// Styles pour mobile (max 991px)
 @media (max-width: 991px) {
     
-    // Navbar mobile
+    // Navbar mobile avec fond noir
     .navbar {
         background: rgba(0, 0, 0, 0.8) !important;
         padding: 0.8rem 0;
     }
     
+    // Réduction du padding
     .navbar .container {
         padding: 0 1rem;
     }
     
-    // Menu déroulant OPTIMISÉ
+    // Menu déroulant optimisé pour mobile
     .navbar-collapse {
-        // Fond avec blur
+        // Fond avec effet blur
         background: linear-gradient(
             180deg,
             rgba(0, 0, 0, 0.98) 0%,
             rgba(0, 0, 0, 0.95) 100%
         );
         backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);  // Pour Safari
         
-        // Position et taille
+        // Position et dimensions
         margin-top: 0.5rem;
         padding: 1rem 0;
         border-radius: 15px;
         border: 1px solid rgba(210, 151, 72, 0.25);
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
         
-        //  Hauteur max + scroll
+        // Hauteur maximale avec scroll
         max-height: 65vh;
-        overflow-y: auto;
-        overflow-x: hidden;
+        overflow-y: auto;    // Scroll vertical si nécessaire
+        overflow-x: hidden;  // Pas de scroll horizontal
         
-        // Scroll personnalisé
+        // Personnalisation de la scrollbar
         &::-webkit-scrollbar {
             width: 5px;
         }
@@ -257,12 +294,13 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             }
         }
         
-        // Animation
+        // Animation d'ouverture
         &.show {
             animation: menuSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
     
+    // Animation slide in pour le menu
     @keyframes menuSlideIn {
         from {
             opacity: 0;
@@ -274,25 +312,25 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
     
-    // Liste
+    // Liste en colonne
     .navbar-nav {
         flex-direction: column;
         gap: 0;
         width: 100%;
     }
     
-    // Items
+    // Items de navigation
     .nav-item {
         width: 100%;
         margin: 0;
-        border-bottom: 1px solid rgba(210, 151, 72, 0.08);
+        border-bottom: 1px solid rgba(210, 151, 72, 0.08);  // Séparateur
         
         &:last-child {
-            border-bottom: none;
+            border-bottom: none;  // Pas de bordure pour le dernier
         }
     }
     
-    // Liens
+    // Liens adaptés pour mobile
     .nav-link {
         padding: 0.9rem 1.2rem !important;
         font-size: 1rem;
@@ -301,18 +339,20 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         transition: all 0.2s ease;
         text-shadow: none;
         
+        // Effet hover/active
         &:hover, &:active {
             background: rgba(210, 151, 72, 0.12);
             color: white !important;
             transform: none;
         }
         
+        // Supprime la ligne sous le lien
         &::after {
             display: none;
         }
     }
     
-    // Logo dans menu
+    // Logo dans le menu mobile
     .navbar-brand {
         padding: 0.8rem 0 !important;
         display: flex;
@@ -331,11 +371,11 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
     
-    // Dropdown mobile
+    // Dropdown adapté pour mobile
     .dropdown-menu {
         background: rgba(15, 10, 8, 0.98);
         border: 1px solid rgba(210, 151, 72, 0.15);
-        position: static !important;
+        position: static !important;   // Pas de position absolute
         transform: none !important;
         margin: 0;
         padding: 0.5rem 0;
@@ -343,6 +383,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         box-shadow: none;
     }
     
+    // Items du dropdown mobile
     .dropdown-item {
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
@@ -356,6 +397,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
     
+    // Flèche du dropdown
     .dropdown-toggle::after {
         color: $color-gold;
         margin-left: 0.5rem;
@@ -363,22 +405,24 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 // ==========================================
-// HERO SECTION
+// HERO SECTION (Section d'accueil)
 // ==========================================
 .hero-section {
     margin-top: 0;
-    height: 100vh;
-    min-height: 600px;
+    height: 100vh;           // Hauteur plein écran
+    min-height: 600px;       // Hauteur minimale
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    // Image de fond
     background-image: url(../assets/images/HeroAccueill.webp);
     background-size: cover;
-    background-position: 50% 50%;  // ✅ Centre exact (citadelle au milieu)
+    background-position: 50% 50%;  // Centre exact
     background-repeat: no-repeat;
     
-    // Overlay pour lisibilité
+    // Overlay sombre pour la lisibilité
     &::before {
         content: '';
         position: absolute;
@@ -394,17 +438,19 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         z-index: 1;
     }
     
+    // Contenu au-dessus de l'overlay
     .container {
         position: relative;
         z-index: 2;
     }
     
-    // Responsive mobile
+    // Responsive tablette
     @media (max-width: 991px) {
         padding-top: 100px;
         min-height: calc(100vh - 100px);
     }
     
+    // Responsive mobile
     @media (max-width: 768px) {
         padding-top: 90px;
         background-position: center 40%;
@@ -415,20 +461,23 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
+// Titre principal du hero
 .hero-title {
     color: white !important;
     font-family: $font-family;
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);  // Ombre pour lisibilité
     margin-bottom: 1.5rem;
     line-height: 1.3;
     
+    // Responsive desktop large
     @media (max-width: 1200px) {
         font-size: 2.8rem;
     }
     
+    // Responsive mobile
     @media (max-width: 768px) {
         font-size: 1.8rem;
         line-height: 1.3;
@@ -437,6 +486,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
+// Sous-titre du hero
 .hero-subtitle {
     color: white;
     font-family: $font-family;
@@ -446,6 +496,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     margin-bottom: 2.5rem;
     
+    // Responsive mobile
     @media (max-width: 768px) {
         font-size: 1rem;
         line-height: 1.5;
@@ -454,6 +505,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
+// Bouton du hero
 .btn-hero {
     display: inline-block;
     padding: 1rem 3rem;
@@ -462,7 +514,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     color: $color-text;
     background-color: $color-gold;
     border: 2px solid $color-gold;
-    border-radius: 50px;
+    border-radius: 50px;     // Forme arrondie
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(210, 151, 72, 0.4);
@@ -470,14 +522,16 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     letter-spacing: 1px;
     font-family: $font-family;
     
+    // Effet hover (inversion des couleurs)
     &:hover {
         background-color: transparent;
         color: white;
         border-color: white;
-        transform: translateY(-3px);
+        transform: translateY(-3px);  // Légère élévation
         box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
     }
     
+    // Responsive mobile
     @media (max-width: 768px) {
         padding: 0.8rem 2rem;
         font-size: 0.95rem;
@@ -486,8 +540,10 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 // ========================================
-//  Section 2: L'ESPRIT D'ALEP
+// ANIMATIONS GLOBALES
 // ========================================
+
+// Animation fade in up (utilisée dans plusieurs sections)
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -499,53 +555,56 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
-
-
+// ========================================
+// SECTION 2: L'ESPRIT D'ALEP
+// ========================================
 .esprit-alep {
     background-color: $color-section-bg;
     padding: 5rem 0;
    
+    // Titre de la section
     h2 {
         color: $color-title;
-    font-family: $font-family;
-    font-size: $title-font-size;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.5px; 
-    animation: fadeInUp 0.8s ease-out;  
-     position: relative;  
+        font-family: $font-family;
+        font-size: $title-font-size;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.5px; 
+        animation: fadeInUp 0.8s ease-out;  // Animation d'entrée
+        position: relative;  
     
-    @media (max-width: 768px) {
+        // Responsive mobile
+        @media (max-width: 768px) {
             font-size: $title-font-size-mobile;
             text-align: center;
-
-           
+        }
     }
-}
     
-   .title-underline {
-    width: 150px;   
-    height: 5px;    
-    background: $color-gold;  
-    margin-bottom: 2rem;
-    border-radius: 3px;
-
-    
+    // Ligne de soulignement sous le titre
+    .title-underline {
+        width: 150px;   
+        height: 5px;    
+        background: $color-gold;  
+        margin-bottom: 2rem;
+        border-radius: 3px;
+        
+        // Centré sur mobile
         @media (max-width: 768px) {
             margin: 0 auto 2rem auto;
         }
     }
     
+    // Paragraphe de texte
     p {
-    color: darken($color-text-gray, 15%);    
-    font-size: 1.15rem;
-    line-height: 1.9;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    max-width: 500px; 
-
+        color: darken($color-text-gray, 15%);  // Gris foncé
+        font-size: 1.15rem;
+        line-height: 1.9;
+        font-weight: 400;
+        letter-spacing: 0.3px;
+        max-width: 500px;  // Largeur maximale pour la lisibilité
         
+        // Responsive mobile
         @media (max-width: 768px) {
             text-align: center;
             padding: 0 1rem;
@@ -553,16 +612,18 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
 
-       .image-container {
-        animation: fadeInUp 0.8s ease-out 0.2s backwards;
-    img {
-        border: 5px solid $color-gold !important;
-        box-shadow: 
-            0 0 0 10px rgba(199, 62, 42, 0.1),  
-            0 20px 40px rgba(0,0,0,0.15) !important;
-   
+    // Conteneur de l'image
+    .image-container {
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;  // Animation avec délai
+        
+        img {
+            border: 5px solid $color-gold !important;
+            box-shadow: 
+                0 0 0 10px rgba(199, 62, 42, 0.1),   // Ombre externe
+                0 20px 40px rgba(0,0,0,0.15) !important;
     
-             @media (max-width: 768px) {
+            // Responsive mobile
+            @media (max-width: 768px) {
                 width: $img-size-mobile;
                 height: $img-size-mobile;
                 margin-top: 2rem;
@@ -570,55 +631,63 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
 
-       .btn-discover {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.8rem 2.5rem;
-    color: $color-gold;
-    background: transparent;
-    border: 2px solid $color-gold;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    
-    i {
-        margin-left: 8px;
-        font-size: 0.9rem;
-        transition: transform 0.3s ease;
-    }
-    
-    &:hover {
-        background: $color-gold;
-        color: white;
-        transform: translateY(-2px);
+    // Bouton "En savoir plus"
+    .btn-discover {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.8rem 2.5rem;
+        color: $color-gold;
+        background: transparent;
+        border: 2px solid $color-gold;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
         
-        i {  // السهم يتحرك مع الهوفر
-            transform: translateX(5px);
+        // Icône flèche
+        i {
+            margin-left: 8px;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
         }
-    }
-    
-    @media (max-width: 768px) {
-        display: block;
-        width: fit-content;
-        margin: 1.5rem auto 0;
+        
+        // Effet hover
+        &:hover {
+            background: $color-gold;
+            color: white;
+            transform: translateY(-2px);
+            
+            // La flèche se déplace vers la droite
+            i {
+                transform: translateX(5px);
+            }
+        }
+        
+        // Responsive mobile
+        @media (max-width: 768px) {
+            display: block;
+            width: fit-content;
+            margin: 1.5rem auto 0;
+        }
     }
 }
-        }
 
-     // قسم Nos Incontournables
+// ==========================================
+// SECTION 3: NOS INCONTOURNABLES
+// ==========================================
 .nos-incontournables {
-    padding: 120px 0 100px 0; // padding كبير أعلى وأسفل
-    background-color: #1a1611;
+    padding: 120px 0 100px 0;  // Padding confortable
+    background-color: #1a1611;  // Fond marron foncé
+    
+    // Image de fond
     background-image: url('../assets/images/BgNosIncontournables.webp');
     background-size: cover;
     background-position: center;
-    
     background-repeat: no-repeat;
     position: relative;
     
-    // طبقة شفافة
+    // Overlay sombre pour contraste
     &::before {
         content: '';
         position: absolute;
@@ -626,30 +695,32 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.4);  // Noir à 40% d'opacité
         z-index: 1;
     }
     
+    // Contenu au-dessus de l'overlay
     .container {
         position: relative;
         z-index: 2;
     }
     
-    // العنوان مع مسافة كافية
+    // Titre de la section
     .section-title {
         padding-top: 20px;
-        padding-bottom: 80px; // مسافة كبيرة تحت العنوان
+        padding-bottom: 80px;  // Espace avant les cartes
         
         h2 {
             font-size: 50px;
-            color: #d4a574;
+            color: #d4a574;     // Doré
             font-weight: 300;
             font-family: 'Playfair Display', serif;
             text-align: center;
-            letter-spacing: 4px;
+            letter-spacing: 4px;  // Espacement large entre les lettres
             margin: 0;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
             
+            // Responsive mobile
             @media (max-width: 768px) {
                 font-size: 36px;
                 letter-spacing: 2px;
@@ -657,28 +728,31 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
     
-    // حاوي البطاقات
+    // Conteneur des cartes
     .cards-container {
         display: flex;
         justify-content: center;
-        align-items: stretch;
-        gap: 30px; // زيادة المسافة بين البطاقات
-        flex-wrap: wrap;
+        align-items: stretch;  // Même hauteur pour toutes les cartes
+        gap: 30px;
+        flex-wrap: wrap;       // Retour à la ligne si nécessaire
         margin-bottom: 60px;
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
         
+        // Colonne de carte
         .card-column {
             flex: 0 0 auto;
-            width: calc(33.333% - 30px);
-            max-width: 380px; // زيادة العرض قليلاً
+            width: calc(33.333% - 30px);  // 3 colonnes
+            max-width: 380px;
             display: flex;
             
+            // Responsive tablette (2 colonnes)
             @media (max-width: 991px) {
                 width: calc(50% - 15px);
             }
             
+            // Responsive mobile (1 colonne)
             @media (max-width: 576px) {
                 width: 100%;
                 max-width: 400px;
@@ -687,79 +761,57 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
     
-    // البطاقات
+    // Carte de nourriture
     .food-card {
-         padding: 30px 20px;
+        padding: 30px 20px;
         width: 100%;
         border-radius: 15px;
         overflow: hidden;
-        background: linear-gradient(to bottom, 
-        #f8f5f0,  // بيج فاتح جداً
-        #f2ebe3   // بيج كريمي
-    );
+        background: linear-gradient(to bottom, #f8f5f0, #f2ebe3);  // Dégradé beige
         display: flex;
         flex-direction: column;
         transition: all 0.4s ease;
         box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.3),
-        0 1px 0 rgba(212, 165, 116, 0.2) inset; // إضافة ظل داخلي ذهبي خفيف
-    
+            0 10px 30px rgba(0, 0, 0, 0.3),
+            0 1px 0 rgba(212, 165, 116, 0.2) inset;  // Ombre interne dorée
         height: 100%;
-       
         
+        // Effet hover
         &:hover {
-            transform: translateY(-10px) ;
-           box-shadow: 
-            0 20px 50px rgba(212, 165, 116, 0.4),
-            0 1px 0 rgba(212, 165, 116, 0.3) inset;
+            transform: translateY(-10px);  // Élévation
+            box-shadow: 
+                0 20px 50px rgba(212, 165, 116, 0.4),
+                0 1px 0 rgba(212, 165, 116, 0.3) inset;
             
+            // Zoom de l'image
             .card-image-wrapper img {
                 transform: scale(1.08);
             }
             
+            // Changement de couleur du titre
             h5 {
                 color: #d4a574;
-                
             }
         }
         
-        // حاوي الصورة - ارتفاع ثابت
+        // Conteneur de l'image
         .card-image-wrapper {
             width: 100%;
-            height: 300px; // ارتفاع ثابت لجميع الصور
+            height: 300px;  // Hauteur fixe pour toutes les images
             overflow: hidden;
             position: relative;
-            
-            // خلفية متدرجة أنيقة للجميع
-            background: linear-gradient(135deg, 
-                #faf7f3 0%, 
-                #f5ede5 100%
-            );
-            
-            // تخصيص لكل بطاقة
-            &:has(img[alt*="végétarien"]) {
-                background: linear-gradient(135deg, #f9f6f2 0%, #f4ede4 100%);
-            }
-            
-            &:has(img[alt*="Sandwiches"]) {
-                // البطاقة الوسطى تبقى كما هي (الصورة تملأ كامل المساحة)
-                background: #2c1810;
-            }
-            
-            &:has(img[alt*="Grillades"]) {
-                background: linear-gradient(135deg, #faf8f4 0%, #f5ede5 100%);
-            }
+            background: linear-gradient(135deg, #faf7f3 0%, #f5ede5 100%);
             
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover; // مهم جداً للحفاظ على نفس الحجم
+                object-fit: cover;     // Remplit tout l'espace
                 object-position: center;
                 transition: transform 0.6s ease;
             }
         }
         
-        // محتوى البطاقة
+        // Contenu de la carte (texte)
         .card-content {
             padding: 25px 20px;
             background: #fafafa;
@@ -768,46 +820,48 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 90px; // ارتفاع أدنى ثابت
+            min-height: 90px;  // Hauteur minimale
             
-           h5 {
-            font-size: 17px; // حجم أصغر قليلاً
-            font-weight: 700; // أكثر سُمكاً
-            color: #2c2c2c;
-            text-transform: uppercase;
-            letter-spacing: 2px; // زيادة التباعد بين الأحرف
-            margin: 0;
-            transition: color 0.3s ease;
-            font-family: 'Playfair Display', serif; // استخدام خط أنيق
-            position: relative;
-            
-            // خط زخرفي تحت العنوان
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 0;
-                height: 2px;
-                background: #d4a574;
-                transition: width 0.3s ease;
+            h5 {
+                font-size: 17px;
+                font-weight: 700;
+                color: #2c2c2c;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin: 0;
+                transition: color 0.3s ease;
+                font-family: 'Playfair Display', serif;
+                position: relative;
+                
+                // Ligne sous le titre (apparaît au hover)
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 0;
+                    height: 2px;
+                    background: #d4a574;
+                    transition: width 0.3s ease;
+                }
+            }
+        }
+        
+        // Ligne apparaît au hover
+        &:hover {
+            .card-content h5::after {
+                width: 60px;
             }
         }
     }
     
-    &:hover {
-        .card-content h5::after {
-            width: 60px;
-        }
-    }
-}
-    
-    // حاوي الزر مع مسافة كافية
+    // Conteneur du bouton
     .button-container {
-        padding-top: 40px; // مسافة فوق الزر
+        padding-top: 40px;
         padding-bottom: 20px;
         
+        // Bouton "Voir le menu complet"
         .btn-menu {
             display: inline-block;
             color: #d4a574;
@@ -822,6 +876,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-decoration: none;
             transition: all 0.3s ease;
             
+            // Effet hover
             &:hover {
                 background: #d4a574;
                 color: #000;
@@ -831,18 +886,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
     
-    // للتأكد من المحاذاة الصحيحة
-    @media (min-width: 992px) {
-        .cards-container {
-            justify-content: space-between;
-            max-width: 1140px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 15px;
-        }
-    }
-    
-    // Responsive تحسينات
+    // Responsive tablette
     @media (max-width: 991px) {
         padding: 80px 0;
         
@@ -855,6 +899,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
     }
     
+    // Responsive mobile
     @media (max-width: 576px) {
         padding: 60px 0;
         
@@ -885,88 +930,482 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 }
 
-@media (max-width: 576px) {
-    .nos-incontournables {
-        .cards-container {
-            gap: 25px;
-            
-            .card-column {
-                width: 90%;
-                max-width: 350px;
+// ==========================================
+// SECTION 4: NOS SERVICES
+// ==========================================
+.nos-services {
+    padding: 80px 0;
+    background-color: #f8f5f0;  // Fond beige clair
+    
+    // Titre de la section
+    .section-title {
+        text-align: center;
+        font-size: 48px;
+        color: #d4a574;  // Doré
+        margin-bottom: 60px;
+        font-family: 'Playfair Display', serif;
+    }
+    
+    // Grille des services (4 colonnes)
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  // 4 colonnes égales
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    // Carte de service
+    .service-card {
+        text-align: center;
+        transition: all 0.3s ease;
+        
+        // Effet hover sur l'icône
+        &:hover {
+            .service-icon {
+                transform: translateY(-10px);  // Élévation
+                box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
             }
         }
         
-        .food-card {
-            .card-content h5 {
-                font-size: 15px;
-                letter-spacing: 1.5px;
+        // Conteneur de l'icône (cercle blanc)
+        .service-icon {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 50%;  // Forme circulaire
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            
+            // Icône Font Awesome
+            i {
+                font-size: 40px;
+                color: #d4a574;  // Doré
+                transition: all 0.3s ease;
             }
+        }
+        
+        // Nom du service
+        .service-name {
+            font-size: 18px;
+            color: #333;
+            font-weight: 500;
+        }
+    }
+    
+    // Responsive tablette (2 colonnes)
+    @media (max-width: 992px) {
+        .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+    }
+
+    // Responsive mobile (1 colonne)
+    @media (max-width: 576px) {
+        padding: 60px 0;
+        
+        .section-title {
+            font-size: 36px;
+        }
+        
+        .services-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
         }
     }
 }
-// .nos-incontournables{
-//     background-image: url(/Restaurant/assets/images/BgNosIncontournables.webp);
-//     background-size: cover;
-//     background-position: center;
-//     background-color: black;
-// }
+
+// ==========================================
+// SECTION 5: AVIS CLIENTS
+// ==========================================
+.avis-clients {
+    padding: 100px 0;
+    background-color: #5d4a3a;  // Marron
+    
+    // Image de fond
+    background-image: url('../assets/images/Avis.webp');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;  // Mélange avec le fond marron
+    position: relative;
+    overflow: hidden;
+    
+    // Overlay pour améliorer la lisibilité
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(93, 74, 58, 0.5);  // Marron à 50% d'opacité
+        z-index: 1;
+    }
+    
+    // Contenu au-dessus de l'overlay
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    // En-tête de la section (titre + note)
+    .avis-header {
+        margin-bottom: 60px;
+        
+        // Titre principal
+        h2 {
+            font-size: 48px;
+            color: #d4a574;  // Doré
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            
+            // Responsive mobile
+            @media (max-width: 768px) {
+                font-size: 32px;
+            }
+        }
+        
+        // Conteneur de la note
+        .rating-score {
+            
+            // Note chiffrée (4.9)
+            .score {
+                font-size: 64px;
+                color: #d4a574;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 10px;
+                
+                // Responsive mobile
+                @media (max-width: 768px) {
+                    font-size: 48px;
+                }
+            }
+            
+            // Étoiles
+            .stars {
+                margin-bottom: 15px;
+                
+                i {
+                    font-size: 32px;
+                    color: #d4a574;  // Doré
+                    margin: 0 5px;
+                    
+                    // Responsive mobile
+                    @media (max-width: 768px) {
+                        font-size: 24px;
+                        margin: 0 3px;
+                    }
+                }
+            }
+            
+            // Texte "Avis vérifiés"
+            .based-on {
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.8);
+                margin: 0;
+                
+                // Icône de vérification (optionnelle)
+                i {
+                    color: #4CAF50;  // Vert
+                    margin-right: 6px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    
+    // Conteneur des cartes d'avis
+    .avis-cards-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        
+        // Colonne de carte
+        .avis-card-column {
+            flex: 0 0 auto;
+            width: calc(33.333% - 20px);  // 3 colonnes
+            max-width: 380px;
+            margin-bottom: 30px;
+            
+            // Responsive tablette (2 colonnes)
+            @media (max-width: 991px) {
+                width: calc(50% - 15px);
+            }
+            
+            // Responsive mobile (1 colonne)
+            @media (max-width: 576px) {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    }
+    
+    // Carte d'avis
+    .avis-card {
+        background: white;
+        padding: 35px 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        
+        // Effet hover (élévation)
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
+        }
+        
+        // Étoiles de la carte (centrées)
+        .card-stars {
+            margin-bottom: 20px;
+            text-align: center;  // Centre les étoiles
+            
+            i {
+                font-size: 24px;
+                color: #d4a574;  // Doré
+                margin-right: 5px;
+            }
+        }
+        
+        // Texte de l'avis
+        .avis-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #333;
+            margin-bottom: 15px;
+            flex-grow: 1;  // Prend l'espace disponible
+            font-family: 'Playfair Display', serif;
+        }
+        
+        // Nom de l'auteur
+        .author-name {
+            font-size: 15px;
+            color: #666;
+            font-weight: 600;
+            margin: 0;
+            font-style: italic;
+        }
+    }
+
+    // Bouton "Voir tous les avis"
+    .btn-all-reviews {
+        display: inline-block;
+        margin-top: 40px;
+        padding: 15px 40px;
+        background: transparent;
+        border: 2px solid #d4a574;
+        color: #d4a574;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: 'Playfair Display', serif;
+        
+        // Icône flèche
+        i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        // Effet hover
+        &:hover {
+            background: #d4a574;
+            color: white;
+            transform: translateY(-3px);  // Légère élévation
+            box-shadow: 0 10px 25px rgba(212, 165, 116, 0.4);
+            
+            // Flèche se déplace vers la droite
+            i {
+                transform: translateX(5px);
+            }
+        }
+    }
+    
+    // Icônes décoratives (like, heart, stars)
+    .decoration-icons {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;  // Ne bloque pas les clics
+        z-index: 1;
+        
+        // Icône "J'aime" (en haut à gauche)
+        .like-icon {
+            position: absolute;
+            top: 15%;
+            left: 8%;
+            font-size: 80px;
+            color: rgba(169, 169, 169, 0.3);  // Gris transparent
+            transform: rotate(-15deg);
+            
+            // Responsive mobile
+            @media (max-width: 768px) {
+                font-size: 50px;
+                left: 5%;
+            }
+        }
+        
+        // Icône "Cœur" (en bas à droite)
+        .heart-icon {
+            position: absolute;
+            bottom: 15%;
+            right: 8%;
+            font-size: 70px;
+            color: rgba(169, 169, 169, 0.3);
+            transform: rotate(15deg);
+            
+            // Responsive mobile
+            @media (max-width: 768px) {
+                font-size: 45px;
+                right: 5%;
+            }
+        }
+        
+        // Étoiles décoratives (flottantes)
+        .star-icon {
+            position: absolute;
+            color: rgba(212, 165, 116, 0.2);  // Doré transparent
+            
+            // Étoile 1 (en haut à droite)
+            &.star-1 {
+                top: 10%;
+                right: 15%;
+                font-size: 50px;
+                animation: float 6s ease-in-out infinite;
+            }
+            
+            // Étoile 2 (en bas à gauche)
+            &.star-2 {
+                bottom: 20%;
+                left: 15%;
+                font-size: 40px;
+                animation: float 5s ease-in-out infinite 1s;  // Délai de 1s
+            }
+            
+            // Étoile 3 (au milieu à droite)
+            &.star-3 {
+                top: 50%;
+                right: 5%;
+                font-size: 35px;
+                animation: float 7s ease-in-out infinite 2s;  // Délai de 2s
+            }
+            
+            // Masquées sur mobile
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+    
+    // Animation flottante pour les étoiles
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-20px) rotate(10deg);
+        }
+    }
+    
+    // Responsive tablette
+    @media (max-width: 991px) {
+        padding: 80px 0;
+    }
+    
+    // Responsive mobile
+    @media (max-width: 576px) {
+        padding: 60px 0;
+        
+        .avis-cards-container {
+            gap: 20px;
+        }
+    }
+}
 
 // ==========================================
 // FOOTER
 // ==========================================
 footer {
+    // Dégradé de fond (marron)
     background: linear-gradient(to bottom, $color-footer-top 0%, $color-footer-bottom 100%);
     padding: 4rem 0 0;
-    border-top: 3px solid $color-gold;
+    border-top: 3px solid $color-gold;  // Bordure dorée
     box-shadow: 0 -2px 10px rgba(212, 167, 116, 0.3);
 
+    // Logo du footer
     .logo {
         width: $logo-footer-width-desktop;
         height: auto;
         display: block;
         margin: 0 auto 1rem;
 
+        // Responsive mobile
         @media (max-width: 768px) {
             width: $logo-footer-width-mobile;
         }
     }
 
+    // Logo Uber Eats
     .uber-logo {
         width: 100px;
         height: auto;
         margin: 1rem 0;
         transition: transform 0.3s ease;
         
+        // Effet hover (zoom)
         &:hover {
             transform: scale(1.05);
         }
     }
 
+    // Icônes des réseaux sociaux
     .icon-social {
-        color: $color-icon;
+        color: $color-icon;  // Jaune
         font-size: 1.8rem;
         margin: 0 0.8rem;
         transition: all 0.3s ease;
         display: inline-block;
         
+        // Effet hover
         &:hover {
             color: $color-gold;
-            transform: scale(1.15);
+            transform: scale(1.15);  // Zoom
         }
     }
 
+    // Logo TripAdvisor
     .tripadvisor-img {
         width: 50px;
         height: 50px;
         transition: all 0.3s ease;
         display: inline-block;
         
+        // Effet hover
         &:hover {
             transform: scale(1.15);
-            filter: brightness(1.2);
+            filter: brightness(1.2);  // Plus lumineux
         }
     }
 
+    // Numéro de téléphone
     .phone-number {
         color: $color-text-footer;
         text-decoration: none;
@@ -975,12 +1414,14 @@ footer {
         transition: all 0.3s ease;
         display: inline-block;
         
+        // Effet hover
         &:hover {
             color: $color-gold;
-            transform: translateX(3px);
+            transform: translateX(3px);  // Déplacement vers la droite
         }
     }
 
+    // Titres niveau 3
     h3 {
         color: $color-text-footer;
         font-family: $font-family;
@@ -988,6 +1429,7 @@ footer {
         margin-top: 0.8rem;
     }
 
+    // Titres niveau 4 (avec icônes)
     h4 {
         color: $color-gold;
         font-size: 1rem;
@@ -995,17 +1437,20 @@ footer {
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
 
+        // Icône avant le titre
         i {
             margin-right: 0.5rem;
         }
     }
 
+    // Paragraphes
     p {
         color: $color-text-footer;
         opacity: 0.9;
         line-height: 1.6;
     }
     
+    // Section copyright
     .copyright {
         border-top: 3px solid $color-gold;
         border-bottom: 3px solid $color-gold;
@@ -1021,19 +1466,20 @@ footer {
         letter-spacing: 0.5px;
     }
 
-    // Texte caché pour lecteurs d'écran
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
+    // Classe pour masquer du texte (accessibilité)
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
 
+    // Responsive mobile
     @media (max-width: 768px) {
         padding: 3rem 0 0;
         
