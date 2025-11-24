@@ -1521,6 +1521,442 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 }
 
 // ==========================================
+// PAGE CONTACT
+// ==========================================
+
+// HERO SECTION - CONTACT
+.hero-contact {
+    margin-top: 0;
+    height: 98vh;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url(../assets/images/HERO.jpeg);
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+        z-index: 1;
+    }
+    
+    .container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 1000px;
+        padding: 3rem 2rem;
+    }
+    
+    // ===== OPTION 3: LUXURY BLACK =====
+    .text-content {
+        background: rgba(0, 0, 0, 0.35);  // ✅ Dark black background
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(212, 165, 116, 0.2);  // ✅ Subtle gold border
+        border-radius: 20px;
+        padding: 4rem 3rem;
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        animation: fadeInUp 0.8s ease-out;
+        margin-top: 2rem;
+        
+        @media (max-width: 768px) {
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            margin-top: 1.5rem;
+        }
+        
+        @media (max-width: 576px) {
+            padding: 2rem 1.5rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+        }
+    }
+    
+    .contact-title {
+        color: $color-gold;  // ✅ Gold title
+        font-family: $font-family;
+        font-size: 4.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+        letter-spacing: 2px;
+        line-height: 1.2;
+        
+        @media (max-width: 992px) {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 576px) {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+    }
+    
+    .contact-description {
+        color: rgba(255, 255, 255, 0.98);  // White text
+        font-family: $font-family;
+        font-size: 1.4rem;
+        font-weight: 300;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+        margin: 0;
+        letter-spacing: 0.5px;
+        
+        @media (max-width: 992px) {
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 576px) {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 991px) {
+        height: 55vh;
+        min-height: 400px;
+        background-attachment: scroll;
+    }
+    
+    @media (max-width: 768px) {
+        height: 50vh;
+        min-height: 350px;
+        background-attachment: scroll;
+    }
+    
+    @media (max-width: 576px) {
+        height: 45vh;
+        min-height: 300px;
+    }
+}
+
+// Animation fade in up
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+// ==========================================
+// SECTION INFORMATIONS (3 Cartes)
+// ==========================================
+.contact-info {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+    
+    // Carte d'information
+    .info-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        height: 100%;
+        
+        // Effet hover (élévation et ombre)
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.25);
+            
+            .card-icon {
+                background: $color-gold;
+                color: white;
+                transform: scale(1.1) translateY(-5px);
+            }
+        }
+        
+        // Icône
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(210, 151, 72, 0.1);  // Fond doré transparent
+            color: $color-gold;
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            
+            i {
+                transition: all 0.3s ease;
+            }
+        }
+        
+        // Titre de la carte
+        .card-title {
+            color: $color-title;
+            font-family: $font-family;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        // Texte principal
+        .card-text {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        // Texte secondaire
+        .card-subtitle,
+        .card-closed {
+            color: #999;
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        .card-closed {
+            color: #d4a574;
+            font-weight: 600;
+            font-style: normal;
+        }
+    }
+    
+    // Responsive tablette
+    @media (max-width: 991px) {
+        padding: 60px 0;
+        
+        .info-card {
+            padding: 30px 20px;
+        }
+    }
+    
+    // Responsive mobile
+    @media (max-width: 576px) {
+        padding: 40px 0;
+        
+        .info-card {
+            padding: 25px 15px;
+            margin-bottom: 20px;
+            
+            .card-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+            
+            .card-title {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+// ==========================================
+// SECTION GOOGLE MAPS
+// ==========================================
+.maps-section {
+    background-color: white;
+    padding: 60px 0 0 0;
+    
+    // En-tête de la section
+    .maps-header {
+        background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
+        padding: 40px 0;
+        text-align: center;
+        
+        h2 {
+            color: $color-gold;
+            font-family: $font-family;
+            font-size: 2.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin: 0;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+            
+            @media (max-width: 768px) {
+                font-size: 2rem;
+            }
+        }
+    }
+    
+    // Conteneur de la carte
+    .maps-container {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        
+        iframe {
+            border-radius: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            height: 400px;
+        }
+        
+        @media (max-width: 576px) {
+            height: 300px;
+        }
+    }
+}
+
+// ==========================================
+// SECTION NOTRE RESTAURANT
+// ==========================================
+.notre-restaurant {
+    background-color: #fafafa;
+    padding: 80px 0;
+    
+    // Titre de la section
+    .section-title {
+        color: $color-title;
+        font-family: $font-family;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 60px;
+        letter-spacing: 2px;
+        position: relative;
+        
+        // Ligne sous le titre
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: $color-gold;
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            font-size: 2rem;
+            margin-bottom: 50px;
+            
+            &::after {
+                width: 100px;
+                bottom: -15px;
+            }
+        }
+    }
+    
+    // Galerie d'images
+    .restaurant-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        
+        // Élément de galerie
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 300px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            
+            // Image
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            
+            // Effet hover
+            &:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 40px rgba(212, 165, 116, 0.3);
+                
+                img {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        
+        // Responsive tablette (2 colonnes)
+        @media (max-width: 991px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            
+            .gallery-item {
+                height: 250px;
+            }
+        }
+        
+        // Responsive mobile (1 colonne)
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            
+            .gallery-item {
+                height: 250px;
+            }
+        }
+    }
+    
+    // Responsive
+    @media (max-width: 768px) {
+        padding: 60px 0;
+    }
+}
+
+// ==========================================
+// ANIMATIONS SUPPLÉMENTAIRES
+// ==========================================
+
+// Animation fade in up (si pas déjà définie)
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+// ==========================================
 // FOOTER
 // ==========================================
 footer {

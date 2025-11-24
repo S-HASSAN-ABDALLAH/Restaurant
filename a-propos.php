@@ -98,7 +98,7 @@
                 <div class="images-grid">
                     <!-- Image 1: Houmous -->
                     <div class="image-box image-top">
-                        <img src="./assets/images/Mezzé.jpeg" 
+                        <img src="./assets/images/Plat Menu Alep.jpeg" 
                              alt="Houmous maison Barbecue d'Alep" 
                              loading="lazy"
                              class="img-fluid rounded">
@@ -106,7 +106,7 @@
                     
                     <!-- Image 2: Riz avec mezze -->
                     <div class="image-box image-bottom">
-                        <img src="./assets/images/riz-mezze.jpg" 
+                        <img src="./assets/images/Mezzé.jpeg" 
                              alt="Plat de riz syrien avec mezze" 
                              loading="lazy"
                              class="img-fluid rounded">
