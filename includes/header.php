@@ -10,6 +10,15 @@
           <li class="nav-item">
             <a class="nav-link" href="index.php">Accueil</a>
           </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="apropos.php">À propos</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="navbar-brand" href="index.php">
+              <img src="./assets/images/Logo.webp" alt="Logo Restaurant" loading="lazy">
+            </a>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
@@ -20,14 +29,6 @@
               <li><a class="dropdown-item" href="#">SANDWICHS</a></li>
               <li><a class="dropdown-item" href="#">DESSERTS & BOISSONS</a></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a class="navbar-brand" href="index.php">
-              <img src="./assets/images/Logo.webp" alt="Logo Restaurant" loading="lazy">
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="apropos.php">À propos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>

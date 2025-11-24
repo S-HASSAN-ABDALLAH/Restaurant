@@ -1341,6 +1341,186 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 }
 
 // ==========================================
+// PAGE À PROPOS
+// ==========================================
+
+// Hero section À propos
+.hero-apropos {
+    margin-top: 0;
+    height: 60vh;  // Plus petit que la page d'accueil
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    // Image de fond (même que l'accueil)
+    background-image: url(../assets/images/HeroAccueill.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    // Overlay plus sombre pour mieux voir le texte
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);  // Plus foncé
+        z-index: 1;
+    }
+    
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    // Titre
+    .hero-title {
+        color: white;
+        font-family: $font-family;
+        font-size: 4rem;
+        font-weight: 700;
+        text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
+        letter-spacing: 2px;
+        
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
+        }
+    }
+    
+    // Responsive mobile
+    @media (max-width: 768px) {
+        height: 40vh;
+        min-height: 300px;
+    }
+}
+
+// Section contenu principal
+.apropos-content {
+    background-color: #f8f5f0;  // Beige clair comme la section "esprit d'alep"
+    padding: 80px 0;
+    
+    // Titre principal
+    .section-title {
+        color: $color-title;
+        font-family: $font-family;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: 3px;
+        
+        @media (max-width: 768px) {
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+    
+    // Sous-titre
+    .subtitle {
+        color: $color-gold;
+        font-family: $font-family;
+        font-size: 1.8rem;
+        font-weight: 400;
+        font-style: italic;
+        margin-bottom: 2rem;
+        
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+    
+    // Contenu texte
+    .text-content {
+        p {
+            color: darken($color-text-gray, 15%);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            
+            @media (max-width: 768px) {
+                text-align: left;
+                font-size: 1rem;
+            }
+        }
+    }
+    
+    // Grille d'images
+    .images-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        
+        .image-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(212, 165, 116, 0.3);
+            }
+            
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+                
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+        
+        // Image du haut (plus petite)
+        .image-top {
+            max-width: 400px;
+            margin-left: auto;
+            
+            img {
+                height: 300px;
+            }
+            
+            @media (max-width: 991px) {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+        
+        // Image du bas (plus grande)
+        .image-bottom {
+            max-width: 500px;
+            margin-right: auto;
+            
+            img {
+                height: 350px;
+            }
+            
+            @media (max-width: 991px) {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            margin-top: 50px;
+        }
+    }
+    
+    // Responsive
+    @media (max-width: 768px) {
+        padding: 60px 0;
+    }
+}
+
+// ==========================================
 // FOOTER
 // ==========================================
 footer {
