@@ -120,25 +120,52 @@
     <div class="container">
         <h2 class="section-title">Notre Restaurant</h2>
         
-        <div class="restaurant-gallery">
-            <!-- Image 1 -->
-            <div class="gallery-item">
-                <img src="./assets/images/Restaurant1.webp" alt="Vue intérieure du restaurant" loading="lazy">
-            </div>
-            
-            <!-- Image 2 -->
-            <div class="gallery-item">
-                <img src="./assets/images/Restaurant2.webp" alt="Plats du restaurant" loading="lazy">
-            </div>
-            
-            <!-- Image 3 -->
-            <div class="gallery-item">
-                <img src="./assets/images/Restaurant3.webp" alt="Ambiance du restaurant" loading="lazy">
+        <!-- النص الوصفي -->
+        <div class="restaurant-description">
+            <p>Découvrez l'atmosphère chaleureuse et authentique de notre restaurant. 
+            Un lieu de convivialité où la tradition syrienne rencontre l'hospitalité grenobloise.</p>
+        </div>
+        
+        <!-- الصور -->
+        <div class="restaurant-gallery-pro">
+    
+    <!-- FIRST: صورة كبيرة (اليسار) -->
+    <div class="gallery-item-large">
+        <img src="./assets/images/intérieur-restaurant.webp.webp">
+    </div>
+    
+    <!-- SECOND: صورتان صغيرتان (اليمين) -->
+    <div class="gallery-items-small">
+        <div class="gallery-item-small">
+            <img src="./assets/images/plat.jpeg">
+        </div>
+        <div class="gallery-item-small">
+            <img src="./assets/images/Tea (6).jpeg">
+        </div>
+    </div>
+    
+</div>
+        
+        <!-- CTA Buttons -->
+        <div class="restaurant-cta">
+            <div class="cta-buttons-group">
+                <!-- Button 1: Uber Eats -->
+                <a href="https://www.ubereats.com/fr/restaurant/barbecue-d-alep/grenoble" 
+                   target="_blank" 
+                   class="btn-cta btn-uber">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    Commander sur Uber Eats
+                </a>
+                
+                <!-- Button 2: Téléphone -->
+                <a href="tel:0988014272" class="btn-cta btn-phone">
+                    <i class="fa-solid fa-phone"></i>
+                    Appelez pour Réserver: 09 88 01 42 72
+                </a>
             </div>
         </div>
     </div>
 </section>
-
 <!-- ==========================================
      FOOTER (Inclus depuis includes)
      ========================================== -->

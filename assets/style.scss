@@ -32,67 +32,59 @@ $img-size-desktop: 400px;          // Taille image desktop
 $img-size-mobile: 300px;           // Taille image mobile
 $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 
+body{
+    font-family: $font-family !important;
+}
+
 // ==========================================
 // NAVBAR DESKTOP
 // ==========================================
 .navbar {
-    // Fond transparent au départ
     background: transparent;
     backdrop-filter: none;
-    
-    // Position fixée en haut de la page
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;           // Au-dessus de tout
+    z-index: 1000;
     width: 100%;
-    
-    // Espacement
     padding: 2rem 0;
     box-shadow: none;
     border-bottom: none;
-    
-    // Transition fluide
     transition: all 0.4s ease;
     
-    // État après scroll (fond noir avec blur)
     &.scrolled {
         background: rgba(0, 0, 0, 0.85);
         backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);  // Pour Safari
+        -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         border-bottom: 1px solid rgba(210, 151, 72, 0.3);
         padding: 1.5rem 0;
     }
 }
 
-// Conteneur de la navbar
 .navbar .container {
     max-width: 100%;
     padding: 0 2rem;
 }
 
-// Navigation principale
 .navbar-nav {
     width: 100%;
     align-items: center;
-    gap: 5rem;               // Espace entre les liens
+    gap: 5rem;
 }
 
-// Liens de navigation
 .nav-link {
     color: $color-gold !important;
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 500;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95);  // Ombre pour lisibilité
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.95);
     padding: 0.5rem 1.5rem !important;
     transition: all 0.3s ease;
     position: relative;
-    white-space: nowrap;     // Pas de retour à la ligne
+    white-space: nowrap;
     
-    // Ligne sous le lien (sauf pour dropdown)
     &:not(.dropdown-toggle)::after {
         content: '';
         position: absolute;
@@ -105,21 +97,17 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         transform: translateX(-50%);
     }
     
-    // Effet hover
     &:hover {
         color: white !important;
-        transform: translateY(-2px);  // Légère élévation
+        transform: translateY(-2px);
     }
     
-    // Ligne apparaît au hover
     &:not(.dropdown-toggle):hover::after {
         width: 80%;
     }
 }
 
-// Menu déroulant (dropdown)
 .dropdown-toggle {
-    // Flèche personnalisée
     &::after {
         display: inline-block;
         margin-left: 0.5rem;
@@ -131,24 +119,21 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         vertical-align: middle;
     }
     
-    // Rotation de la flèche quand ouvert
     &[aria-expanded="true"]::after {
         transform: rotate(180deg);
     }
 }
 
-// Logo dans la navbar
 .navbar-brand img {
     width: 70px;
     height: 70px;
     object-fit: cover;
-    border-radius: 50%;      // Forme circulaire
+    border-radius: 50%;
     background-color: transparent;
     transition: all 0.3s ease;
     box-shadow: 0 3px 15px rgba(212, 167, 116, 0.6);
     border: 2px solid $color-gold;
     
-    // Effet zoom au hover
     &:hover {
         transform: scale(1.08);
         box-shadow: 0 5px 25px rgba(212, 167, 116, 0.8);
@@ -156,7 +141,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
 }
 
-// Menu déroulant (dropdown menu)
 .dropdown-menu {
     background-color: rgba(42, 24, 16, 0.95);
     border: 1px solid $color-gold;
@@ -164,13 +148,11 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     margin-top: 0.8rem;
     border-radius: 8px;
     
-    // Animation d'apparition
     &.show {
         animation: fadeInDown 0.3s ease;
     }
 }
 
-// Animation fade in down
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -182,26 +164,22 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
 }
 
-// Items du dropdown
 .dropdown-item {
     color: $color-gold !important;
     padding: 1rem 1.5rem;
     transition: all 0.3s ease;
     font-size: 1.1rem;
     
-    // Effet hover
     &:hover {
         background-color: rgba(212, 167, 116, 0.2);
         color: white !important;
-        transform: translateX(5px);  // Déplacement vers la droite
+        transform: translateX(5px);
     }
     
-    // Coins arrondis pour premier item
     &:first-child {
         border-radius: 8px 8px 0 0;
     }
     
-    // Coins arrondis pour dernier item
     &:last-child {
         border-radius: 0 0 8px 8px;
     }
@@ -211,7 +189,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 // NAVBAR MOBILE
 // ==========================================
 
-// Bouton hamburger
 .navbar-toggler {
     border: 2px solid $color-gold;
     padding: 0.5rem 0.75rem;
@@ -219,19 +196,16 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     border-radius: 8px;
     transition: all 0.3s ease;
     
-    // État focus
     &:focus {
         box-shadow: 0 0 0 3px rgba(210, 151, 72, 0.4);
         outline: none;
     }
     
-    // Effet hover
     &:hover {
         background: rgba(210, 151, 72, 0.2);
         border-color: white;
     }
     
-    // Icône hamburger (SVG inline)
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23D29748' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         width: 1.5rem;
@@ -239,44 +213,33 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
 }
 
-// Styles pour mobile (max 991px)
 @media (max-width: 991px) {
-    
-    // Navbar mobile avec fond noir
     .navbar {
         background: rgba(0, 0, 0, 0.8) !important;
         padding: 0.8rem 0;
     }
     
-    // Réduction du padding
     .navbar .container {
         padding: 0 1rem;
     }
     
-    // Menu déroulant optimisé pour mobile
     .navbar-collapse {
-        // Fond avec effet blur
         background: linear-gradient(
             180deg,
             rgba(0, 0, 0, 0.98) 0%,
             rgba(0, 0, 0, 0.95) 100%
         );
         backdrop-filter: blur(25px);
-        -webkit-backdrop-filter: blur(25px);  // Pour Safari
-        
-        // Position et dimensions
+        -webkit-backdrop-filter: blur(25px);
         margin-top: 0.5rem;
         padding: 1rem 0;
         border-radius: 15px;
         border: 1px solid rgba(210, 151, 72, 0.25);
         box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
-        
-        // Hauteur maximale avec scroll
         max-height: 65vh;
-        overflow-y: auto;    // Scroll vertical si nécessaire
-        overflow-x: hidden;  // Pas de scroll horizontal
+        overflow-y: auto;
+        overflow-x: hidden;
         
-        // Personnalisation de la scrollbar
         &::-webkit-scrollbar {
             width: 5px;
         }
@@ -294,13 +257,11 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             }
         }
         
-        // Animation d'ouverture
         &.show {
             animation: menuSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
     
-    // Animation slide in pour le menu
     @keyframes menuSlideIn {
         from {
             opacity: 0;
@@ -312,25 +273,22 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Liste en colonne
     .navbar-nav {
         flex-direction: column;
         gap: 0;
         width: 100%;
     }
     
-    // Items de navigation
     .nav-item {
         width: 100%;
         margin: 0;
-        border-bottom: 1px solid rgba(210, 151, 72, 0.08);  // Séparateur
+        border-bottom: 1px solid rgba(210, 151, 72, 0.08);
         
         &:last-child {
-            border-bottom: none;  // Pas de bordure pour le dernier
+            border-bottom: none;
         }
     }
     
-    // Liens adaptés pour mobile
     .nav-link {
         padding: 0.9rem 1.2rem !important;
         font-size: 1rem;
@@ -339,20 +297,17 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         transition: all 0.2s ease;
         text-shadow: none;
         
-        // Effet hover/active
         &:hover, &:active {
             background: rgba(210, 151, 72, 0.12);
             color: white !important;
             transform: none;
         }
         
-        // Supprime la ligne sous le lien
         &::after {
             display: none;
         }
     }
     
-    // Logo dans le menu mobile
     .navbar-brand {
         padding: 0.8rem 0 !important;
         display: flex;
@@ -371,11 +326,10 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Dropdown adapté pour mobile
     .dropdown-menu {
         background: rgba(15, 10, 8, 0.98);
         border: 1px solid rgba(210, 151, 72, 0.15);
-        position: static !important;   // Pas de position absolute
+        position: static !important;
         transform: none !important;
         margin: 0;
         padding: 0.5rem 0;
@@ -383,7 +337,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         box-shadow: none;
     }
     
-    // Items du dropdown mobile
     .dropdown-item {
         padding: 0.8rem 1.5rem;
         font-size: 0.95rem;
@@ -397,7 +350,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Flèche du dropdown
     .dropdown-toggle::after {
         color: $color-gold;
         margin-left: 0.5rem;
@@ -409,20 +361,17 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 // ==========================================
 .hero-section {
     margin-top: 0;
-    height: 100vh;           // Hauteur plein écran
-    min-height: 600px;       // Hauteur minimale
+    height: 100vh;
+    min-height: 600px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    // Image de fond
     background-image: url(../assets/images/HeroAccueill.webp);
     background-size: cover;
-    background-position: 50% 50%;  // Centre exact
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     
-    // Overlay sombre pour la lisibilité
     &::before {
         content: '';
         position: absolute;
@@ -438,19 +387,16 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         z-index: 1;
     }
     
-    // Contenu au-dessus de l'overlay
     .container {
         position: relative;
         z-index: 2;
     }
     
-    // Responsive tablette
     @media (max-width: 991px) {
         padding-top: 100px;
         min-height: calc(100vh - 100px);
     }
     
-    // Responsive mobile
     @media (max-width: 768px) {
         padding-top: 90px;
         background-position: center 40%;
@@ -461,23 +407,20 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
 }
 
-// Titre principal du hero
 .hero-title {
     color: white !important;
     font-family: $font-family;
     font-size: 3.5rem;
     font-weight: 700;
     text-align: center;
-    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);  // Ombre pour lisibilité
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9);
     margin-bottom: 1.5rem;
     line-height: 1.3;
     
-    // Responsive desktop large
     @media (max-width: 1200px) {
         font-size: 2.8rem;
     }
     
-    // Responsive mobile
     @media (max-width: 768px) {
         font-size: 1.8rem;
         line-height: 1.3;
@@ -486,7 +429,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
 }
 
-// Sous-titre du hero
 .hero-subtitle {
     color: white;
     font-family: $font-family;
@@ -496,7 +438,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
     margin-bottom: 2.5rem;
     
-    // Responsive mobile
     @media (max-width: 768px) {
         font-size: 1rem;
         line-height: 1.5;
@@ -505,7 +446,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
 }
 
-// Bouton du hero
 .btn-hero {
     display: inline-block;
     padding: 1rem 3rem;
@@ -514,7 +454,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     color: $color-text;
     background-color: $color-gold;
     border: 2px solid $color-gold;
-    border-radius: 50px;     // Forme arrondie
+    border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(210, 151, 72, 0.4);
@@ -522,16 +462,14 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     letter-spacing: 1px;
     font-family: $font-family;
     
-    // Effet hover (inversion des couleurs)
     &:hover {
         background-color: transparent;
         color: white;
         border-color: white;
-        transform: translateY(-3px);  // Légère élévation
+        transform: translateY(-3px);
         box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
     }
     
-    // Responsive mobile
     @media (max-width: 768px) {
         padding: 0.8rem 2rem;
         font-size: 0.95rem;
@@ -543,7 +481,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 // ANIMATIONS GLOBALES
 // ========================================
 
-// Animation fade in up (utilisée dans plusieurs sections)
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -562,7 +499,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     background-color: $color-section-bg;
     padding: 5rem 0;
    
-    // Titre de la section
     h2 {
         color: $color-title;
         font-family: $font-family;
@@ -571,17 +507,15 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         line-height: 1.2;
         margin-bottom: 1.5rem;
         letter-spacing: -0.5px; 
-        animation: fadeInUp 0.8s ease-out;  // Animation d'entrée
+        animation: fadeInUp 0.8s ease-out;
         position: relative;  
     
-        // Responsive mobile
         @media (max-width: 768px) {
             font-size: $title-font-size-mobile;
             text-align: center;
         }
     }
     
-    // Ligne de soulignement sous le titre
     .title-underline {
         width: 150px;   
         height: 5px;    
@@ -589,22 +523,19 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         margin-bottom: 2rem;
         border-radius: 3px;
         
-        // Centré sur mobile
         @media (max-width: 768px) {
             margin: 0 auto 2rem auto;
         }
     }
     
-    // Paragraphe de texte
     p {
-        color: darken($color-text-gray, 15%);  // Gris foncé
+        color: darken($color-text-gray, 15%);
         font-size: 1.15rem;
         line-height: 1.9;
         font-weight: 400;
         letter-spacing: 0.3px;
-        max-width: 500px;  // Largeur maximale pour la lisibilité
+        max-width: 500px;
         
-        // Responsive mobile
         @media (max-width: 768px) {
             text-align: center;
             padding: 0 1rem;
@@ -612,17 +543,15 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
 
-    // Conteneur de l'image
     .image-container {
-        animation: fadeInUp 0.8s ease-out 0.2s backwards;  // Animation avec délai
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;
         
         img {
             border: 5px solid $color-gold !important;
             box-shadow: 
-                0 0 0 10px rgba(199, 62, 42, 0.1),   // Ombre externe
+                0 0 0 10px rgba(199, 62, 42, 0.1),
                 0 20px 40px rgba(0,0,0,0.15) !important;
     
-            // Responsive mobile
             @media (max-width: 768px) {
                 width: $img-size-mobile;
                 height: $img-size-mobile;
@@ -631,7 +560,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
 
-    // Bouton "En savoir plus"
     .btn-discover {
         display: inline-block;
         margin-top: 1.5rem;
@@ -645,26 +573,22 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         font-size: 1rem;
         transition: all 0.3s ease;
         
-        // Icône flèche
         i {
             margin-left: 8px;
             font-size: 0.9rem;
             transition: transform 0.3s ease;
         }
         
-        // Effet hover
         &:hover {
             background: $color-gold;
             color: white;
             transform: translateY(-2px);
             
-            // La flèche se déplace vers la droite
             i {
                 transform: translateX(5px);
             }
         }
         
-        // Responsive mobile
         @media (max-width: 768px) {
             display: block;
             width: fit-content;
@@ -677,17 +601,14 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 // SECTION 3: NOS INCONTOURNABLES
 // ==========================================
 .nos-incontournables {
-    padding: 120px 0 100px 0;  // Padding confortable
-    background-color: #1a1611;  // Fond marron foncé
-    
-    // Image de fond
+    padding: 120px 0 100px 0;
+    background-color: #1a1611;
     background-image: url('../assets/images/BgNosIncontournables.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
     
-    // Overlay sombre pour contraste
     &::before {
         content: '';
         position: absolute;
@@ -695,32 +616,29 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.4);  // Noir à 40% d'opacité
+        background: rgba(0, 0, 0, 0.4);
         z-index: 1;
     }
     
-    // Contenu au-dessus de l'overlay
     .container {
         position: relative;
         z-index: 2;
     }
     
-    // Titre de la section
     .section-title {
         padding-top: 20px;
-        padding-bottom: 80px;  // Espace avant les cartes
+        padding-bottom: 80px;
         
         h2 {
             font-size: 50px;
-            color: #d4a574;     // Doré
+            color: #d4a574;
             font-weight: 300;
             font-family: 'Playfair Display', serif;
             text-align: center;
-            letter-spacing: 4px;  // Espacement large entre les lettres
+            letter-spacing: 4px;
             margin: 0;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
             
-            // Responsive mobile
             @media (max-width: 768px) {
                 font-size: 36px;
                 letter-spacing: 2px;
@@ -728,31 +646,27 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Conteneur des cartes
     .cards-container {
         display: flex;
         justify-content: center;
-        align-items: stretch;  // Même hauteur pour toutes les cartes
+        align-items: stretch;
         gap: 30px;
-        flex-wrap: wrap;       // Retour à la ligne si nécessaire
+        flex-wrap: wrap;
         margin-bottom: 60px;
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
         
-        // Colonne de carte
         .card-column {
             flex: 0 0 auto;
-            width: calc(33.333% - 30px);  // 3 colonnes
+            width: calc(33.333% - 30px);
             max-width: 380px;
             display: flex;
             
-            // Responsive tablette (2 colonnes)
             @media (max-width: 991px) {
                 width: calc(50% - 15px);
             }
             
-            // Responsive mobile (1 colonne)
             @media (max-width: 576px) {
                 width: 100%;
                 max-width: 400px;
@@ -761,43 +675,38 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Carte de nourriture
     .food-card {
         padding: 30px 20px;
         width: 100%;
         border-radius: 15px;
         overflow: hidden;
-        background: linear-gradient(to bottom, #f8f5f0, #f2ebe3);  // Dégradé beige
+        background: linear-gradient(to bottom, #f8f5f0, #f2ebe3);
         display: flex;
         flex-direction: column;
         transition: all 0.4s ease;
         box-shadow: 
             0 10px 30px rgba(0, 0, 0, 0.3),
-            0 1px 0 rgba(212, 165, 116, 0.2) inset;  // Ombre interne dorée
+            0 1px 0 rgba(212, 165, 116, 0.2) inset;
         height: 100%;
         
-        // Effet hover
         &:hover {
-            transform: translateY(-10px);  // Élévation
+            transform: translateY(-10px);
             box-shadow: 
                 0 20px 50px rgba(212, 165, 116, 0.4),
                 0 1px 0 rgba(212, 165, 116, 0.3) inset;
             
-            // Zoom de l'image
             .card-image-wrapper img {
                 transform: scale(1.08);
             }
             
-            // Changement de couleur du titre
             h5 {
                 color: #d4a574;
             }
         }
         
-        // Conteneur de l'image
         .card-image-wrapper {
             width: 100%;
-            height: 300px;  // Hauteur fixe pour toutes les images
+            height: 300px;
             overflow: hidden;
             position: relative;
             background: linear-gradient(135deg, #faf7f3 0%, #f5ede5 100%);
@@ -805,13 +714,12 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;     // Remplit tout l'espace
+                object-fit: cover;
                 object-position: center;
                 transition: transform 0.6s ease;
             }
         }
         
-        // Contenu de la carte (texte)
         .card-content {
             padding: 25px 20px;
             background: #fafafa;
@@ -820,7 +728,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 90px;  // Hauteur minimale
+            min-height: 90px;
             
             h5 {
                 font-size: 17px;
@@ -833,7 +741,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
                 font-family: 'Playfair Display', serif;
                 position: relative;
                 
-                // Ligne sous le titre (apparaît au hover)
                 &::after {
                     content: '';
                     position: absolute;
@@ -848,7 +755,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             }
         }
         
-        // Ligne apparaît au hover
         &:hover {
             .card-content h5::after {
                 width: 60px;
@@ -856,12 +762,10 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Conteneur du bouton
     .button-container {
         padding-top: 40px;
         padding-bottom: 20px;
         
-        // Bouton "Voir le menu complet"
         .btn-menu {
             display: inline-block;
             color: #d4a574;
@@ -876,7 +780,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             text-decoration: none;
             transition: all 0.3s ease;
             
-            // Effet hover
             &:hover {
                 background: #d4a574;
                 color: #000;
@@ -886,7 +789,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Responsive tablette
     @media (max-width: 991px) {
         padding: 80px 0;
         
@@ -899,7 +801,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Responsive mobile
     @media (max-width: 576px) {
         padding: 60px 0;
         
@@ -935,45 +836,40 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 // ==========================================
 .nos-services {
     padding: 80px 0;
-    background-color: #f8f5f0;  // Fond beige clair
+    background-color: #f8f5f0;
     
-    // Titre de la section
     .section-title {
         text-align: center;
         font-size: 48px;
-        color: #d4a574;  // Doré
+        color: #d4a574;
         margin-bottom: 60px;
         font-family: 'Playfair Display', serif;
     }
     
-    // Grille des services (4 colonnes)
     .services-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);  // 4 colonnes égales
+        grid-template-columns: repeat(4, 1fr);
         gap: 40px;
         max-width: 1200px;
         margin: 0 auto;
     }
     
-    // Carte de service
     .service-card {
         text-align: center;
         transition: all 0.3s ease;
         
-        // Effet hover sur l'icône
         &:hover {
             .service-icon {
-                transform: translateY(-10px);  // Élévation
+                transform: translateY(-10px);
                 box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
             }
         }
         
-        // Conteneur de l'icône (cercle blanc)
         .service-icon {
             width: 120px;
             height: 120px;
             background-color: white;
-            border-radius: 50%;  // Forme circulaire
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -981,15 +877,13 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             
-            // Icône Font Awesome
             i {
                 font-size: 40px;
-                color: #d4a574;  // Doré
+                color: #d4a574;
                 transition: all 0.3s ease;
             }
         }
         
-        // Nom du service
         .service-name {
             font-size: 18px;
             color: #333;
@@ -997,7 +891,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Responsive tablette (2 colonnes)
     @media (max-width: 992px) {
         .services-grid {
             grid-template-columns: repeat(2, 1fr);
@@ -1005,7 +898,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
 
-    // Responsive mobile (1 colonne)
     @media (max-width: 576px) {
         padding: 60px 0;
         
@@ -1025,17 +917,14 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 // ==========================================
 .avis-clients {
     padding: 100px 0;
-    background-color: #5d4a3a;  // Marron
-    
-    // Image de fond
+    background-color: #5d4a3a;
     background-image: url('../assets/images/Avis.webp');
     background-size: cover;
     background-position: center;
-    background-blend-mode: multiply;  // Mélange avec le fond marron
+    background-blend-mode: multiply;
     position: relative;
     overflow: hidden;
     
-    // Overlay pour améliorer la lisibilité
     &::before {
         content: '';
         position: absolute;
@@ -1043,39 +932,32 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(93, 74, 58, 0.5);  // Marron à 50% d'opacité
+        background: rgba(93, 74, 58, 0.5);
         z-index: 1;
     }
     
-    // Contenu au-dessus de l'overlay
     .container {
         position: relative;
         z-index: 2;
     }
     
-    // En-tête de la section (titre + note)
     .avis-header {
         margin-bottom: 60px;
         
-        // Titre principal
         h2 {
             font-size: 48px;
-            color: #d4a574;  // Doré
+            color: #d4a574;
             font-family: 'Playfair Display', serif;
             font-weight: 400;
             margin-bottom: 30px;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             
-            // Responsive mobile
             @media (max-width: 768px) {
                 font-size: 32px;
             }
         }
         
-        // Conteneur de la note
         .rating-score {
-            
-            // Note chiffrée (4.9)
             .score {
                 font-size: 64px;
                 color: #d4a574;
@@ -1083,22 +965,19 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
                 display: block;
                 margin-bottom: 10px;
                 
-                // Responsive mobile
                 @media (max-width: 768px) {
                     font-size: 48px;
                 }
             }
             
-            // Étoiles
             .stars {
                 margin-bottom: 15px;
                 
                 i {
                     font-size: 32px;
-                    color: #d4a574;  // Doré
+                    color: #d4a574;
                     margin: 0 5px;
                     
-                    // Responsive mobile
                     @media (max-width: 768px) {
                         font-size: 24px;
                         margin: 0 3px;
@@ -1106,15 +985,13 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
                 }
             }
             
-            // Texte "Avis vérifiés"
             .based-on {
                 font-size: 16px;
                 color: rgba(255, 255, 255, 0.8);
                 margin: 0;
                 
-                // Icône de vérification (optionnelle)
                 i {
-                    color: #4CAF50;  // Vert
+                    color: #4CAF50;
                     margin-right: 6px;
                     font-size: 14px;
                 }
@@ -1122,7 +999,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Conteneur des cartes d'avis
     .avis-cards-container {
         display: flex;
         justify-content: center;
@@ -1131,19 +1007,16 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         max-width: 1200px;
         margin: 0 auto;
         
-        // Colonne de carte
         .avis-card-column {
             flex: 0 0 auto;
-            width: calc(33.333% - 20px);  // 3 colonnes
+            width: calc(33.333% - 20px);
             max-width: 380px;
             margin-bottom: 30px;
             
-            // Responsive tablette (2 colonnes)
             @media (max-width: 991px) {
                 width: calc(50% - 15px);
             }
             
-            // Responsive mobile (1 colonne)
             @media (max-width: 576px) {
                 width: 100%;
                 max-width: 400px;
@@ -1151,7 +1024,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Carte d'avis
     .avis-card {
         background: white;
         padding: 35px 30px;
@@ -1162,35 +1034,31 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         display: flex;
         flex-direction: column;
         
-        // Effet hover (élévation)
         &:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
         }
         
-        // Étoiles de la carte (centrées)
         .card-stars {
             margin-bottom: 20px;
-            text-align: center;  // Centre les étoiles
+            text-align: center;
             
             i {
                 font-size: 24px;
-                color: #d4a574;  // Doré
+                color: #d4a574;
                 margin-right: 5px;
             }
         }
         
-        // Texte de l'avis
         .avis-text {
             font-size: 16px;
             line-height: 1.7;
             color: #333;
             margin-bottom: 15px;
-            flex-grow: 1;  // Prend l'espace disponible
+            flex-grow: 1;
             font-family: 'Playfair Display', serif;
         }
         
-        // Nom de l'auteur
         .author-name {
             font-size: 15px;
             color: #666;
@@ -1200,7 +1068,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
 
-    // Bouton "Voir tous les avis"
     .btn-all-reviews {
         display: inline-block;
         margin-top: 40px;
@@ -1217,53 +1084,46 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         letter-spacing: 1px;
         font-family: 'Playfair Display', serif;
         
-        // Icône flèche
         i {
             margin-left: 10px;
             transition: transform 0.3s ease;
         }
         
-        // Effet hover
         &:hover {
             background: #d4a574;
             color: white;
-            transform: translateY(-3px);  // Légère élévation
+            transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(212, 165, 116, 0.4);
             
-            // Flèche se déplace vers la droite
             i {
                 transform: translateX(5px);
             }
         }
     }
     
-    // Icônes décoratives (like, heart, stars)
     .decoration-icons {
         position: absolute;
         width: 100%;
         height: 100%;
         top: 0;
         left: 0;
-        pointer-events: none;  // Ne bloque pas les clics
+        pointer-events: none;
         z-index: 1;
         
-        // Icône "J'aime" (en haut à gauche)
         .like-icon {
             position: absolute;
             top: 15%;
             left: 8%;
             font-size: 80px;
-            color: rgba(169, 169, 169, 0.3);  // Gris transparent
+            color: rgba(169, 169, 169, 0.3);
             transform: rotate(-15deg);
             
-            // Responsive mobile
             @media (max-width: 768px) {
                 font-size: 50px;
                 left: 5%;
             }
         }
         
-        // Icône "Cœur" (en bas à droite)
         .heart-icon {
             position: absolute;
             bottom: 15%;
@@ -1272,19 +1132,16 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             color: rgba(169, 169, 169, 0.3);
             transform: rotate(15deg);
             
-            // Responsive mobile
             @media (max-width: 768px) {
                 font-size: 45px;
                 right: 5%;
             }
         }
         
-        // Étoiles décoratives (flottantes)
         .star-icon {
             position: absolute;
-            color: rgba(212, 165, 116, 0.2);  // Doré transparent
+            color: rgba(212, 165, 116, 0.2);
             
-            // Étoile 1 (en haut à droite)
             &.star-1 {
                 top: 10%;
                 right: 15%;
@@ -1292,30 +1149,26 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
                 animation: float 6s ease-in-out infinite;
             }
             
-            // Étoile 2 (en bas à gauche)
             &.star-2 {
                 bottom: 20%;
                 left: 15%;
                 font-size: 40px;
-                animation: float 5s ease-in-out infinite 1s;  // Délai de 1s
+                animation: float 5s ease-in-out infinite 1s;
             }
             
-            // Étoile 3 (au milieu à droite)
             &.star-3 {
                 top: 50%;
                 right: 5%;
                 font-size: 35px;
-                animation: float 7s ease-in-out infinite 2s;  // Délai de 2s
+                animation: float 7s ease-in-out infinite 2s;
             }
             
-            // Masquées sur mobile
             @media (max-width: 768px) {
                 display: none;
             }
         }
     }
     
-    // Animation flottante pour les étoiles
     @keyframes float {
         0%, 100% {
             transform: translateY(0) rotate(0deg);
@@ -1325,12 +1178,10 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Responsive tablette
     @media (max-width: 991px) {
         padding: 80px 0;
     }
     
-    // Responsive mobile
     @media (max-width: 576px) {
         padding: 60px 0;
         
@@ -1344,23 +1195,19 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 // PAGE À PROPOS
 // ==========================================
 
-// Hero section À propos
 .hero-apropos {
     margin-top: 0;
-    height: 60vh;  // Plus petit que la page d'accueil
+    height: 60vh;
     min-height: 400px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    // Image de fond (même que l'accueil)
     background-image: url(../assets/images/HeroAccueill.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
-    // Overlay plus sombre pour mieux voir le texte
     &::before {
         content: '';
         position: absolute;
@@ -1368,7 +1215,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);  // Plus foncé
+        background: rgba(0, 0, 0, 0.5);
         z-index: 1;
     }
     
@@ -1377,7 +1224,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         z-index: 2;
     }
     
-    // Titre
     .hero-title {
         color: white;
         font-family: $font-family;
@@ -1391,19 +1237,16 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Responsive mobile
     @media (max-width: 768px) {
         height: 40vh;
         min-height: 300px;
     }
 }
 
-// Section contenu principal
 .apropos-content {
-    background-color: #f8f5f0;  // Beige clair comme la section "esprit d'alep"
+    background-color: #f8f5f0;
     padding: 80px 0;
     
-    // Titre principal
     .section-title {
         color: $color-title;
         font-family: $font-family;
@@ -1418,7 +1261,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Sous-titre
     .subtitle {
         color: $color-gold;
         font-family: $font-family;
@@ -1433,7 +1275,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Contenu texte
     .text-content {
         p {
             color: darken($color-text-gray, 15%);
@@ -1449,7 +1290,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Grille d'images
     .images-grid {
         display: flex;
         flex-direction: column;
@@ -1479,7 +1319,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             }
         }
         
-        // Image du haut (plus petite)
         .image-top {
             max-width: 400px;
             margin-left: auto;
@@ -1494,7 +1333,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             }
         }
         
-        // Image du bas (plus grande)
         .image-bottom {
             max-width: 500px;
             margin-right: auto;
@@ -1514,7 +1352,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Responsive
     @media (max-width: 768px) {
         padding: 60px 0;
     }
@@ -1524,7 +1361,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 // PAGE CONTACT
 // ==========================================
 
-// HERO SECTION - CONTACT
 .hero-contact {
     margin-top: 0;
     height: 98vh;
@@ -1533,7 +1369,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     display: flex;
     justify-content: center;
     align-items: center;
-    
     background-image: url(../assets/images/HERO.jpeg);
     background-size: cover;
     background-position: center 40%;
@@ -1564,12 +1399,11 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         padding: 3rem 2rem;
     }
     
-    // ===== OPTION 3: LUXURY BLACK =====
     .text-content {
-        background: rgba(0, 0, 0, 0.35);  // ✅ Dark black background
+        background: rgba(0, 0, 0, 0.35);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(212, 165, 116, 0.2);  // ✅ Subtle gold border
+        border: 1px solid rgba(212, 165, 116, 0.2);
         border-radius: 20px;
         padding: 4rem 3rem;
         box-shadow: 
@@ -1592,7 +1426,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
     
     .contact-title {
-        color: $color-gold;  // ✅ Gold title
+        color: $color-gold;
         font-family: $font-family;
         font-size: 4.5rem;
         font-weight: 700;
@@ -1620,7 +1454,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
     
     .contact-description {
-        color: rgba(255, 255, 255, 0.98);  // White text
+        color: rgba(255, 255, 255, 0.98);
         font-family: $font-family;
         font-size: 1.4rem;
         font-weight: 300;
@@ -1659,25 +1493,10 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
 }
 
-// Animation fade in up
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-// ==========================================
-// SECTION INFORMATIONS (3 Cartes)
-// ==========================================
 .contact-info {
     background-color: #f5f5f5;
     padding: 80px 0;
     
-    // Carte d'information
     .info-card {
         background: white;
         padding: 40px 30px;
@@ -1687,7 +1506,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         transition: all 0.3s ease;
         height: 100%;
         
-        // Effet hover (élévation et ombre)
         &:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(212, 165, 116, 0.25);
@@ -1699,11 +1517,10 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             }
         }
         
-        // Icône
         .card-icon {
             width: 80px;
             height: 80px;
-            background: rgba(210, 151, 72, 0.1);  // Fond doré transparent
+            background: rgba(210, 151, 72, 0.1);
             color: $color-gold;
             font-size: 2.5rem;
             display: flex;
@@ -1718,7 +1535,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             }
         }
         
-        // Titre de la carte
         .card-title {
             color: $color-title;
             font-family: $font-family;
@@ -1728,7 +1544,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             letter-spacing: 1px;
         }
         
-        // Texte principal
         .card-text {
             color: #666;
             font-size: 1.1rem;
@@ -1737,7 +1552,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
             font-weight: 500;
         }
         
-        // Texte secondaire
         .card-subtitle,
         .card-closed {
             color: #999;
@@ -1753,7 +1567,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Responsive tablette
     @media (max-width: 991px) {
         padding: 60px 0;
         
@@ -1762,7 +1575,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Responsive mobile
     @media (max-width: 576px) {
         padding: 40px 0;
         
@@ -1783,14 +1595,10 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
     }
 }
 
-// ==========================================
-// SECTION GOOGLE MAPS
-// ==========================================
 .maps-section {
     background-color: white;
     padding: 60px 0 0 0;
     
-    // En-tête de la section
     .maps-header {
         background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
         padding: 40px 0;
@@ -1811,7 +1619,6 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Conteneur de la carte
     .maps-container {
         width: 100%;
         height: 500px;
@@ -1833,24 +1640,25 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
 }
 
 // ==========================================
-// SECTION NOTRE RESTAURANT
+// SECTION NOTRE RESTAURANT (Dark Version)
+// Background Color: #3D3A36 (Couleur Figma)
 // ==========================================
+
 .notre-restaurant {
-    background-color: #fafafa;
+    background-color: #3D3A36;
     padding: 80px 0;
+    position: relative;
     
-    // Titre de la section
     .section-title {
-        color: $color-title;
+        color: white;
         font-family: $font-family;
-        font-size: 2.5rem;
+        font-size: 3.2rem;
         font-weight: 700;
         text-align: center;
         margin-bottom: 60px;
         letter-spacing: 2px;
         position: relative;
         
-        // Ligne sous le titre
         &::after {
             content: '';
             position: absolute;
@@ -1864,7 +1672,7 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
         
         @media (max-width: 768px) {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 50px;
             
             &::after {
@@ -1874,154 +1682,381 @@ $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
         }
     }
     
-    // Galerie d'images
-    .restaurant-gallery {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
+    // النص الوصفي
+    .restaurant-description {
+        text-align: center;
+        margin-bottom: 50px;
+        animation: fadeInUp 0.8s ease-out;
         
-        // Élément de galerie
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            height: 300px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            
-            // Image
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.3s ease;
-            }
-            
-            // Effet hover
-            &:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 15px 40px rgba(212, 165, 116, 0.3);
-                
-                img {
-                    transform: scale(1.05);
-                }
-            }
+        p {
+            color: #E8E8E8;
+            font-size: 1.25rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: $font-family;
+            letter-spacing: 0.5px;
+            font-weight: 400;
         }
         
-        // Responsive tablette (2 colonnes)
-        @media (max-width: 991px) {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
             
-            .gallery-item {
-                height: 250px;
-            }
-        }
-        
-        // Responsive mobile (1 colonne)
-        @media (max-width: 576px) {
-            grid-template-columns: 1fr;
-            gap: 20px;
-            
-            .gallery-item {
-                height: 250px;
+            p {
+                font-size: 1.05rem;
             }
         }
     }
     
-    // Responsive
-    @media (max-width: 768px) {
+    // ⭐ GRID PRINCIPAL - مهم جداً!
+    .restaurant-gallery-pro {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;  // 60% + 40%
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto 60px;
+    }
+    
+    // الصورة الكبيرة (اليسار - العمود الأول)
+    .gallery-item-large {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        height: 500px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(212, 165, 116, 0.4);
+            
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+    
+    // Container الصور الصغيرة (اليمين - العمود الثاني)
+    .gallery-items-small {
+        display: flex;
+        flex-direction: column;  // ⭐ عمودي!
+        gap: 30px;
+    }
+    
+    // كل صورة صغيرة
+    .gallery-item-small {
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        height: calc((500px - 30px) / 2);  // ⭐ نصف الارتفاع!
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
+            
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+    
+    // مجموعة الأزرار
+    .restaurant-cta {
+        text-align: center;
+        margin-top: 60px;
+        animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    }
+    
+    .cta-buttons-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    // الزر العام
+    .btn-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 35px;
+        background: transparent;
+        border: 2px solid $color-gold;
+        color: $color-gold;
+        text-decoration: none;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+        font-family: $font-family;
+        cursor: pointer;
+        
+        i {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.4);
+            
+            i {
+                transform: scale(1.15);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            padding: 12px 25px;
+            font-size: 1rem;
+            flex: 1;
+            min-width: 200px;
+        }
+    }
+    
+    // Uber Eats Button (أخضر)
+    .btn-uber {
+        border-color: #1DBF63;
+        color: #1DBF63;
+        
+        &:hover {
+            background: #1DBF63;
+            color: white;
+            box-shadow: 0 10px 30px rgba(29, 191, 99, 0.4);
+        }
+    }
+    
+    // Phone Button (ذهبي)
+    .btn-phone {
+        border-color: $color-gold;
+        color: $color-gold;
+        
+        &:hover {
+            background: $color-gold;
+            color: #3D3A36;
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.5);
+        }
+    }
+    
+    // ⭐ Responsive
+    @media (max-width: 991px) {
+        .restaurant-gallery-pro {
+            grid-template-columns: 1fr;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item-large {
+            height: 350px;
+        }
+        
+        .gallery-items-small {
+            flex-direction: row;
+        }
+        
+        .gallery-item-small {
+            height: 250px;
+            flex: 1;
+        }
+    }
+    
+    @media (max-width: 576px) {
         padding: 60px 0;
+        
+        .restaurant-gallery-pro {
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item-large {
+            height: 250px;
+        }
+        
+        .gallery-items-small {
+            flex-direction: column;
+        }
+        
+        .gallery-item-small {
+            height: 200px;
+        }
     }
 }
 
 // ==========================================
-// ANIMATIONS SUPPLÉMENTAIRES
+// MENU PAGE
 // ==========================================
-
-// Animation fade in up (si pas déjà définie)
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+.hero-menu {
+    margin-top: 0;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/images/9.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.4) 100%
+        );
+        z-index: 1;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    @media (max-width: 991px) {
+        padding-top: 100px;
+        min-height: calc(100vh - 100px);
+    }
+    
+    @media (max-width: 768px) {
+        padding-top: 90px;
+        background-position: center 40%;
+        
+        .container {
+            padding: 0 1.5rem;
+        }
     }
 }
 
+.menu{
+    background-image: url(../assets/images/menu.jpeg);  
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin-top: 0;
+    height: 390vh;
+    min-height: 600px;
+    position: relative;
+    display: flex;
 
+    .title{
+        color: $color-gold;
+        margin-top: 300px;
+        
+        h2 {
+            font-size: 48px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+        
+        .underline{
+            background-color: $color-gold;
+            width: 130px;
+            height: 5px;
+            margin: 10px auto 0;
+        }
+    }
+    
+    .plat{
+        background-color: rgba(232, 212, 184, 1);
+        margin-top: 50px;
+    }
+    
+    .plat-titre{
+        border-bottom: solid $color-gold !important;
+    }
+    
+    .plat-price{
+        font-size: 25px;
+        color: $color-gold;
+    }
+}
 
 // ==========================================
 // FOOTER
 // ==========================================
 footer {
-    // Dégradé de fond (marron)
     background: linear-gradient(to bottom, $color-footer-top 0%, $color-footer-bottom 100%);
     padding: 4rem 0 0;
-    border-top: 3px solid $color-gold;  // Bordure dorée
+    border-top: 3px solid $color-gold;
     box-shadow: 0 -2px 10px rgba(212, 167, 116, 0.3);
 
-    // Logo du footer
     .logo {
         width: $logo-footer-width-desktop;
         height: auto;
         display: block;
         margin: 0 auto 1rem;
 
-        // Responsive mobile
         @media (max-width: 768px) {
             width: $logo-footer-width-mobile;
         }
     }
 
-    // Logo Uber Eats
     .uber-logo {
         width: 100px;
         height: auto;
         margin: 1rem 0;
         transition: transform 0.3s ease;
         
-        // Effet hover (zoom)
         &:hover {
             transform: scale(1.05);
         }
     }
 
-    // Icônes des réseaux sociaux
     .icon-social {
-        color: $color-icon;  // Jaune
+        color: $color-icon;
         font-size: 1.8rem;
         margin: 0 0.8rem;
         transition: all 0.3s ease;
         display: inline-block;
         
-        // Effet hover
         &:hover {
             color: $color-gold;
-            transform: scale(1.15);  // Zoom
+            transform: scale(1.15);
         }
     }
 
-    // Logo TripAdvisor
     .tripadvisor-img {
         width: 50px;
         height: 50px;
         transition: all 0.3s ease;
         display: inline-block;
         
-        // Effet hover
         &:hover {
             transform: scale(1.15);
-            filter: brightness(1.2);  // Plus lumineux
+            filter: brightness(1.2);
         }
     }
 
-    // Numéro de téléphone
     .phone-number {
         color: $color-text-footer;
         text-decoration: none;
@@ -2030,14 +2065,12 @@ footer {
         transition: all 0.3s ease;
         display: inline-block;
         
-        // Effet hover
         &:hover {
             color: $color-gold;
-            transform: translateX(3px);  // Déplacement vers la droite
+            transform: translateX(3px);
         }
     }
 
-    // Titres niveau 3
     h3 {
         color: $color-text-footer;
         font-family: $font-family;
@@ -2045,7 +2078,6 @@ footer {
         margin-top: 0.8rem;
     }
 
-    // Titres niveau 4 (avec icônes)
     h4 {
         color: $color-gold;
         font-size: 1rem;
@@ -2053,20 +2085,17 @@ footer {
         margin-top: 1.5rem;
         margin-bottom: 0.5rem;
 
-        // Icône avant le titre
         i {
             margin-right: 0.5rem;
         }
     }
 
-    // Paragraphes
     p {
         color: $color-text-footer;
         opacity: 0.9;
         line-height: 1.6;
     }
     
-    // Section copyright
     .copyright {
         border-top: 3px solid $color-gold;
         border-bottom: 3px solid $color-gold;
@@ -2082,7 +2111,6 @@ footer {
         letter-spacing: 0.5px;
     }
 
-    // Classe pour masquer du texte (accessibilité)
     .sr-only {
         position: absolute;
         width: 1px;
@@ -2095,7 +2123,6 @@ footer {
         border: 0;
     }
 
-    // Responsive mobile
     @media (max-width: 768px) {
         padding: 3rem 0 0;
         
