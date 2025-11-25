@@ -31,6 +31,8 @@ $text-font-size: 1.1rem;           // Taille texte
 $img-size-desktop: 400px;          // Taille image desktop
 $img-size-mobile: 300px;           // Taille image mobile
 $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
+$animation-duration: 0.3s;
+$animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
 
 body{
     font-family: $font-family !important;
@@ -258,7 +260,7 @@ body{
         }
         
         &.show {
-            animation: menuSlideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: menuSlideIn $animation-duration $animation-easing;
         }
     }
     
@@ -1495,7 +1497,7 @@ body{
 
 .contact-info {
     background-color: #f5f5f5;
-    padding: 80px 0;
+    padding: 80px 0 60px 0;
     
     .info-card {
         background: white;
@@ -1516,6 +1518,18 @@ body{
                 transform: scale(1.1) translateY(-5px);
             }
         }
+
+        &:nth-child(1) {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+&:nth-child(2) {
+    animation: fadeInUp 0.6s ease-out 0.2s backwards;
+}
+
+&:nth-child(3) {
+    animation: fadeInUp 0.6s ease-out 0.4s backwards;
+}
         
         .card-icon {
             width: 80px;
@@ -1597,7 +1611,7 @@ body{
 
 .maps-section {
     background-color: white;
-    padding: 60px 0 0 0;
+    padding: 0;
     
     .maps-header {
         background: linear-gradient(135deg, #333 0%, #1a1a1a 100%);
@@ -1620,17 +1634,26 @@ body{
     }
     
     .maps-container {
-        width: 100%;
-        height: 500px;
-        position: relative;
+    width: 100%;
+    height: 500px;
+    position: relative;
+    margin: 0;  // ← Assure 0 partout
+    padding: 0;  // ← Pas de padding
+    line-height: 0;  // ← IMPORTANT : élimine l'espace
+    font-size: 0;  // ← Élimine l'espace de texte
         
         iframe {
-            border-radius: 0;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+        border: 0;  // ← Pas de bordure
+        border-radius: 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        display: block;
+        
+        width: 100%;  // ← Assure 100%
+        height: 100%;  // ← Assure 100%
+    }
         
         @media (max-width: 768px) {
-            height: 400px;
+            height: 350px;
         }
         
         @media (max-width: 576px) {
@@ -1640,17 +1663,17 @@ body{
 }
 
 // ==========================================
-// SECTION NOTRE RESTAURANT (Dark Version)
-// Background Color: #3D3A36 (Couleur Figma)
+// SECTION: Notre Restaurant
 // ==========================================
-
 .notre-restaurant {
-    background-color: #3D3A36;
+    background-color: #f8f5f0; 
     padding: 80px 0;
+    margin-top: 0;
+    margin-bottom: 0;
     position: relative;
     
     .section-title {
-        color: white;
+        color: #333;
         font-family: $font-family;
         font-size: 3.2rem;
         font-weight: 700;
@@ -1689,7 +1712,7 @@ body{
         animation: fadeInUp 0.8s ease-out;
         
         p {
-            color: #E8E8E8;
+            color: #666;
             font-size: 1.25rem;
             line-height: 1.8;
             max-width: 600px;
@@ -1838,23 +1861,25 @@ body{
     .btn-uber {
         border-color: #1DBF63;
         color: #1DBF63;
+        background: white; 
+         
         
         &:hover {
             background: #1DBF63;
-            color: white;
-            box-shadow: 0 10px 30px rgba(29, 191, 99, 0.4);
+        color: white;
         }
     }
     
     // Phone Button (ذهبي)
     .btn-phone {
         border-color: $color-gold;
-        color: $color-gold;
+    color: #333;  // ← Change en foncé
+    background: white;  // ← Ajoute un fond blanc
+    
         
-        &:hover {
-            background: $color-gold;
-            color: #3D3A36;
-            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.5);
+       &:hover {
+        background: $color-gold;
+        color: white;
         }
     }
     

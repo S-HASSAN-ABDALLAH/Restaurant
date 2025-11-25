@@ -106,66 +106,73 @@
      ========================================== -->
 <section class="maps-section">
     <div class="maps-header">
-        <h2>Google Maps Embed</h2>
+        <h2>Notre Emplacement</h2>
     </div>
     <div class="maps-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2805.0744888888884!2d5.720367!3d45.176853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af4b7c3f3f3f3%3A0x3f3f3f3f3f3f3f3f!2s7%20Rue%20Raoul%20Blanchard%2C%2038000%20Grenoble!5e0!3m2!1sfr!2sfr!4v1234567890" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3335.4151145912083!2d5.726612376594888!3d45.190055751687815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478af55d4eb70163%3A0x80cf82d06be695a0!2sAleppo%20BBQ!5e1!3m2!1sen!2sfr!4v1764098181064!5m2!1sen!2sfr" title="Carte Google Maps - Barbecue d'Alep, 7 Rue Raoul Blanchard, Grenoble" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
 
-<!-- ==========================================
-     SECTION NOTRE RESTAURANT
-     ========================================== -->
+<<!-- SECTION NOTRE RESTAURANT -->
 <section class="notre-restaurant">
     <div class="container">
         <h2 class="section-title">Notre Restaurant</h2>
         
-        <!-- النص الوصفي -->
+        <!-- Description du restaurant -->
         <div class="restaurant-description">
             <p>Découvrez l'atmosphère chaleureuse et authentique de notre restaurant. 
             Un lieu de convivialité où la tradition syrienne rencontre l'hospitalité grenobloise.</p>
         </div>
         
-        <!-- الصور -->
+        <!-- Galerie photos -->
         <div class="restaurant-gallery-pro">
-    
-    <!-- FIRST: صورة كبيرة (اليسار) -->
-    <div class="gallery-item-large">
-        <img src="./assets/images/intérieur-restaurant.webp.webp">
-    </div>
-    
-    <!-- SECOND: صورتان صغيرتان (اليمين) -->
-    <div class="gallery-items-small">
-        <div class="gallery-item-small">
-            <img src="./assets/images/plat.jpeg">
+            <!-- Photo principale -->
+            <div class="gallery-item-large">
+                <img src="./assets/images/intérieur-restaurant.webp" 
+                     alt="Intérieur du restaurant Barbecue d'Alep"
+                     loading="lazy">
+            </div>
+            
+            <!-- Photos secondaires -->
+            <div class="gallery-items-small">
+                <div class="gallery-item-small">
+                    <img src="./assets/images/platContact.webp" 
+                         alt="Plat syrien traditionnel"
+                         loading="lazy">
+                </div>
+                <div class="gallery-item-small">
+                    <img src="./assets/images/TeaContact.webp" 
+                         alt="Thé syrien traditionnel"
+                         loading="lazy">
+                </div>
+            </div>
         </div>
-        <div class="gallery-item-small">
-            <img src="./assets/images/Tea (6).jpeg">
-        </div>
-    </div>
-    
-</div>
         
-        <!-- CTA Buttons -->
+        <!-- Boutons d'action -->
         <div class="restaurant-cta">
             <div class="cta-buttons-group">
-                <!-- Button 1: Uber Eats -->
-                <a href="https://www.ubereats.com/fr/restaurant/barbecue-d-alep/grenoble" 
+                <!-- Uber Eats -->
+                <a href="https://www.ubereats.com/..." 
                    target="_blank" 
-                   class="btn-cta btn-uber">
+                   rel="noopener"
+                   class="btn-cta btn-uber"
+                   aria-label="Commander sur Uber Eats">
                     <i class="fa-solid fa-bag-shopping"></i>
                     Commander sur Uber Eats
                 </a>
                 
-                <!-- Button 2: Téléphone -->
-                <a href="tel:0988014272" class="btn-cta btn-phone">
+                <!-- Téléphone -->
+                <a href="tel:0988014272" 
+                   class="btn-cta btn-phone"
+                   aria-label="Appeler le restaurant">
                     <i class="fa-solid fa-phone"></i>
-                    Appelez pour Réserver: 09 88 01 42 72
+                    Réserver par téléphone
                 </a>
             </div>
         </div>
     </div>
 </section>
+
 <!-- ==========================================
      FOOTER (Inclus depuis includes)
      ========================================== -->
