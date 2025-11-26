@@ -31,8 +31,10 @@ $text-font-size: 1.1rem;           // Taille texte
 $img-size-desktop: 400px;          // Taille image desktop
 $img-size-mobile: 300px;           // Taille image mobile
 $box-shadow: 0 10px 30px rgba(0,0,0,0.1);  // Ombre par défaut
+
 $animation-duration: 0.3s;
 $animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
 
 body{
     font-family: $font-family !important;
@@ -1635,7 +1637,7 @@ body{
     
     .maps-container {
     width: 100%;
-    height: 500px;
+    height: 400px;
     position: relative;
     margin: 0;  // ← Assure 0 partout
     padding: 0;  // ← Pas de padding
@@ -1647,7 +1649,7 @@ body{
         border-radius: 0;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         display: block;
-        
+        vertical-align: bottom;
         width: 100%;  // ← Assure 100%
         height: 100%;  // ← Assure 100%
     }
@@ -1663,8 +1665,10 @@ body{
 }
 
 // ==========================================
-// SECTION: Notre Restaurant
+// SECTION NOTRE RESTAURANT (Dark Version)
+// Background Color: #3D3A36 (Couleur Figma)
 // ==========================================
+
 .notre-restaurant {
     background-color: #f8f5f0; 
     padding: 80px 0;
@@ -1938,11 +1942,12 @@ body{
     margin-top: 0;
     height: 100vh;
     min-height: 600px;
+    // max-height: 700px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../assets/images/9.jpeg);
+    background-image: url(../assets/images/HeroMenu.webp);
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -1961,6 +1966,30 @@ body{
         );
         z-index: 1;
     }
+
+    .hero-title {
+        // NOTRE MENU
+        font-size: 4rem;  // Un peu plus grand
+        font-weight: 700;
+        color: white;  // GARDE LE BLANC !
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);  // Ombre plus forte
+        letter-spacing: 3px;
+        
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
+        }
+    }
+    
+    .hero-subtitle {
+        // Savourez de véritables...
+        font-size: 1.4rem;  // Un peu plus grand
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        margin-bottom: 2rem;
+    }
+
+    
+    
     
     .container {
         position: relative;
@@ -1982,47 +2011,217 @@ body{
     }
 }
 
-.menu{
+// NAVIGATION DES CATÉGORIES
+.categories {
+ background: rgba(0, 0, 0, 0.85);    backdrop-filter: blur(10px);
+    padding: 30px 0;
+    border-bottom: 2px solid rgba(210, 151, 72, 0.2);
+    
+    .nav-pills {
+        max-width: 900px;
+        margin: 0 auto;
+        justify-content: center;
+        gap: 20px;
+        
+        .nav-item {
+            margin: 0 10px;
+        }
+        
+        .nav-link {
+            color: #666;
+            font-family: $font-family;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 14px 35px;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            // État normal
+            &:not(.active) {
+                color: rgba(255, 255, 255, 0.8);
+                
+                &:hover {
+                    background: rgba(210, 151, 72, 0.1);
+                    border-color: rgba(210, 151, 72, 0.3);
+                    color: $color-gold;
+                    transform: translateY(-1px);  // Petit effet hover
+                }
+            }
+            
+            // État actif (sélectionné)
+            &.active {
+                background: $color-gold;
+                color: white;
+                border-color: $color-gold;
+                box-shadow: 0 4px 12px rgba(210, 151, 72, 0.3);
+                transform: translateY(-2px);  // Légère élévation
+            }
+            
+            // Désactivé
+            &:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+// ==========================================
+// MENU SECTION - Version finale complète
+// ==========================================
+.menu-section {
+    padding: 80px 0;
     background-image: url(../assets/images/menu.jpeg);  
-    background-size: cover;
-    background-position: 50% 50%;
+    background-size: 100% auto;
+    background-position: top center;
     background-repeat: no-repeat;
-    margin-top: 0;
-    height: 390vh;
-    min-height: 600px;
     position: relative;
-    display: flex;
-
-    .title{
-        color: $color-gold;
-        margin-top: 300px;
+    min-height: 100vh;
+    
+    // Pour prendre toute la largeur
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    
+    // Titre de catégorie (MEZZÉS)
+    .category-title {
+        margin-top: 200px;
+        padding-top: 100px;
+        text-align: center;
+        margin-bottom: 50px;
         
         h2 {
-            font-size: 48px;
-            font-weight: 900;
-            letter-spacing: 2px;
+            color: $color-gold;
+            font-family: $font-family;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
         }
         
-        .underline{
-            background-color: $color-gold;
-            width: 130px;
-            height: 5px;
-            margin: 10px auto 0;
+        .title-underline {
+            width: 100px;
+            height: 3px;
+            background: $color-gold;
+            margin: 0 auto;
+            border-radius: 2px;
         }
     }
     
-    .plat{
-        background-color: rgba(232, 212, 184, 1);
-        margin-top: 50px;
+    // Container des plats
+    .menu-items {
+        max-width: 900px;
+        margin: 0 auto;
+        background: transparent !important;
+border: 2px solid $color-gold;
+        padding: 50px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
     
-    .plat-titre{
-        border-bottom: solid $color-gold !important;
-    }
-    
-    .plat-price{
-        font-size: 25px;
-        color: $color-gold;
+    // Chaque plat - STRUCTURE CORRECTE !
+    .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 50px !important;
+    padding: 20px !important;  // ← Ajoute du padding interne
+    border: 1px solid #f0f0f0 !important;  // ← Bordure complète
+    border-radius: 10px !important;  // ← Coins arrondis
+background: #FDF9F3 !important;  // Beige très clair
+    border-left: 4px solid $color-gold !important;
+    border-radius: 8px !important;
+    box-shadow: inset 0 0 20px rgba(210, 151, 72, 0.05) !important;
+
+
+        
+        &:last-child {
+            border-bottom: none !important;
+            margin-bottom: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        
+        // Image du plat
+        .item-image {
+           
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+        
+    img {
+        
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: none;                              // ← Sans bordure
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); // ← Ombre douce
+        aspect-ratio: 1 / 1 !important;
+            }
+        }
+        
+        // Contenu
+        .item-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+            
+            .item-header {
+            display: flex;
+            align-items: center;  // ← Alignement parfait
+            margin-bottom: 15px;
+
+            
+                
+                .item-title {
+                    color: #333;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    margin: 0;
+                    font-family: $font-family;
+                }
+                
+                .item-dots {
+                    flex: 1;
+                    border-bottom: 2px dotted #ccc;
+                    margin: 0 15px;
+                    height: 1px;
+                }
+                
+                .item-price {
+                    color: $color-gold;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                }
+            }
+            
+            .item-description {
+                color: #555;
+                font-size: 1rem;
+                line-height: 1.6;
+                margin: 0;
+                font-style: italic;
+            }
+        }
+        
+        // Hover effet
+        &:hover {
+            .item-image img {
+                transform: scale(1.1);
+                object-fit: cover !important;
+    object-position: center center !important;
+            }
+            
+            .item-title {
+                color: $color-gold;
+            }
+        }
     }
 }
 

@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     
     <!-- CSS personnalisé -->
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css?v=2">
     
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="./assets/images/Logo.webp">
@@ -50,7 +50,7 @@
             <div class="col-12">
                 <h1 class="hero-title">NOTRE MENU</h1>
                 <p class="hero-subtitle">Savourez de véritables grillades syriennes au charbon de bois</p>
-                <a href="#menu" class="btn-hero">Voir le Menu</a>
+                
             </div>
         </div>
     </div>
@@ -58,19 +58,19 @@
 
 <section>
 
-        <div class="categories py-5">
+        <div class="categories ">
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link cat" href="#">Active</a>
+    <a class="nav-link active" href="#">MEZZÉS</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link cat" href="#">Much longer nav link</a>
+    <a class="nav-link" href="#">ASSIETTES</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link cat" href="#">Link</a>
+    <a class="nav-link" href="#">SANDWICHES</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link cat">Disabled</a>
+    <a class="nav-link">DESSERTS & BOISSONS</a>
   </li>
 </ul>
 
@@ -79,32 +79,225 @@
 
 </section>
 
-<section class="menu">
+<section class="menu-section" id="menu">
+   
     <div class="container">
-        <div class="title text-center">
+        <!-- Titre de la catégorie -->
+        <div class="category-title text-center">
             <h2>MEZZÉS</h2>
-            <div class="underline"></div>
+            <div class="title-underline"></div>
         </div>
-        <div class="plat p-4 border rounded-3">
-            <div class="row align-items-center">
-                <div class="col-md-2 col-4 justify-content-center align-items-center d-flex">
-                    <img width="120"class="plat-image" src="./assets/images/6.png" alt="">
-
+        
+        <!-- Container des plats -->
+        <div class="menu-items"> 
+            <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/Design sans titre (1).png" alt="Hoummos">
                 </div>
-                <div class="col-md-10 col-8  ">
-                    <div class="plat-titre d-flex justify-content-between border-bottom pb-2 mb-3 pe-5">
-                        <h4>Hoummos</h4>
-                        <span class="plat-price fw-bolder">7.00 €</span>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
                     </div>
-                    <p class="text-secondary ">yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy</p>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
                 </div>
             </div>
+            
+            <!-- Tu répèteras cette structure 12 fois -->
+              <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/Design sans titre (2).png" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/Design sans titre.png" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+
+             <!-- Plat 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Hoummos</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                    </p>
+                </div>
+            </div>
+            
         </div>
     </div>
-
-
 </section>
-
 
 
 

@@ -1436,7 +1436,7 @@ body {
 }
 .maps-section .maps-container {
   width: 100%;
-  height: 500px;
+  height: 400px;
   position: relative;
   margin: 0;
   padding: 0;
@@ -1448,6 +1448,7 @@ body {
   border-radius: 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   display: block;
+  vertical-align: bottom;
   width: 100%;
   height: 100%;
 }
@@ -1695,7 +1696,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../assets/images/9.jpeg);
+  background-image: url(../assets/images/HeroMenu.webp);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -1709,6 +1710,24 @@ body {
   height: 100%;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 100%);
   z-index: 1;
+}
+.hero-menu .hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  letter-spacing: 3px;
+}
+@media (max-width: 768px) {
+  .hero-menu .hero-title {
+    font-size: 2.5rem;
+  }
+}
+.hero-menu .hero-subtitle {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  margin-bottom: 2rem;
 }
 .hero-menu .container {
   position: relative;
@@ -1730,41 +1749,177 @@ body {
   }
 }
 
-.menu {
-  background-image: url(../assets/images/menu.jpeg);
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  margin-top: 0;
-  height: 390vh;
-  min-height: 600px;
-  position: relative;
-  display: flex;
+.categories {
+  background: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 30px 0;
+  border-bottom: 2px solid rgba(210, 151, 72, 0.2);
 }
-.menu .title {
+.categories .nav-pills {
+  max-width: 900px;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 20px;
+}
+.categories .nav-pills .nav-item {
+  margin: 0 10px;
+}
+.categories .nav-pills .nav-link {
+  color: #666;
+  font-family: "Playfair", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 14px 35px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.categories .nav-pills .nav-link:not(.active) {
+  color: rgba(255, 255, 255, 0.8);
+}
+.categories .nav-pills .nav-link:not(.active):hover {
+  background: rgba(210, 151, 72, 0.1);
+  border-color: rgba(210, 151, 72, 0.3);
   color: #D29748;
-  margin-top: 300px;
+  transform: translateY(-1px);
 }
-.menu .title h2 {
-  font-size: 48px;
-  font-weight: 900;
-  letter-spacing: 2px;
+.categories .nav-pills .nav-link.active {
+  background: #D29748;
+  color: white;
+  border-color: #D29748;
+  box-shadow: 0 4px 12px rgba(210, 151, 72, 0.3);
+  transform: translateY(-2px);
 }
-.menu .title .underline {
-  background-color: #D29748;
-  width: 130px;
-  height: 5px;
-  margin: 10px auto 0;
+.categories .nav-pills .nav-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
-.menu .plat {
-  background-color: rgb(232, 212, 184);
-  margin-top: 50px;
+
+.menu-section {
+  padding: 80px 0;
+  background-image: url(../assets/images/menu.jpeg);
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 100vh;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
 }
-.menu .plat-titre {
-  border-bottom: solid #D29748 !important;
+.menu-section .category-title {
+  margin-top: 200px;
+  padding-top: 100px;
+  text-align: center;
+  margin-bottom: 50px;
 }
-.menu .plat-price {
-  font-size: 25px;
+.menu-section .category-title h2 {
+  color: #D29748;
+  font-family: "Playfair", serif;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.menu-section .category-title .title-underline {
+  width: 100px;
+  height: 3px;
+  background: #D29748;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+.menu-section .menu-items {
+  max-width: 900px;
+  margin: 0 auto;
+  background: transparent !important;
+  border: 2px solid #D29748;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.menu-section .menu-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 50px !important;
+  padding: 20px !important;
+  border: 1px solid #f0f0f0 !important;
+  border-radius: 10px !important;
+  background: #FDF9F3 !important;
+  border-left: 4px solid #D29748 !important;
+  border-radius: 8px !important;
+  box-shadow: inset 0 0 20px rgba(210, 151, 72, 0.05) !important;
+}
+.menu-section .menu-item:last-child {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.menu-section .menu-item .item-image {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+}
+.menu-section .menu-item .item-image img {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  aspect-ratio: 1/1 !important;
+}
+.menu-section .menu-item .item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.menu-section .menu-item .item-content .item-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.menu-section .menu-item .item-content .item-header .item-title {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: "Playfair", serif;
+}
+.menu-section .menu-item .item-content .item-header .item-dots {
+  flex: 1;
+  border-bottom: 2px dotted #ccc;
+  margin: 0 15px;
+  height: 1px;
+}
+.menu-section .menu-item .item-content .item-header .item-price {
+  color: #D29748;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.menu-section .menu-item .item-content .item-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  font-style: italic;
+}
+.menu-section .menu-item:hover .item-image img {
+  transform: scale(1.1);
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  -o-object-position: center center !important;
+     object-position: center center !important;
+}
+.menu-section .menu-item:hover .item-title {
   color: #D29748;
 }
 
