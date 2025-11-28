@@ -93,7 +93,7 @@
             <!-- Plat 1 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Design sans titre (1).png" alt="Hoummos">
+                    <img src="./assets/images/MHoumous1.webp" alt="Hoummos">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -108,189 +108,189 @@
             </div>
             
             <!-- Tu répèteras cette structure 12 fois -->
-              <!-- Plat 1 -->
+              <!-- Plat 2 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Design sans titre (2).png" alt="Hoummos">
+                    <img src="./assets/images/MMotabal.webp" alt="Motabal (Caviar d'aubergine)">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Motabal (Caviar d'aubergine)</h4>
                         <span class="item-dots"></span>
                         <span class="item-price">7.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        Purée d'd'aubergines grillées avec crème de sésame, yaourt citron, ail, avec huile d'olive, servi avec pain Syrien
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 3 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Design sans titre.png" alt="Hoummos">
+                    <img src="./assets/images/MMoussaka1.webp" alt="Moussaka">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Moussaka</h4>
                         <span class="item-dots"></span>
                         <span class="item-price">7.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        Sauce tomate, aubergines, oignons, ail, poivron rouge ou vert, avec des épices Syriens, servi avec du pain Syrien
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 4 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/" alt="Hoummos">
+                    <img src="./assets/images/MFattouche.webp" alt="Fattouche (salade)">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Fattouche (salade)</h4>
                         <span class="item-dots"></span>
                         <span class="item-price">7.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        Tomates, salade, chou rouge, ail, citron, concombre, mélasse de grenade, huile d'olive, avec pain grillé
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 5 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images" alt="Hoummos">
+                    <img src="./assets/images/MBurak fromage1.webp" alt="Burak fromages">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Burak fromages</h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
+                        <span class="item-price">6.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        3 pièces feuilles (fines) farcies au fromage Syrien, mélangee avec du mozzarella et de la menthe + paprika
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 6 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                    <img src="./assets/images/MSpring Roll.webp" alt="Spring Roll">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Spring Roll</h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
+                        <span class="item-price">6.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        3 pièces feuilles (fines) farcies aux légumes de saison, épices et fromage
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 7 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                    <img src="./assets/images/MKebbeh1.webp" alt="Kebbeb boulettes">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Kebbeh boulettes</h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
+                        <span class="item-price">8.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                         3 pièces de boulgour farcie avec de la viande hachée marinée avec 7 épices Syriens, oignon + noix
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 8 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                    <img src="./assets/images/MSamboussek viande.webp" alt="Samboussek viande">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Samboussek viande</h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
+                        <span class="item-price">6.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        3 pièces de chaussons rissolés aux viande
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 9 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                    <img src="./assets/images/MSamboussek épinard.webp" alt="Samboussek épinard">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Samboussek épinard</h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
+                        <span class="item-price">6.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        3 pièces de chaussons rissolés aux épinard.
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 10 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                    <img src="./assets/images/MFeuillesDeVigne1.webp" alt="Feuilles de vigne">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Feuilles de vigne</h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
+                        <span class="item-price">6.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        4 pièces de feuilles de vigne farcies au riz
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 11 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                    <img src="./assets/images/MFalafel1.webp" alt="Falafel">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Falafel</h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
+                        <span class="item-price">6.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        3 pièces beignets de pois chiches servis avec crème de sésame
                     </p>
                 </div>
             </div>
 
-             <!-- Plat 1 -->
+             <!-- Plat 12 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/hoummos.jpg" alt="Hoummos">
+                    <img src="./assets/images/MLabneh.webp" alt="Labneh">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
+                        <h4 class="item-title">Labneh</h4>
                         <span class="item-dots"></span>
                         <span class="item-price">7.00 €</span>
                     </div>
                     <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
+                        Fromage blanc de lait vache caillé, menthe, servi avec du pain Syrien
                     </p>
                 </div>
             </div>

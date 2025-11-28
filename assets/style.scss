@@ -1942,7 +1942,6 @@ body{
     margin-top: 0;
     height: 100vh;
     min-height: 600px;
-    // max-height: 700px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -1967,53 +1966,72 @@ body{
         z-index: 1;
     }
 
-    .hero-title {
-        // NOTRE MENU
-        font-size: 4rem;  // Un peu plus grand
-        font-weight: 700;
-        color: white;  // GARDE LE BLANC !
-        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);  // Ombre plus forte
-        letter-spacing: 3px;
-        
-        @media (max-width: 768px) {
-            font-size: 2.5rem;
-        }
+    .container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: 0 1.5rem;
     }
-    
+
+    .hero-title {
+        font-size: 4rem;
+        font-weight: 700;
+        color: white;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+        letter-spacing: 3px;
+        margin-bottom: 1rem;
+    }
+
     .hero-subtitle {
-        // Savourez de véritables...
-        font-size: 1.4rem;  // Un peu plus grand
+        font-size: 1.4rem;
         color: rgba(255, 255, 255, 0.95);
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         margin-bottom: 2rem;
     }
 
-    
-    
-    
-    .container {
-        position: relative;
-        z-index: 2;
-    }
-    
+    // TABLETTE
     @media (max-width: 991px) {
-        padding-top: 100px;
-        min-height: calc(100vh - 100px);
-    }
-    
-    @media (max-width: 768px) {
-        padding-top: 90px;
+        height: 80vh;
+        min-height: 500px;
         background-position: center 40%;
-        
-        .container {
-            padding: 0 1.5rem;
+
+        .hero-title {
+            font-size: 3rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+        }
+    }
+
+    // MOBILE
+    @media (max-width: 576px) {
+        height: 55vh;
+        min-height: 350px;
+        // background-size: contain;
+        //  background-position: center center;
+        // background-color: #4A1E07;
+          background-position: right center;
+
+        .hero-title {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
         }
     }
 }
 
+// ==========================================
 // NAVIGATION DES CATÉGORIES
+// ==========================================
 .categories {
- background: rgba(0, 0, 0, 0.85);    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
     padding: 30px 0;
     border-bottom: 2px solid rgba(210, 151, 72, 0.2);
     
@@ -2022,13 +2040,13 @@ body{
         margin: 0 auto;
         justify-content: center;
         gap: 20px;
-        
+
         .nav-item {
             margin: 0 10px;
         }
         
         .nav-link {
-            color: #666;
+            color: rgba(255, 255, 255, 0.8);
             font-family: $font-family;
             font-size: 1.2rem;
             font-weight: 500;
@@ -2039,7 +2057,12 @@ body{
             text-transform: uppercase;
             letter-spacing: 1px;
             
-            // État normal
+            // 🔥 FIX: Enlève le ::after du navbar global
+            &::after {
+                display: none !important;
+                content: none !important;
+            }
+            
             &:not(.active) {
                 color: rgba(255, 255, 255, 0.8);
                 
@@ -2047,49 +2070,122 @@ body{
                     background: rgba(210, 151, 72, 0.1);
                     border-color: rgba(210, 151, 72, 0.3);
                     color: $color-gold;
-                    transform: translateY(-1px);  // Petit effet hover
+                    transform: translateY(-1px);
                 }
             }
             
-            // État actif (sélectionné)
+            // 🔥 FIX: Active state
             &.active {
-                background: $color-gold;
-                color: white;
-                border-color: $color-gold;
+                background: $color-gold !important;
+                color: white !important;           // ← Force le texte blanc
+                border-color: $color-gold !important;
                 box-shadow: 0 4px 12px rgba(210, 151, 72, 0.3);
-                transform: translateY(-2px);  // Légère élévation
+                transform: translateY(-2px);
+                
+                // 🔥 Enlève tout underline
+                &::after,
+                &::before {
+                    display: none !important;
+                    content: none !important;
+                }
+            }
+        }
+    }
+    
+    // Tablette
+    @media (max-width: 991px) {
+        padding: 20px 0;
+        
+        .nav-pills {
+            gap: 10px;
+            
+            .nav-item {
+                margin: 0 5px;
             }
             
-            // Désactivé
-            &:disabled {
-                opacity: 0.5;
-                cursor: not-allowed;
+            .nav-link {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+        }
+    }
+    
+   
+// Mobile - VERSION COMPACTE
+@media (max-width: 576px) {
+    padding: 15px 0 !important;
+    
+    .nav-pills {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        padding: 0 15px !important;
+        max-width: 100% !important;
+        
+        .nav-item {
+            margin: 0 !important;
+            flex: 0 0 auto !important;      // ← Ne prend que la taille du contenu
+        }
+        
+        .nav-link {
+            font-size: 0.65rem !important;
+            padding: 8px 16px !important;
+            white-space: nowrap !important;
+            letter-spacing: 0.3px !important;
+            border-radius: 25px !important;
+            display: inline-block !important;
+            width: auto !important;          // ← Largeur automatique
+            min-width: unset !important;
+            border: 1px solid rgba(210, 151, 72, 0.3) !important;
+            
+            &::after {
+                display: none !important;
+            }
+            
+            &:not(.active) {
+                background: transparent !important;
+                color: rgba(255, 255, 255, 0.8) !important;
+            }
+            
+            &.active {
+                background: $color-gold !important;
+                color: white !important;
+                border-color: $color-gold !important;
             }
         }
     }
 }
+}
+
 // ==========================================
-// MENU SECTION - Version finale complète
+// MENU SECTION - Version responsive
 // ==========================================
 .menu-section {
     padding: 80px 0;
-    background-image: url(../assets/images/menu.jpeg);  
+    background-image: url(../assets/images/menu.jpeg);
     background-size: 100% auto;
-    background-position: top center;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     position: relative;
     min-height: 100vh;
+    // background: linear-gradient(
+    //     180deg,
+    //     #1a1410 0%,      // Marron très foncé (haut)
+    //     #2d241c 30%,     // Marron foncé
+    //     #3d322a 70%,     // Marron moyen
+    //     #1a1410 100%     // Marron très foncé (bas)
+    // );
     
-    // Pour prendre toute la largeur
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
     width: 100vw;
     
-    // Titre de catégorie (MEZZÉS)
     .category-title {
-        margin-top: 200px;
+        // margin-top: 200px;
         padding-top: 100px;
         text-align: center;
         margin-bottom: 50px;
@@ -2100,9 +2196,13 @@ body{
             font-size: 3rem;
             font-weight: 700;
             letter-spacing: 3px;
-            margin-bottom: 15px;
+            margin-bottom: 0px;
+            margin-top: -10px;
             text-transform: uppercase;
+            position: relative;
+            z-index: 5;
         }
+
         
         .title-underline {
             width: 100px;
@@ -2113,74 +2213,80 @@ body{
         }
     }
     
-    // Container des plats
     .menu-items {
-        max-width: 900px;
+        max-width: 1100px;
+        width: 95%;
         margin: 0 auto;
-        background: transparent !important;
-border: 2px solid $color-gold;
+    // background: rgba(253, 249, 243, 0.95) !important;  // Beige clair semi-transparent
+    background: transparent;
+        border: 2px solid $color-gold;
         padding: 50px;
         border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);        // ← Ombre plus forte
+        
     }
     
-    // Chaque plat - STRUCTURE CORRECTE !
     .menu-item {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    margin-bottom: 50px !important;
-    padding: 20px !important;  // ← Ajoute du padding interne
-    border: 1px solid #f0f0f0 !important;  // ← Bordure complète
-    border-radius: 10px !important;  // ← Coins arrondis
-background: #FDF9F3 !important;  // Beige très clair
-    border-left: 4px solid $color-gold !important;
-    border-radius: 8px !important;
-    box-shadow: inset 0 0 20px rgba(210, 151, 72, 0.05) !important;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 50px !important;
+        padding: 20px !important;
+    background: #FFFFFF !important;
+    border: 1px solid $color-gold !important;
+    border-radius: 12px !important;
+    box-shadow: 
+        0 0 0 1px rgba(210, 151, 72, 0.1),
+        0 4px 20px rgba(210, 151, 72, 0.15),
+        0 8px 30px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+        box-shadow: 
+            0 0 0 2px rgba(210, 151, 72, 0.3),
+            0 8px 30px rgba(210, 151, 72, 0.25),
+            0 12px 40px rgba(0, 0, 0, 0.15);
+    }
 
 
-        
         &:last-child {
-            border-bottom: none !important;
             margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
         }
         
-        // Image du plat
         .item-image {
-           
-    flex-shrink: 0;
-    width: 150px;
-    height: 150px;
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+            transition: transform 0.3s ease;
         
-    img {
-        
-        width: 80%;
-        height: 80%;
-        border-radius: 50%;
-        object-fit: cover;
-        border: none;                              // ← Sans bordure
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); // ← Ombre douce
-        aspect-ratio: 1 / 1 !important;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                background: transparent !important;
+                aspect-ratio: 1 / 1 !important;
             }
         }
         
-        // Contenu
         .item-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             
             .item-header {
-            display: flex;
-            align-items: center;  // ← Alignement parfait
-            margin-bottom: 15px;
-
-            
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
                 
                 .item-title {
-                    color: #333;
+                    color: #4A3428;
                     font-size: 1.5rem;
                     font-weight: 700;
                     margin: 0;
@@ -2189,9 +2295,10 @@ background: #FDF9F3 !important;  // Beige très clair
                 
                 .item-dots {
                     flex: 1;
-                    border-bottom: 2px dotted #ccc;
+                    border-bottom: 2px dotted $color-gold; 
                     margin: 0 15px;
                     height: 1px;
+                    
                 }
                 
                 .item-price {
@@ -2210,12 +2317,9 @@ background: #FDF9F3 !important;  // Beige très clair
             }
         }
         
-        // Hover effet
         &:hover {
             .item-image img {
                 transform: scale(1.1);
-                object-fit: cover !important;
-    object-position: center center !important;
             }
             
             .item-title {
@@ -2223,7 +2327,130 @@ background: #FDF9F3 !important;  // Beige très clair
             }
         }
     }
+
+    // TABLETTE
+    @media (max-width: 991px) {
+        padding: 60px 0;
+        background-size: cover;
+
+        .category-title {
+            margin-top: 120px;
+            padding-top: 60px;
+            margin-bottom: 35px;
+
+            h2 {
+                font-size: 2.4rem;
+            }
+        }
+
+        .menu-items {
+            padding: 35px 25px;
+            width: 92%;
+        }
+
+        .menu-item {
+            gap: 20px;
+
+            .item-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .item-header .item-title {
+                font-size: 1.3rem;
+            }
+
+            .item-header .item-price {
+                font-size: 1.2rem;
+            }
+
+            .item-description {
+            font-size: 0.95rem;
+            }
+    }
 }
+
+   // MOBILE
+@media (max-width: 576px) {
+    padding: 30px 0 40px 0;
+    
+    .category-title {
+         margin-top: 30px;
+        padding-top: 20px;
+        margin-bottom: 20px;  // ← Réduit
+
+        h2 {
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+        }
+
+        .title-underline {
+            width: 70px;
+        }
+    }
+
+    .menu-items {
+        width: 92%;
+        padding: 15px 10px;
+        border-radius: 10px;
+    }
+
+    .menu-item {
+        flex-direction: row;
+        text-align: left;
+        gap: 12px;
+        padding: 12px !important;
+        margin-bottom: 10px !important;
+        align-items: center;
+
+        .item-image {
+            width: 75px;              // ← Légèrement plus grand
+            height: 75px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            
+            img {
+                border-radius: 10px !important;
+            }
+        }
+
+        .item-content {
+            flex: 1;
+            min-width: 0;
+
+            .item-header {
+                display: block;
+                margin-bottom: 5px;
+
+                .item-dots {
+                    display: none;
+                }
+
+                .item-title {
+                    font-size: 1rem;      // ← Légèrement plus grand
+                    font-weight: 700;
+                    line-height: 1.3;
+                    display: inline;
+                }
+
+                .item-price {
+                    font-size: 0.95rem;   // ← Légèrement plus grand
+                    font-weight: 700;
+                    color: $color-gold;
+                    float: right;
+                    margin-left: 10px;
+                }
+            }
+
+            .item-description {
+                font-size: 0.85rem;       // ← Plus lisible
+                line-height: 1.4;
+                color: #666;              // ← Un peu plus foncé
+                clear: both;
+            }
+        }
+    }
+}}
 
 // ==========================================
 // FOOTER
