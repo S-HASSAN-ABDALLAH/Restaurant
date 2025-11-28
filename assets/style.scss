@@ -2450,7 +2450,207 @@ body{
             }
         }
     }
-}}
+}
+}
+
+// ==========================================
+// BARQUETTES DE FRITES
+// ==========================================
+.frites-section {
+    margin-top: 40px;
+    padding: 30px;
+    text-align: center;
+    
+    .frites-title {
+        font-family: $font-family;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #4A3428;
+        font-style: italic;
+        margin-bottom: 25px;
+    }
+    
+    .frites-options {
+        max-width: 400px;
+        margin: 0 auto 30px auto;
+        
+        .frites-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            
+            .frites-size {
+                font-family: $font-family;
+                font-size: 1.2rem;
+                color: #4A3428;
+                font-style: italic;
+            }
+            
+            .frites-dots {
+                flex: 1;
+                border-bottom: 2px dotted rgba(74, 52, 40, 0.4);
+                margin: 0 15px;
+                height: 1px;
+            }
+            
+            .frites-price {
+                font-size: 1.3rem;
+                font-weight: 700;
+                color: $color-gold;
+            }
+        }
+    }
+    
+    .frites-image {
+        max-width: 200px;
+        margin: 0 auto;
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+// ==========================================
+// MENU SPÉCIAL
+// ==========================================
+.menu-special {
+    margin-bottom: 100px;
+    margin-top: 40px;
+    padding: 25px 35px;
+    background: rgba(240, 220, 180, 0.4);
+    border: 2px solid $color-gold;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    
+    // Badge "MENU SPÉCIAL" - en haut à gauche
+    .special-badge {
+        position: absolute;
+        top: 20px;
+        left: 35px;
+        font-family: $font-family;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: $color-gold;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+    
+    // Centre - Titre + Économisez
+    .special-center {
+        flex: 1;
+        text-align: center;
+        padding-top: 15px;
+        
+        .special-title {
+            font-family: $font-family;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #4A3428;
+            margin: 0 0 5px 0;
+            letter-spacing: 1px;
+        }
+        
+        .special-saving {
+            font-family: $font-family;
+            font-size: 1rem;
+            color: rgba(74, 52, 40, 0.6);
+            font-style: italic;
+            margin: 0;
+        }
+    }
+    
+    // Droite - Étoile + Prix
+    .special-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        
+        .special-star {
+            font-size: 1.5rem;
+            color: $color-gold;
+        }
+        
+        .special-price {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: $color-gold;
+        }
+    }
+    
+    // TABLETTE
+    @media (max-width: 991px) {
+        padding: 25px 25px;
+        
+        .special-badge {
+            font-size: 0.8rem;
+            left: 25px;
+        }
+        
+        .special-center {
+            .special-title {
+                font-size: 1.4rem;
+            }
+            
+            .special-saving {
+                font-size: 0.9rem;
+            }
+        }
+        
+        .special-right {
+            .special-star {
+                font-size: 1.3rem;
+            }
+            
+            .special-price {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    
+    // MOBILE
+    @media (max-width: 576px) {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 15px;
+        
+        .special-badge {
+            position: static;
+            margin-bottom: 5px;
+            font-size: 0.75rem;
+        }
+        
+        .special-center {
+            padding-top: 0;
+            
+            .special-title {
+                font-size: 1.1rem;
+            }
+            
+            .special-saving {
+                font-size: 0.85rem;
+            }
+        }
+        
+        .special-right {
+            flex-direction: row;
+            gap: 10px;
+            
+            .special-star {
+                font-size: 1.2rem;
+            }
+            
+            .special-price {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
 
 // ==========================================
 // FOOTER

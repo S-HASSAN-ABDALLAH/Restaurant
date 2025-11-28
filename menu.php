@@ -299,6 +299,324 @@
     </div>
 </section>
 
+<!-- ========================================
+     SECTION ASSIETTES
+     ======================================== -->
+<section class="menu-section" id="assiettes">
+   
+    <div class="container">
+        <!-- Titre de la catégorie -->
+        <div class="category-title text-center">
+            <h2>ASSIETTES</h2>
+            <div class="title-underline"></div>
+        </div>
+        
+        <!-- Container des plats -->
+        <div class="menu-items"> 
+            <!-- Assiette 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/Mviande ALEP.webp" alt="Plat viande ALEP">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat viande ALEP (avec 3 mezzés)</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">16.50 €</span>
+                    </div>
+                    <p class="item-description">
+                        2 brochettes de viande hachée (bœuf) marinée avec 7 épices spéciales d’Alep, servi avec riz jaune (ou frites +1€), hommos, caviar d’aubergine, salade, sauce à l’ail et pain Syrien
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Assiette 2 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/Mviande EXTRA.webp" alt="Plat viande EXTRA">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat viande EXTRA (avec 3 mezzés)</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">19.50 €</span>
+                    </div>
+                    <p class="item-description">
+                        2 brochettes de viandes hachée (bœuf) marinée, mélangée avec des oignons, persil, poivron rouge, servi avec riz jaune (ou frites +1€), hommos, caviar d’aubergine, salade, sauce à l’ail et pain Syrien
+                    </p>
+                </div>
+            </div>
+
+            <!-- Assiette 3 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MKebbeb grillé.webp" alt="Plat Kebbeb grillé">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat Kebbeb grillé</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">19.50 €</span>
+                    </div>
+                    <p class="item-description">
+                        2 brochettes de viandes hachée (bœuf) avec boulghur marinée à la menthe séchée, oignon, poivron rouge, servi avec riz jaune (ou frites +1€), salade, hommos, caviar d’aubergine, sauce à l’ail et pain Syrien
+                    </p>
+                </div>
+            </div>
+
+            <!-- Assiette 4 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MChiche Taouk.webp" alt="Plat Chiche Taouk">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat Chiche Taouk</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">19.50 €</span>
+                    </div>
+                    <p class="item-description">
+                        2 brochettes de viandes poulet marinée, servi avec riz jaune (ou frites +1€), hommos, caviar d’aubergine, salade, sauce à l’ail et pain Syrien
+                    </p>
+                </div>
+            </div>
+
+            <!-- Assiette 5 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MMenu Alep.webp" alt="Plat Menu Alep">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat Menu Alep</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">23.50€</span>
+                    </div>
+                    <p class="item-description">
+                        3 brochettes de viandes au choix, riz jaune, hommos, caviar d’aubergine, salade, sauce à l’ail, pain Syrien avec une boisson au choix
+                    </p>
+                </div>
+            </div>
+
+            <!-- Assiette 6 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MPlatMix.webp" alt="Plat Mix">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat Mix</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">19.50 €</span>
+                    </div>
+                    <p class="item-description">
+                        2 brochettes de viandes au choix, servi avec riz jaune (ou frites +1€), hommos, caviar d’aubergine, salade, sauce à l’ail, pain Syrien
+                    </p>
+                </div>
+            </div>
+
+            <!-- Assiette 7 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MFalafel d’Alep.webp" alt="Plat Falafel d’Alep (végétarien)  ">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat Falafel d’Alep (végétarien)  </h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">17.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        4 morceaux de pain farcis avec falafel, tomate, salade, chou,menthe, persil, crème de sésame servi avec hommos et une pièce falafel
+                    </p>
+                </div>
+            </div>
+
+            <!-- Assiette 8 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/Mvégétarien.webp" alt="Plat végétarien">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat végétarien</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">19.50 €</span>
+                    </div>
+                    <p class="item-description">
+                        Assortiment de 10 mezzés, hommos, caviar d’aubergine, moussaka, salade, falafel, burak fromages, samboussek épinard, labneh
+                    </p>
+                </div>
+            </div>
+
+            <!-- Assiette 9 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/Menfant.webp" alt="Plat enfant">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Plat enfant</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">12.50 €</span>
+                    </div>
+                    <p class="item-description">
+                        Une brochette de viande au choix, frites, riz jaune, salade + Jus
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION SANDWICHES
+     ======================================== -->
+<section class="menu-section" id="sandwiches">
+   
+    <div class="container">
+        <!-- Titre de la catégorie -->
+        <div class="category-title text-center">
+            <h2>SANDWICHES</h2>
+            <div class="title-underline"></div>
+        </div>
+        
+        <!-- Container des plats -->
+        <div class="menu-items"> 
+            <!-- Sandwich 1 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MSTaouck.webp" alt="Sandwich chiche taouk">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Sandwich chiche taouk</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">9.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Viande de poulet marinée avec tomate, salade, chou, sauce à l'ail
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Sandwich 2 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MSViande.webp" alt="Sandwich viande Alep">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Sandwich viande Alep</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">9.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Viande hachée de bœuf marinée avec 7 épices spéciaux d'Alep, tomate, salade, chou, sauce à l'ail, persil
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sandwich 3 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MSViandeExtra.webp" alt="Sandwich viande EXTRA (Kofta)">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Sandwich viande EXTRA (Kofta)</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">9.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Viande hachée de bœuf marinée (oignon, persil, 7 épices), tomate, salade, chou, sauce à l'ail
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sandwich 4 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MSFalafel.webp" alt="Sandwich falafel">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Sandwich falafel</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">8.50 €</span>
+                    </div>
+                    <p class="item-description">
+                        Beignets de pois chiches, crème sésame avec tomate, chou, persil, menthe, salade
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sandwich 5 -->
+            <div class="menu-item">
+                <div class="item-image">
+                    <img src="./assets/images/MSFrites.webp" alt="Sandwich frites">
+                </div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <h4 class="item-title">Sandwich frites</h4>
+                        <span class="item-dots"></span>
+                        <span class="item-price">7.00 €</span>
+                    </div>
+                    <p class="item-description">
+                        Frites, tomate, salade, chou, sauce à l'ail..
+                    </p>
+                </div>
+            </div>
+
+            <!-- ========================================
+                 BARQUETTES DE FRITES
+                 ======================================== -->
+            <div class="frites-section">
+                <h3 class="frites-title">Barquettes de Frites</h3>
+                
+                <div class="frites-options">
+                    <div class="frites-option">
+                        <span class="frites-size">Petite</span>
+                        <span class="frites-dots"></span>
+                        <span class="frites-price">3.50 €</span>
+                    </div>
+                    <div class="frites-option">
+                        <span class="frites-size">Grande</span>
+                        <span class="frites-dots"></span>
+                        <span class="frites-price">4.50 €</span>
+                    </div>
+                </div>
+                
+                <div class="frites-image">
+                    <img src="./assets/images/MFritesGrande.webp" alt="Barquettes de frites">
+                </div>
+            </div>
+
+           <!-- ========================================
+     MENU SPÉCIAL
+     ======================================== -->
+<div class="menu-special">
+    <div class="special-badge">MENU SPÉCIAL</div>
+    
+    <div class="special-center">
+        <h3 class="special-title">SANDWICH + FRITES + BOISSON</h3>
+        <p class="special-saving">Économisez 2€</p>
+    </div>
+    
+    <div class="special-right">
+        <i class="fas fa-star special-star"></i>
+        <span class="special-price">13€</span>
+    </div>
+</div>
+                <div class="special-star">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
 
 
 
