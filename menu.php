@@ -521,7 +521,7 @@
             <!-- Sandwich 3 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSViandeExtra.webp" alt="Sandwich viande EXTRA (Kofta)">
+                    <img src="./assets/images/h.png" alt="Sandwich viande EXTRA (Kofta)">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -612,6 +612,123 @@
                 <div class="special-star">
                     <i class="fas fa-star"></i>
                 </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     SECTION DESSERTS & BOISSONS
+     ======================================== -->
+<section class="menu-section" id="desserts-boissons">
+   
+    <div class="container">
+        <!-- Titre de la catégorie -->
+        <div class="category-title text-center">
+            <h2>DESSERTS & BOISSONS</h2>
+            <div class="title-underline"></div>
+        </div>
+        
+        <!-- Container principal -->
+        <div class="menu-items desserts-container">
+            
+            <!-- ========== DESSERTS ========== -->
+            <div class="desserts-category">
+                <div class="category-content">
+                    <h3 class="category-subtitle">Desserts</h3>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Halawat el jubn</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">3.50€</span>
+                    </div>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Mohallabiya</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">4.00€</span>
+                    </div>
+                </div>
+                
+                <div class="category-image">
+                    <img src="./assets/images/Halawat.jpeg" alt="Desserts syriens" style="margin-top:10px">
+                </div>
+            </div>
+            
+            <!-- ========== BOISSONS ========== -->
+            <div class="desserts-category">
+                <div class="category-content">
+                    <h3 class="category-subtitle">Boissons</h3>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Canettes 33 cl</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">2.50€</span>
+                    </div>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Bouteilles 50 cl</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">3.00€</span>
+                    </div>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Bouteille d'eau 50 cl</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">1.50€</span>
+                    </div>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Ayran</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">2.50€</span>
+                    </div>
+                </div>
+                
+                <div class="category-image">
+                    <img src="./assets/images/coca.jpeg" alt="Boissons fraîches">
+                </div>
+            </div>
+            
+            <!-- ========== BOISSONS CHAUDES ========== -->
+            <div class="desserts-category">
+                <div class="category-content">
+                    <h3 class="category-subtitle">Boissons Chaudes</h3>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Café Expresso</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">2.50€</span>
+                    </div>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Café Syrien</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">3.00€</span>
+                    </div>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Thé à la menthe</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">2.50€</span>
+                    </div>
+                    
+                    <div class="simple-item">
+                        <span class="simple-name">Thé rouge</span>
+                        <span class="simple-dots"></span>
+                        <span class="simple-price">2.50€</span>
+                    </div>
+                </div>
+                
+                <div class="category-image">
+                    <img src="./assets/images/cafe.jpeg" alt="Boissons chaudes">
+                </div>
+            </div>
+            
+            <!-- ========== GRANDE IMAGE THÉ ========== -->
+            <div class="tea-banner">
+                <img src="./assets/images/g.png" alt="Thé syrien traditionnel">
             </div>
             
         </div>

@@ -2653,6 +2653,193 @@ body{
 }
 
 // ==========================================
+// DESSERTS & BOISSONS SECTION
+// ==========================================
+.desserts-container {
+    background: rgba(253, 249, 243, 0.95) !important;
+    
+    // Catégorie (Desserts, Boissons, Boissons Chaudes)
+    .desserts-category {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(210, 151, 72, 0.2);
+        
+        &:last-of-type {
+            border-bottom: none;
+            margin-bottom: 30px;
+        }
+        
+        // Contenu (liste des items)
+        .category-content {
+            flex: 1;
+            
+            .category-subtitle {
+                font-family: $font-family;
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #4A3428;
+                margin-bottom: 20px;
+                font-style: italic;
+            }
+        }
+        
+        // Image à droite
+        .category-image {
+            flex-shrink: 0;
+            width: 180px;
+            height: 140px;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+                 margin-top: 40px;
+            }
+        }
+    }
+    
+    // Item simple (nom + pointillés + prix)
+    .simple-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        
+        .simple-name {
+            font-family: $font-family;
+            font-size: 1rem;
+            color: #4A3428;
+            white-space: nowrap;
+        }
+        
+        .simple-dots {
+            flex: 1;
+            border-bottom: 1px dotted rgba(74, 52, 40, 0.4);
+            margin: 0 10px;
+            height: 1px;
+        }
+        
+        .simple-price {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $color-gold;
+            white-space: nowrap;
+        }
+    }
+    
+    // Grande image thé en bas
+    .tea-banner {
+        width: 100%;
+        height: 300px;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 20px;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// ==========================================
+// RESPONSIVE - DESSERTS & BOISSONS
+// ==========================================
+
+// TABLETTE
+@media (max-width: 991px) {
+    .desserts-container {
+        .desserts-category {
+            gap: 25px;
+            
+            .category-content {
+                .category-subtitle {
+                    font-size: 1.2rem;
+                }
+            }
+            
+            .category-image {
+                width: 150px;
+                height: 120px;
+            }
+        }
+        
+        .simple-item {
+            .simple-name,
+            .simple-price {
+                font-size: 0.95rem;
+            }
+        }
+        
+        .tea-banner {
+            height: 250px;
+        }
+    }
+}
+
+// MOBILE
+@media (max-width: 576px) {
+    .desserts-container {
+        padding: 20px 15px !important;
+        
+        .desserts-category {
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            
+            .category-content {
+                width: 100%;
+                order: 1;
+                
+                .category-subtitle {
+                    font-size: 1.1rem;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    margin-top: 20px;
+                }
+            }
+            
+            .category-image {
+                width: 100%;
+                height: 150px;
+                order: 2;
+                
+                img {
+                    border-radius: 8px;
+                    margin-bottom: 50px;
+                     
+                    
+                }
+            }
+        }
+        
+        .simple-item {
+            margin-bottom: 10px;
+            
+            .simple-name {
+                font-size: 0.9rem;
+            }
+            
+            .simple-price {
+                font-size: 0.9rem;
+            }
+        }
+        
+        .tea-banner {
+            height: 200px;
+            border-radius: 8px;
+        }
+    }
+}
+
+
+// ==========================================
 // FOOTER
 // ==========================================
 footer {
