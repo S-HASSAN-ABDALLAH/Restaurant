@@ -111,7 +111,7 @@
               <!-- Plat 2 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MMotabal.webp" alt="Motabal (Caviar d'aubergine)">
+                    <img src="./assets/images/Motabal.webp" alt="Motabal (Caviar d'aubergine)">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -145,7 +145,7 @@
              <!-- Plat 4 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MFattouche.webp" alt="Fattouche (salade)">
+                    <img src="./assets/images/Fattouche.webp" alt="Fattouche (salade)">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -162,7 +162,7 @@
              <!-- Plat 5 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MBurak fromage1.webp" alt="Burak fromages">
+                    <img src="./assets/images/Burak fromages.webp" alt="Burak fromages">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -179,7 +179,7 @@
              <!-- Plat 6 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSpring Roll.webp" alt="Spring Roll">
+                    <img src="./assets/images/Spring Roll.webp" alt="Spring Roll">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -196,7 +196,7 @@
              <!-- Plat 7 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MKebbeh1.webp" alt="Kebbeb boulettes">
+                    <img src="./assets/images/Kebbeh boulettes.webp" alt="Kebbeh boulettes">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -213,7 +213,7 @@
              <!-- Plat 8 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSamboussek viande.webp" alt="Samboussek viande">
+                    <img src="./assets/images/Samboussek_viande1.webp" alt="Samboussek viande">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -230,7 +230,7 @@
              <!-- Plat 9 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSamboussek épinard.webp" alt="Samboussek épinard">
+                    <img src="./assets/images/Samboussak épinard.webp" alt="Samboussek épinard">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -247,7 +247,7 @@
              <!-- Plat 10 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MFeuillesDeVigne1.webp" alt="Feuilles de vigne">
+                    <img src="./assets/images/Feuilles de vigne (3).webp" alt="Feuilles de vigne">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -264,7 +264,7 @@
              <!-- Plat 11 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MFalafel1.webp" alt="Falafel">
+                    <img src="./assets/images/Falafel.webp" alt="Falafel">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -281,7 +281,7 @@
              <!-- Plat 12 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MLabneh.webp" alt="Labneh">
+                    <img src="./assets/images/Labneh.webp" alt="Labneh">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
