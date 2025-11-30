@@ -521,7 +521,7 @@
             <!-- Sandwich 3 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/h.png" alt="Sandwich viande EXTRA (Kofta)">
+                    <img src="./assets/images/Sandwich viande Extera.webp" alt="Sandwich viande EXTRA (Kofta)">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -652,7 +652,7 @@
                 </div>
                 
                 <div class="category-image">
-                    <img src="./assets/images/Halawat.jpeg" alt="Desserts syriens" style="margin-top:10px">
+                    <img src="./assets/images/Halawat el jubn.webp" alt="Desserts syriens" style="margin-top:10px">
                 </div>
             </div>
             
@@ -687,7 +687,7 @@
                 </div>
                 
                 <div class="category-image">
-                    <img src="./assets/images/coca.jpeg" alt="Boissons fraîches">
+                    <img src="./assets/images/coca.webp" alt="Boissons fraîches">
                 </div>
             </div>
             
@@ -722,13 +722,13 @@
                 </div>
                 
                 <div class="category-image">
-                    <img src="./assets/images/cafe.jpeg" alt="Boissons chaudes">
+                    <img src="./assets/images/cafe.webp" alt="Boissons chaudes">
                 </div>
             </div>
             
             <!-- ========== GRANDE IMAGE THÉ ========== -->
             <div class="tea-banner">
-                <img src="./assets/images/g.png" alt="Thé syrien traditionnel">
+                <img src="./assets/images/Thé.webp" alt="Thé syrien traditionnel">
             </div>
             
         </div>
