@@ -1871,9 +1871,8 @@ body {
 
 .menu-section {
   padding: 80px 0;
-  background-image: url(../assets/images/menu.jpeg);
+  background-image: url(../assets/images/BGMenu.webp);
   background-size: cover;
-  background-position: center;
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
@@ -1892,8 +1891,7 @@ body {
   font-size: 3rem;
   font-weight: 700;
   letter-spacing: 3px;
-  margin-bottom: 0px;
-  margin-top: -10px;
+  margin: -10px 0 0 0;
   text-transform: uppercase;
   position: relative;
   z-index: 5;
@@ -1919,18 +1917,19 @@ body {
   display: flex;
   align-items: center;
   gap: 25px;
-  margin-bottom: 50px !important;
-  padding: 20px !important;
-  background: #FFFFFF !important;
-  border: 1px solid #D29748 !important;
-  border-radius: 12px !important;
+  margin-bottom: 50px;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #D29748;
+  border-radius: 12px;
   box-shadow: 0 0 0 1px rgba(210, 151, 72, 0.1), 0 4px 20px rgba(210, 151, 72, 0.15), 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
 .menu-section .menu-item:hover {
   box-shadow: 0 0 0 2px rgba(210, 151, 72, 0.3), 0 8px 30px rgba(210, 151, 72, 0.25), 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 .menu-section .menu-item:last-child {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 .menu-section .menu-item .item-image {
   flex-shrink: 0;
@@ -1973,7 +1972,7 @@ body {
 }
 .menu-section .menu-item .item-content .item-header .item-dots {
   flex: 1;
-  border-bottom: 2px dotted #D29748;
+  border-bottom: 2px dotted rgba(74, 52, 40, 0.4);
   margin: 0 15px;
   height: 1px;
 }
