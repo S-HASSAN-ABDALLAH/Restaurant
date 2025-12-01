@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- META DESCRIPTION (SEO) -->
-    <meta name="description" content="Découvrez l'histoire de Barbecue d'Alep, restaurant syrien authentique à Grenoble. Cuisine traditionnelle, passion et hospitalité syrienne.">
+    <meta name="description" content="Découvrez notre menu authentique syrien : mezzés, grillades, sandwiches et desserts. Barbecue d'Alep à Grenoble.">
     
     <!-- Keywords -->
-    <meta name="keywords" content="à propos barbecue alep, restaurant syrien grenoble, histoire restaurant, cuisine traditionnelle alep">
+    <meta name="keywords" content="menu barbecue alep, mezzés syriens, grillades grenoble, sandwich syrien, desserts orientaux">
     
     <!-- Titre de la page -->
     <title>Menu - Barbecue d'Alep</title>
@@ -610,14 +610,11 @@
         <i class="fas fa-star special-star"></i>
         <span class="special-price">13€</span>
     </div>
+  </div>
+ 
 </div>
-                <div class="special-star">
-                    <i class="fas fa-star"></i>
-                </div>
-            </div>
-            
-        </div>
-    </div>
+</div>
+                
 </section>
 
 <!-- ========================================
@@ -736,31 +733,6 @@
         </div>
     </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ========================================
      FOOTER
