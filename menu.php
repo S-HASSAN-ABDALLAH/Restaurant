@@ -23,16 +23,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     
     <!-- CSS personnalisé -->
+    <!-- <link rel="preload" href="./assets/style.css?v=2" as="style"> -->
     <link rel="stylesheet" href="./assets/style.css?v=2">
     
+
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="./assets/images/Logo.webp">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
+
 </head>
 <body>
 
@@ -95,7 +100,7 @@
             <!-- Plat 1 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MHoumous1.webp" alt="Hoummos">
+                    <img src="./assets/images/MHoumous1.webp" alt="Hoummos" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -112,7 +117,7 @@
               <!-- Plat 2 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Motabal.webp" alt="Motabal (Caviar d'aubergine)">
+                    <img src="./assets/images/Motabal.webp" alt="Motabal (Caviar d'aubergine)" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -129,7 +134,7 @@
              <!-- Plat 3 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MMoussaka1.webp" alt="Moussaka">
+                    <img src="./assets/images/MMoussaka1.webp" alt="Moussaka" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -146,7 +151,7 @@
              <!-- Plat 4 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Fattouche.webp" alt="Fattouche (salade)">
+                    <img src="./assets/images/Fattouche.webp" alt="Fattouche (salade)" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -163,7 +168,7 @@
              <!-- Plat 5 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Burak fromages.webp" alt="Burak fromages">
+                    <img src="./assets/images/Burak fromages.webp" alt="Burak fromages" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -180,7 +185,7 @@
              <!-- Plat 6 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Spring Roll.webp" alt="Spring Roll">
+                    <img src="./assets/images/Spring Roll.webp" alt="Spring Roll" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -197,7 +202,7 @@
              <!-- Plat 7 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Kebbeh boulettes.webp" alt="Kebbeh boulettes">
+                    <img src="./assets/images/Kebbeh boulettes.webp" alt="Kebbeh boulettes" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -214,7 +219,7 @@
              <!-- Plat 8 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Samboussek_viande1.webp" alt="Samboussek viande">
+                    <img src="./assets/images/Samboussek_viande1.webp" alt="Samboussek viande" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -231,7 +236,7 @@
              <!-- Plat 9 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Samboussak épinard.webp" alt="Samboussek épinard">
+                    <img src="./assets/images/Samboussak épinard.webp" alt="Samboussek épinard" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -248,7 +253,7 @@
              <!-- Plat 10 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Feuilles de vigne (3).webp" alt="Feuilles de vigne">
+                    <img src="./assets/images/Feuilles de vigne (3).webp" alt="Feuilles de vigne" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -265,7 +270,7 @@
              <!-- Plat 11 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Falafel.webp" alt="Falafel">
+                    <img src="./assets/images/Falafel.webp" alt="Falafel" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -282,7 +287,7 @@
              <!-- Plat 12 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Labneh.webp" alt="Labneh">
+                    <img src="./assets/images/Labneh.webp" alt="Labneh" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -317,7 +322,7 @@
             <!-- Assiette 1 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Mviande ALEP.webp" alt="Plat viande ALEP">
+                    <img src="./assets/images/Mviande ALEP.webp" alt="Plat viande ALEP" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -334,7 +339,7 @@
             <!-- Assiette 2 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Mviande EXTRA.webp" alt="Plat viande EXTRA">
+                    <img src="./assets/images/Mviande EXTRA.webp" alt="Plat viande EXTRA" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -351,7 +356,7 @@
             <!-- Assiette 3 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MKebbeb grillé.webp" alt="Plat Kebbeb grillé">
+                    <img src="./assets/images/MKebbeb grillé.webp" alt="Plat Kebbeb grillé" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -368,7 +373,7 @@
             <!-- Assiette 4 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MChiche Taouk.webp" alt="Plat Chiche Taouk">
+                    <img src="./assets/images/MChiche Taouk.webp" alt="Plat Chiche Taouk" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -385,7 +390,7 @@
             <!-- Assiette 5 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MMenu Alep.webp" alt="Plat Menu Alep">
+                    <img src="./assets/images/MMenu Alep.webp" alt="Plat Menu Alep" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -402,7 +407,7 @@
             <!-- Assiette 6 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MPlatMix.webp" alt="Plat Mix">
+                    <img src="./assets/images/MPlatMix.webp" alt="Plat Mix" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -419,7 +424,7 @@
             <!-- Assiette 7 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MFalafel d’Alep.webp" alt="Plat Falafel d’Alep (végétarien)  ">
+                    <img src="./assets/images/MFalafel d’Alep.webp" alt="Plat Falafel d’Alep (végétarien)" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -436,7 +441,7 @@
             <!-- Assiette 8 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Mvégétarien.webp" alt="Plat végétarien">
+                    <img src="./assets/images/Mvégétarien.webp" alt="Plat végétarien" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -453,7 +458,7 @@
             <!-- Assiette 9 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Menfant.webp" alt="Plat enfant">
+                    <img src="./assets/images/Menfant.webp" alt="Plat enfant" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -488,7 +493,7 @@
             <!-- Sandwich 1 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSTaouck.webp" alt="Sandwich chiche taouk">
+                    <img src="./assets/images/MSTaouck.webp" alt="Sandwich chiche taouk" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -505,7 +510,7 @@
             <!-- Sandwich 2 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSViande.webp" alt="Sandwich viande Alep">
+                    <img src="./assets/images/MSViande.webp" alt="Sandwich viande Alep"  loading="lazy" >
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -522,7 +527,7 @@
             <!-- Sandwich 3 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Sandwich viande Extera.webp" alt="Sandwich viande EXTRA (Kofta)">
+                    <img src="./assets/images/Sandwich viande Extera.webp" alt="Sandwich viande EXTRA (Kofta)" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -539,7 +544,7 @@
             <!-- Sandwich 4 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSFalafel.webp" alt="Sandwich falafel">
+                    <img src="./assets/images/MSFalafel.webp" alt="Sandwich falafel" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -556,7 +561,7 @@
             <!-- Sandwich 5 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSFrites.webp" alt="Sandwich frites">
+                    <img src="./assets/images/MSFrites.webp" alt="Sandwich frites" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -574,7 +579,7 @@
                  BARQUETTES DE FRITES
                  ======================================== -->
             <div class="frites-section">
-                <h3 class="frites-title">Barquettes de Frites</h3>
+                <h4 class="frites-title">Barquettes de Frites</h4>
                 
                 <div class="frites-options">
                     <div class="frites-option">
@@ -590,7 +595,7 @@
                 </div>
                 
                 <div class="frites-image">
-                    <img src="./assets/images/MFritesGrande.webp" alt="Barquettes de frites">
+                    <img src="./assets/images/MFritesGrande.webp" alt="Barquettes de frites" loading="lazy">
                 </div>
             </div>
 
@@ -601,7 +606,7 @@
     <div class="special-badge">MENU SPÉCIAL</div>
     
     <div class="special-center">
-        <h3 class="special-title">SANDWICH + FRITES + BOISSON</h3>
+        <h4 class="special-title">SANDWICH + FRITES + BOISSON</h4>
         <p class="special-saving">Économisez 2€</p>
     </div>
     
@@ -650,7 +655,7 @@
                 </div>
                 
                 <div class="category-image">
-                    <img src="./assets/images/Halawat el jubn.webp" alt="Desserts syriens" style="margin-top:10px">
+                    <img src="./assets/images/Halawat el jubn.webp" alt="Desserts syriens" loading="lazy" style="margin-top:10px">
                 </div>
             </div>
             
@@ -685,7 +690,7 @@
                 </div>
                 
                 <div class="category-image">
-                    <img src="./assets/images/coca.webp" alt="Boissons fraîches">
+                    <img src="./assets/images/coca.webp" alt="Boissons fraîches" loading="lazy">
                 </div>
             </div>
             
@@ -720,13 +725,13 @@
                 </div>
                 
                 <div class="category-image">
-                    <img src="./assets/images/cafe.webp" alt="Boissons chaudes">
+                    <img src="./assets/images/cafe.webp" alt="Boissons chaudes" loading="lazy">
                 </div>
             </div>
             
             <!-- ========== GRANDE IMAGE THÉ ========== -->
             <div class="tea-banner">
-                <img src="./assets/images/Thé.webp" alt="Thé syrien traditionnel">
+                <img src="./assets/images/Thé.webp" alt="Thé syrien traditionnel" loading="lazy">
             </div>
             
         </div>
@@ -741,7 +746,7 @@
 <!-- ========================================
      SCRIPTS
      ======================================== -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <!-- Script navbar scroll -->
 <script>
