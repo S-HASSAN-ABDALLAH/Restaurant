@@ -1928,6 +1928,12 @@ body {
 .menu-section .menu-item:hover {
   box-shadow: 0 0 0 2px rgba(210, 151, 72, 0.3), 0 8px 30px rgba(210, 151, 72, 0.25), 0 12px 40px rgba(0, 0, 0, 0.15);
 }
+.menu-section .menu-item:hover .item-image img {
+  transform: scale(1.1);
+}
+.menu-section .menu-item:hover .item-title {
+  color: #D29748;
+}
 .menu-section .menu-item:last-child {
   margin-bottom: 0;
 }
@@ -1935,10 +1941,10 @@ body {
   flex-shrink: 0;
   width: 150px;
   height: 150px;
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  box-shadow: none !important;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
   transition: transform 0.3s ease;
 }
 .menu-section .menu-item .item-image img {
@@ -1946,11 +1952,11 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  aspect-ratio: 1/1 !important;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  aspect-ratio: 1/1;
 }
 .menu-section .menu-item .item-content {
   flex: 1;
@@ -1969,6 +1975,7 @@ body {
   font-weight: 700;
   margin: 0;
   font-family: "Playfair", serif;
+  transition: color 0.3s ease;
 }
 .menu-section .menu-item .item-content .item-header .item-dots {
   flex: 1;
@@ -1987,12 +1994,6 @@ body {
   line-height: 1.6;
   margin: 0;
   font-style: italic;
-}
-.menu-section .menu-item:hover .item-image img {
-  transform: scale(1.1);
-}
-.menu-section .menu-item:hover .item-title {
-  color: #D29748;
 }
 @media (max-width: 991px) {
   .menu-section {
@@ -2053,7 +2054,7 @@ body {
     flex-direction: row;
     text-align: left;
     gap: 12px;
-    padding: 12px !important;
+    padding: 12px;
     margin-bottom: 10px !important;
     align-items: center;
   }
@@ -2144,6 +2145,45 @@ body {
 .frites-section .frites-image img {
   width: 100%;
   height: auto;
+}
+@media (max-width: 991px) {
+  .frites-section {
+    padding: 25px 20px;
+  }
+  .frites-section .frites-title {
+    font-size: 1.5rem;
+  }
+  .frites-section .frites-options .frites-option .frites-size {
+    font-size: 1rem;
+  }
+  .frites-section .frites-options .frites-option .frites-price {
+    font-size: 1.1rem;
+  }
+  .frites-section .frites-image {
+    max-width: 150px;
+  }
+}
+@media (max-width: 576px) {
+  .frites-section {
+    padding: 20px 15px;
+    margin-top: 25px;
+  }
+  .frites-section .frites-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  .frites-section .frites-options {
+    max-width: 100%;
+  }
+  .frites-section .frites-options .frites-option .frites-size {
+    font-size: 0.9rem;
+  }
+  .frites-section .frites-options .frites-option .frites-price {
+    font-size: 1rem;
+  }
+  .frites-section .frites-image {
+    max-width: 120px;
+  }
 }
 
 .menu-special {
@@ -2333,7 +2373,6 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
 @media (max-width: 991px) {
   .desserts-container .desserts-category {
     gap: 25px;
@@ -2385,9 +2424,7 @@ body {
   .desserts-container .simple-item {
     margin-bottom: 10px;
   }
-  .desserts-container .simple-item .simple-name {
-    font-size: 0.9rem;
-  }
+  .desserts-container .simple-item .simple-name,
   .desserts-container .simple-item .simple-price {
     font-size: 0.9rem;
   }
@@ -2396,6 +2433,7 @@ body {
     border-radius: 8px;
   }
 }
+
 footer {
   background: linear-gradient(to bottom, #6B5D50 0%, #1A0F0A 100%);
   padding: 4rem 0 0;
