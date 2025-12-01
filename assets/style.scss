@@ -2161,28 +2161,23 @@ body{
 // ==========================================
 // MENU SECTION - Version responsive
 // ==========================================
+
+
 .menu-section {
     padding: 80px 0;
-    background-image: url(../assets/images/menu.jpeg);
-    background-size: 100% auto;
-    background-size: cover;
+    background-image: url(../assets/images/BackgroundMenu.webp);
+    background-size: cover;         // ← تغطي كل المساحة
     background-position: center;
+    background-position: top center;
     background-repeat: no-repeat;
     position: relative;
-    min-height: 100vh;
-    // background: linear-gradient(
-    //     180deg,
-    //     #1a1410 0%,      // Marron très foncé (haut)
-    //     #2d241c 30%,     // Marron foncé
-    //     #3d322a 70%,     // Marron moyen
-    //     #1a1410 100%     // Marron très foncé (bas)
-    // );
+    width: 100%;
+    margin: 0;
     
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    width: 100vw;
+    // ✅ الحد الأدنى للارتفاع = ارتفاع الصورة
+    min-height: 500px;  // ← غيري هذا الرقم حسب ارتفاع صورتك
+
+    
     
     .category-title {
         // margin-top: 200px;
@@ -2369,6 +2364,21 @@ body{
             }
     }
 }
+
+// // TABLET 768px
+// @media (max-width: 768px) {
+//     .menu-section {
+//         .category-title {
+//             padding-top: 50px;    // ← قللي الرقم لرفع العنوان
+//             margin-top: 20px;
+            
+//             h2 {
+//                 color: red;
+//                 font-size: 2.2rem;
+//             }
+//         }
+//     }
+// }
 
    // MOBILE
 @media (max-width: 576px) {

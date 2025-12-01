@@ -79,6 +79,8 @@
 
 </section>
 
+<div class="menu-wrapper">
+
 <section class="menu-section" id="menu">
    
     <div class="container">
@@ -734,7 +736,7 @@
         </div>
     </div>
 </section>
-
+</div>
 
 
 
