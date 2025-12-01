@@ -1698,7 +1698,7 @@ body {
   align-items: center;
   background-image: url(../assets/images/HeroMenu.webp);
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: 50% 60%;
   background-repeat: no-repeat;
 }
 .hero-menu::before {
@@ -1735,7 +1735,7 @@ body {
   .hero-menu {
     height: 80vh;
     min-height: 500px;
-    background-position: center 40%;
+    background-position: center center;
   }
   .hero-menu .hero-title {
     font-size: 3rem;
@@ -1749,7 +1749,7 @@ body {
   .hero-menu {
     height: 55vh;
     min-height: 350px;
-    background-position: right center;
+    background-position: 95% 40%;
   }
   .hero-menu .hero-title {
     font-size: 2.2rem;

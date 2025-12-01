@@ -1948,7 +1948,9 @@ body{
     align-items: center;
     background-image: url(../assets/images/HeroMenu.webp);
     background-size: cover;
-    background-position: 50% 50%;
+    // background-position: 50% 50%;
+    background-position: 50% 60%; 
+    //   background-position: center center;
     background-repeat: no-repeat;
     
     &::before {
@@ -1992,7 +1994,8 @@ body{
     @media (max-width: 991px) {
         height: 80vh;
         min-height: 500px;
-        background-position: center 40%;
+        // background-position: center 40%;
+        background-position: center center;
 
         .hero-title {
             font-size: 3rem;
@@ -2007,7 +2010,9 @@ body{
     @media (max-width: 576px) {
         height: 55vh;
         min-height: 350px;
-        background-position: right center;
+        //  background-position: right center;
+        // background-position: center center;
+         background-position: 95% 40%;
 
         .hero-title {
             font-size: 2.2rem;

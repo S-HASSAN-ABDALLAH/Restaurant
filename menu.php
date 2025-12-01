@@ -109,7 +109,6 @@
                 </div>
             </div>
             
-            <!-- Tu répèteras cette structure 12 fois -->
               <!-- Plat 2 -->
             <div class="menu-item">
                 <div class="item-image">
