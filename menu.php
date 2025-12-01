@@ -36,7 +36,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/webp" href="./assets/images/Logo.webp">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
 
 </head>
 <body>
@@ -759,6 +758,7 @@ window.addEventListener('scroll', function() {
     }
 });
 </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
