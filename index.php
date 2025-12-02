@@ -87,14 +87,14 @@
                 <h2>L'esprit d'Alep, la chaleur de la table syrienne</h2>
                 <div class="title-underline"></div>
                 <p>Au Barbecue d'Alep, nous célébrons la cuisine du cœur : grillades parfumées, mezzés faits maison, accueil chaleureux. Un lieu où la tradition rencontre la passion.</p>
-                <a href="a-propos.html" class="btn-discover">
+                <a href="a-propos.php" class="btn-discover">
                     En savoir plus <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
             
             <!-- Colonne image -->
             <div class="col-12 col-md-6 text-center image-container">
-                     <img src="./assets/images/Restaurant d'Alep.webp" 
+                     <img src="./assets/images/AlepRestoAccueil.webp" 
                      alt="Intérieur du restaurant Barbecue d'Alep à Grenoble" 
                      loading="lazy" 
                      class="img-fluid rounded-circle"
@@ -139,7 +139,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12 card-column">
                 <div class="food-card">
                     <div class="card-image-wrapper">
-                        <img src="assets/images/SANDWICHS.jpeg" 
+                        <img src="./assets/images/SANDWICHS (2).webp" 
                              alt="Sandwiches syriens authentiques"
                              loading="lazy"
                              width="380"
