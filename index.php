@@ -123,7 +123,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12 card-column">
                 <div class="food-card">
                     <div class="card-image-wrapper">
-                        <img src="./assets/images/Végétarien & Végan.webp" 
+                        <img src="./assets/images/végétarienAccueil.webp" 
                              alt="Plats végétariens et végans syriens"
                              loading="lazy"
                              width="380"
@@ -155,7 +155,7 @@
             <div class="col-lg-4 col-md-6 col-sm-12 card-column">
                 <div class="food-card">
                     <div class="card-image-wrapper">
-                        <img src="assets/images/GRILLADES1.webp" 
+                        <img src="assets/images/GrilladeAccueil1.webp" 
                              alt="Grillades syriennes au charbon de bois"
                              loading="lazy"
                              width="380"
