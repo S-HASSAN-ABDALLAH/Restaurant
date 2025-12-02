@@ -1033,22 +1033,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../assets/images/mo.jpeg);
+  background-image: url(../assets/images/HeroÀPropos.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-}
-@media (max-width: 768px) {
-  .hero-apropos {
-    height: 40vh;
-    min-height: 300px;
-    background-position: center 25%;
-  }
-}
-@media (max-width: 576px) {
-  .hero-apropos {
-    background-position: center 15%;
-  }
 }
 .hero-apropos::before {
   content: "";
@@ -1077,10 +1065,27 @@ body {
     font-size: 2.5rem;
   }
 }
+@media (max-width: 768px) {
+  .hero-apropos {
+    height: 40vh;
+    min-height: 300px;
+    background-position: center 10%;
+  }
+}
 
 .apropos-content {
   background-color: #f8f5f0;
   padding: 80px 0;
+}
+@media (max-width: 768px) {
+  .apropos-content {
+    padding: 60px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .apropos-content {
+    padding: 50px 15px;
+  }
 }
 .apropos-content .section-title {
   color: #333333;
@@ -1149,37 +1154,20 @@ body {
 .apropos-content .images-grid .image-box img:hover {
   transform: scale(1.05);
 }
-.apropos-content .images-grid .image-top {
-  max-width: 450px;
-  margin: 0 auto;
-}
-@media (max-width: 991px) {
-  .apropos-content .images-grid .image-top {
-    max-width: 100%;
-  }
-}
+.apropos-content .images-grid .image-top,
 .apropos-content .images-grid .image-bottom {
   max-width: 450px;
   margin: 0 auto;
 }
 @media (max-width: 991px) {
+  .apropos-content .images-grid .image-top,
   .apropos-content .images-grid .image-bottom {
     max-width: 100%;
-  }
-}
-@media (max-width: 991px) {
-  .apropos-content .images-grid {
-    margin-top: 50px;
   }
 }
 @media (max-width: 576px) {
   .apropos-content .images-grid .image-box img {
     height: 220px;
-  }
-}
-@media (max-width: 768px) {
-  .apropos-content {
-    padding: 60px 0;
   }
 }
 
@@ -1191,7 +1179,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../assets/images/HERO.jpeg);
+  background-image: url(../assets/images/HeroÀPropos.webp);
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;

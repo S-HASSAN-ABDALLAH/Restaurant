@@ -62,7 +62,7 @@
         <div class="row align-items-center">
             <!-- Colonne Gauche: Texte -->
             <div class="col-12 col-lg-6">
-                <h2 class="section-title">À PROPOS</h2>
+                <h2 class="section-title">NOTRE PASSION</h2>
                 <h3 class="subtitle">Barbecue d'Alep</h3>
                 
                 <div class="text-content">
@@ -96,18 +96,18 @@
             <!-- Colonne Droite: Images -->
             <div class="col-12 col-lg-6">
                 <div class="images-grid">
-                    <!-- Image 1: Houmous -->
+                    <!-- Image 1: Menu Alep -->
                     <div class="image-box image-top">
-                        <img src="./assets/images/Plat Menu Alep.jpeg" 
-                             alt="Houmous maison Barbecue d'Alep" 
+                        <img src="./assets/images/Plat Menu Alep.webp" 
+                             alt="Menu Alep" 
                              loading="lazy"
                              class="img-fluid rounded">
                     </div>
                     
-                    <!-- Image 2: Riz avec mezze -->
+                    <!-- Image 2: Mezzés syriens -->
                     <div class="image-box image-bottom">
-                        <img src="./assets/images/Mezzé.jpeg" 
-                             alt="Plat de riz syrien avec mezze" 
+                        <img src="./assets/images/MezzéàPropos.webp" 
+                             alt="Mezzés syriens" 
                              loading="lazy"
                              class="img-fluid rounded">
                     </div>
