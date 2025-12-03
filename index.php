@@ -70,7 +70,7 @@
             <div class="col-12">
                 <h1 class="hero-title">De la citadelle d'Alep au cœur de Grenoble</h1>
                 <p class="hero-subtitle">Savourez de véritables grillades syriennes au charbon de bois</p>
-                <a href="#menu" class="btn-hero">Voir le Menu</a>
+                <a href="menu.php" class="btn-hero">Voir le Menu</a>
             </div>
         </div>
     </div>

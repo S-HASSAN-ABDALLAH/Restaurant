@@ -65,16 +65,16 @@
         <div class="categories ">
 <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link active" href="#">MEZZÉS</a>
+    <a class="nav-link active" href="#menu">MEZZÉS</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">ASSIETTES</a>
+    <a class="nav-link" href="#assiettes">ASSIETTES</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">SANDWICHES</a>
+    <a class="nav-link" href="#sandwiches">SANDWICHES</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link">DESSERTS & BOISSONS</a>
+    <a class="nav-link" href="#desserts-boissons">DESSERTS & BOISSONS</a>
   </li>
 </ul>
 
@@ -492,7 +492,7 @@
             <!-- Sandwich 1 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSTaouck.webp" alt="Sandwich chiche taouk" loading="lazy">
+                    <img src="./assets/images/SandwicheChiche.webp" alt="Sandwich chiche taouk" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -509,7 +509,7 @@
             <!-- Sandwich 2 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/MSViande.webp" alt="Sandwich viande Alep"  loading="lazy" >
+                    <img src="./assets/images/SViande.webp" alt="Sandwich viande Alep"  loading="lazy" >
                 </div>
                 <div class="item-content">
                     <div class="item-header">

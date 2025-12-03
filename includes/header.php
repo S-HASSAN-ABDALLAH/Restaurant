@@ -12,7 +12,7 @@
           </li>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="apropos.php">À propos</a>
+            <a class="nav-link" href="a-propos.php">À propos</a>
           </li>
           
           <li class="nav-item">
@@ -24,10 +24,10 @@
               Menu
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">MEZZÉS</a></li>
-              <li><a class="dropdown-item" href="#">ASSIETTES</a></li>
-              <li><a class="dropdown-item" href="#">SANDWICHS</a></li>
-              <li><a class="dropdown-item" href="#">DESSERTS & BOISSONS</a></li>
+              <li><a class="dropdown-item" href="menu.php#menu">MEZZÉS</a></li>
+              <li><a class="dropdown-item" href="menu.php#assiettes">ASSIETTES</a></li>
+              <li><a class="dropdown-item" href="menu.php#sandwiches">SANDWICHS</a></li>
+              <li><a class="dropdown-item" href="menu.php#desserts-boissons">DESSERTS & BOISSONS</a></li>
             </ul>
           </li>
           <li class="nav-item">

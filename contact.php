@@ -136,12 +136,12 @@
             <!-- Photos secondaires -->
             <div class="gallery-items-small">
                 <div class="gallery-item-small">
-                    <img src="./assets/images/platContact.webp" 
+                    <img src="./assets/images/PlatContact1.webp" 
                          alt="Plat syrien traditionnel"
                          loading="lazy">
                 </div>
                 <div class="gallery-item-small">
-                    <img src="./assets/images/TeaContact.webp" 
+                    <img src="./assets/images/TeaContact2.webp" 
                          alt="Thé syrien traditionnel"
                          loading="lazy">
                 </div>
@@ -152,7 +152,7 @@
         <div class="restaurant-cta">
             <div class="cta-buttons-group">
                 <!-- Uber Eats -->
-                <a href="https://www.ubereats.com/..." 
+                <a href="https://www.ubereats.com/fr/store/barbecue-dalep/5R3ZDI_aTUC5uBllhX6DFg?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjglMjBBbGwlQzMlQTllJTIwZHUlMjBQYXJjJTIwR2VvcmdlcyUyMFBvbXBpZG91JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyYWEwNjRiN2YtMTMwYy1iOTgwLWYxODQtNTZhZWJhNDZiOThiJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0NS4xNzY4NTMlMkMlMjJsb25naXR1ZGUlMjIlM0E1LjcyMDM2NyU3RA%3D%3D" 
                    target="_blank" 
                    rel="noopener"
                    class="btn-cta btn-uber"
