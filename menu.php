@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> 
     
     <!-- CSS personnalisé -->
-    <!-- <link rel="preload" href="./assets/style.css?v=2" as="style"> -->
     <link rel="stylesheet" href="./assets/style.css?v=2">
     
 
@@ -492,7 +491,7 @@
             <!-- Sandwich 1 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/SandwicheChiche.webp" alt="Sandwich chiche taouk" loading="lazy">
+                    <img src="./assets/images/SChiche4.webp" alt="Sandwich chiche taouk" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
@@ -509,7 +508,7 @@
             <!-- Sandwich 2 -->
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/SViande.webp" alt="Sandwich viande Alep"  loading="lazy" >
+                    <img src="./assets/images/SViande1.webp" alt="Sandwich viande Alep"  loading="lazy" >
                 </div>
                 <div class="item-content">
                     <div class="item-header">

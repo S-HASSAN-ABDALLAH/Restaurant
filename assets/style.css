@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
   font-family: "Playfair", serif !important;
+  font-variant-numeric: lining-nums;
 }
 
 .navbar {
@@ -1248,7 +1249,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../assets/images/hero4.webp);
+  background-image: url(../assets/images/hero1Contact.webp);
   background-size: cover;
   background-position: center 40%;
   background-repeat: no-repeat;
@@ -1284,9 +1285,11 @@ body {
 }
 @media (max-width: 768px) {
   .hero-contact .text-content {
-    padding: 2.5rem 1.5rem;
+    padding: 1.5rem 1.2rem;
     border-radius: 15px;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    max-width: 70%;
+    margin: 2rem auto;
     background: rgba(0, 0, 0, 0.3);
   }
 }
@@ -2126,14 +2129,48 @@ body {
     width: 120px;
     height: 120px;
   }
-  .menu-section .menu-item .item-header .item-title {
+  .menu-section .menu-item .item-content .item-header .item-title {
     font-size: 1.3rem;
   }
-  .menu-section .menu-item .item-header .item-price {
+  .menu-section .menu-item .item-content .item-header .item-price {
     font-size: 1.2rem;
   }
-  .menu-section .menu-item .item-description {
+  .menu-section .menu-item .item-content .item-description {
     font-size: 0.95rem;
+  }
+}
+@media (max-width: 768px) {
+  .menu-section {
+    padding: 50px 0;
+  }
+  .menu-section .category-title {
+    padding-top: 40px;
+    margin-bottom: 30px;
+  }
+  .menu-section .category-title h2 {
+    font-size: 2rem;
+  }
+  .menu-section .menu-items {
+    padding: 25px 15px;
+    width: 95%;
+    margin-bottom: 40px;
+  }
+  .menu-section .menu-item {
+    gap: 15px;
+    padding: 15px;
+  }
+  .menu-section .menu-item .item-image {
+    width: 100px;
+    height: 100px;
+  }
+  .menu-section .menu-item .item-content .item-header .item-title {
+    font-size: 1.15rem;
+  }
+  .menu-section .menu-item .item-content .item-header .item-price {
+    font-size: 1.1rem;
+  }
+  .menu-section .menu-item .item-content .item-description {
+    font-size: 0.9rem;
   }
 }
 @media (max-width: 576px) {
@@ -2141,9 +2178,9 @@ body {
     padding: 30px 0 40px 0;
   }
   .menu-section .category-title {
-    margin-top: 30px;
-    padding-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    padding-top: 50px;
+    margin-bottom: 40px;
   }
   .menu-section .category-title h2 {
     font-size: 1.8rem;
@@ -2156,6 +2193,7 @@ body {
     width: 92%;
     padding: 15px 10px;
     border-radius: 10px;
+    margin-bottom: 50px;
   }
   .menu-section .menu-item {
     flex-direction: row;

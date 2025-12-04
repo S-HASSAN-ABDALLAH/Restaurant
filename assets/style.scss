@@ -38,6 +38,7 @@ $animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
 
 body{
     font-family: $font-family !important;
+    font-variant-numeric: lining-nums;
 }
 
 // ==========================================
@@ -1395,7 +1396,7 @@ body{
         }
     }
     
-    // ✅ الكود الجديد
+   
     @media (max-width: 768px) {
         gap: 30px;
         
@@ -1426,7 +1427,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../assets/images/hero4.webp);
+    background-image: url(../assets/images/hero1Contact.webp);
     background-size: cover;
     background-position: center 40%;
     background-repeat: no-repeat;
@@ -1470,17 +1471,19 @@ body{
         margin-top: 2rem;
         
         @media (max-width: 768px) {
-            padding: 2.5rem 1.5rem;
+            padding: 1.5rem 1.2rem;
             border-radius: 15px;
-            margin-top: 1.5rem;
+            margin-top: 1rem;
+            max-width: 70%;
+            margin: 2rem auto;
             background: rgba(0, 0, 0, 0.30);
         }
-        
-        @media (max-width: 576px) {
+
+         @media (max-width: 576px) {
             padding: 1.5rem 1.2rem;  
-        border-radius: 12px;
-        margin-top: 1rem;
-        background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.25);
         }
     }
     
@@ -1544,12 +1547,14 @@ body{
     @media (max-width: 768px) {
         height: 50vh;
         min-height: 350px;
+        //  margin-top: 29px;
         background-attachment: scroll;
     }
     
     @media (max-width: 576px) {
         height: 45vh;
         min-height: 300px;
+        // margin-top: 10px;
     }
 }
 
@@ -2398,6 +2403,7 @@ body{
         }
     }
 
+    // ✅ 991px
     @media (max-width: 991px) {
         padding: 60px 0;
         background-size: cover;
@@ -2425,27 +2431,78 @@ body{
                 height: 120px;
             }
 
-            .item-header .item-title {
-                font-size: 1.3rem;
-            }
+            .item-content {
+                .item-header {
+                    .item-title {
+                        font-size: 1.3rem;
+                    }
 
-            .item-header .item-price {
-                font-size: 1.2rem;
-            }
+                    .item-price {
+                        font-size: 1.2rem;
+                    }
+                }
 
-            .item-description {
-                font-size: 0.95rem;
+                .item-description {
+                    font-size: 0.95rem;
+                }
             }
         }
     }
 
+    // ✅ 768px
+    @media (max-width: 768px) {
+        padding: 50px 0;
+        
+        .category-title {
+            padding-top: 40px;
+            margin-bottom: 30px;
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        .menu-items {
+            padding: 25px 15px;
+            width: 95%;
+            margin-bottom: 40px;
+        }
+        
+        .menu-item {
+            gap: 15px;
+            padding: 15px;
+            
+            .item-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .item-content {
+                .item-header {
+                    .item-title {
+                        font-size: 1.15rem;
+                    }
+                    
+                    .item-price {
+                        font-size: 1.1rem;
+                    }
+                }
+                
+                .item-description {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+
+    // ✅ 576px
     @media (max-width: 576px) {
         padding: 30px 0 40px 0;
         
         .category-title {
-            margin-top: 30px;
-            padding-top: 20px;
-            margin-bottom: 20px;
+            margin-top: 40px;
+            padding-top: 50px;
+            margin-bottom: 40px;
 
             h2 {
                 font-size: 1.8rem;
@@ -2461,6 +2518,7 @@ body{
             width: 92%;
             padding: 15px 10px;
             border-radius: 10px;
+             margin-bottom: 50px
         }
 
         .menu-item {
