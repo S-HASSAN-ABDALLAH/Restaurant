@@ -1,7 +1,7 @@
 <?php 
 require_once "../config/database.php";
-$stmt = $pdo->query("SELECT* FROM categories ORDER BY name ASC ");
-$categories = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt = $pdo->query("SELECT* FROM items ORDER BY name ASC ");
+$items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_GET["action"]) && $_GET["action"] === "supprimer" && isset($_GET["id"]) ){
   $id = $_GET["id"];
@@ -36,20 +36,22 @@ if (isset($_GET["action"]) && $_GET["action"] === "supprimer" && isset($_GET["id
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Date de création</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Description</th>
       <th>Actions</th>
 
       
     </tr>
   </thead>
   <tbody>
-    <?php foreach($categories as $categorie):?>
+    <?php foreach($items as $item):?>
     <tr>
-      <th scope="row"><?= $categorie["id"]?></th>
-      <td><?= $categorie["name"]?></td>
-      <td><?=date("d/m/Y",strtotime($categorie["created_at"]))?></td>
-      <td><a href="show.php?action=supprimer&id=<?= $categorie["id"]?>" onclick="return confirm('Voulez-vous supprimer cette catégorie?')"><Button>Supprimer</Button></a></td>
+      <th scope="row"><?= $item["id"]?></th>
+      <td><?= $item["name"]?></td>
+      <td><?= $item["description"]?></td>
+      
+      <td><a href="show.php?action=supprimer&id=<?= $item["id"]?>" onclick="return confirm('Voulez-vous supprimer cette catégorie?')"><Button>Supprimer</Button></a></td>
     </tr>
     <?php endforeach ;?>
     
