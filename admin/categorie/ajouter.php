@@ -1,48 +1,57 @@
 <?php 
 require_once "../config/database.php";
 $erreurs = [];
-if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nom = trim($_POST["name"]);
-    if (empty($nom)){
-        $erreurs[]= "Le nom est obligatoire";
+    
+    if (empty($nom)) {
+        $erreurs[] = "Le nom est obligatoire";
     }
-    if (empty($erreurs)){
-        try{
-            $stmt=$pdo->prepare("INSERT INTO categories (name) VALUES (?)");
+    
+    if (empty($erreurs)) {
+        try {
+            $stmt = $pdo->prepare("INSERT INTO categories (name) VALUES (?)");
             $stmt->execute([$nom]);
-            header("location:show.php");
+            header("Location: show.php?message=success");  // ✅ مسافة بعد Location
             exit;
-        }
-        catch(PDOException $e){
-          $erreurs[] = "Erreur lors de la création : " . $e->getMessage();  
+        } catch(PDOException $e) {
+            $erreurs[] = "Erreur lors de la création : " . $e->getMessage();  
         } 
     }
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ajouter une catégorie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class = "container"> 
+    <div class="container py-5">
+        <h1>Ajouter une catégorie</h1>
+        
         <?php if (!empty($erreurs)): ?>
-            <div class="alert alert-error">
-                <ul>
+            <div class="alert alert-danger">
+                <ul class="mb-0">
                     <?php foreach ($erreurs as $error): ?>
                         <li><?= htmlspecialchars($error) ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
         <?php endif; ?>
+        
         <form method="POST">
-            <input type="text" id="name" name="name" value="<?= htmlspecialchars($_POST['name'] ?? '') ?>" >
-            <button type="submit">Créer</button>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nom de la catégorie</label>
+                <input type="text" class="form-control" id="name" name="name" 
+                       value="<?= htmlspecialchars($_POST['name'] ?? '') ?>">
+            </div>
+            <button type="submit" class="btn btn-primary">Créer</button>
+            <a href="show.php" class="btn btn-secondary">Annuler</a>
         </form>
     </div>
-    
 </body>
 </html>
