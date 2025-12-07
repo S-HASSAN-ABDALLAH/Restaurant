@@ -1,3 +1,15 @@
+<?php
+require_once 'config/database.php';
+
+// جلب الأقسام مرتبة
+$stmt = $pdo->query("SELECT * FROM categories ORDER BY display_order ASC");
+$categories = $stmt->fetchAll();
+
+// جلب كل الأطباق
+$stmt = $pdo->query("SELECT * FROM items ORDER BY id_categorie, display_order ASC");
+$allItems = $stmt->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -95,213 +107,34 @@
         
         <!-- Container des plats -->
         <div class="menu-items"> 
-            <!-- Plat 1 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MHoumous1.webp" alt="Hoummos" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Hoummos</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        Purée de pois chiches avec tahini, ail, citron, huile d'olive, servi avec pain Syrien
-                    </p>
-                </div>
-            </div>
+            <?php
+            $stmt = $pdo->prepare("SELECT * FROM items WHERE id_categorie = ? ORDER BY display_order ASC");
+            $stmt->execute([1]); // 1 = Mezzés
+            $items = $stmt->fetchAll();
             
-              <!-- Plat 2 -->
+            foreach ($items as $item):
+            ?>
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Motabal.webp" alt="Motabal (Caviar d'aubergine)" loading="lazy">
+                    <img src="./assets/images/<?= htmlspecialchars($item['picture']) ?>" 
+                         alt="<?= htmlspecialchars($item['name']) ?>" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Motabal (Caviar d'aubergine)</h4>
+                        <h4 class="item-title"><?= htmlspecialchars($item['name']) ?></h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
+                        <span class="item-price"><?= number_format($item['price'], 2) ?> €</span>
                     </div>
                     <p class="item-description">
-                        Purée d'd'aubergines grillées avec crème de sésame, yaourt citron, ail, avec huile d'olive, servi avec pain Syrien
+                        <?= htmlspecialchars($item['description']) ?>
                     </p>
                 </div>
             </div>
-
-             <!-- Plat 3 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MMoussaka1.webp" alt="Moussaka" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Moussaka</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        Sauce tomate, aubergines, oignons, ail, poivron rouge ou vert, avec des épices Syriens, servi avec du pain Syrien
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 4 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Fattouche.webp" alt="Fattouche (salade)" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Fattouche (salade)</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        Tomates, salade, chou rouge, ail, citron, concombre, mélasse de grenade, huile d'olive, avec pain grillé
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 5 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Burak fromages.webp" alt="Burak fromages" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Burak fromages</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">6.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        3 pièces feuilles (fines) farcies au fromage Syrien, mélangee avec du mozzarella et de la menthe + paprika
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 6 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Spring Roll.webp" alt="Spring Roll" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Spring Roll</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">6.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        3 pièces feuilles (fines) farcies aux légumes de saison, épices et fromage
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 7 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Kebbeh boulettes.webp" alt="Kebbeh boulettes" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Kebbeh boulettes</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">8.00 €</span>
-                    </div>
-                    <p class="item-description">
-                         3 pièces de boulgour farcie avec de la viande hachée marinée avec 7 épices Syriens, oignon + noix
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 8 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Samboussek_viande1.webp" alt="Samboussek viande" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Samboussek viande</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">6.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        3 pièces de chaussons rissolés aux viande
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 9 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Samboussak épinard.webp" alt="Samboussek épinard" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Samboussek épinard</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">6.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        3 pièces de chaussons rissolés aux épinard.
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 10 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Feuilles de vigne (3).webp" alt="Feuilles de vigne" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Feuilles de vigne</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">6.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        4 pièces de feuilles de vigne farcies au riz
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 11 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Falafel.webp" alt="Falafel" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Falafel</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">6.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        3 pièces beignets de pois chiches servis avec crème de sésame
-                    </p>
-                </div>
-            </div>
-
-             <!-- Plat 12 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Labneh.webp" alt="Labneh" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Labneh</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        Fromage blanc de lait vache caillé, menthe, servi avec du pain Syrien
-                    </p>
-                </div>
-            </div>
-            
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
+
 
 <!-- ========================================
      SECTION ASSIETTES
@@ -318,158 +151,30 @@
         <!-- Container des plats -->
         <div class="menu-items"> 
             <!-- Assiette 1 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Mviande ALEP.webp" alt="Plat viande ALEP" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Plat viande ALEP (avec 3 mezzés)</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">16.50 €</span>
-                    </div>
-                    <p class="item-description">
-                        2 brochettes de viande hachée (bœuf) marinée avec 7 épices spéciales d’Alep, servi avec riz jaune (ou frites +1€), hommos, caviar d’aubergine, salade, sauce à l’ail et pain Syrien
-                    </p>
-                </div>
-            </div>
+            <?php
+            $stmt = $pdo->prepare("SELECT * FROM items WHERE id_categorie = ? ORDER BY display_order ASC");
+            $stmt->execute([3]); // 3 = Assiettes
+            $items = $stmt->fetchAll();
             
-            <!-- Assiette 2 -->
+            foreach ($items as $item):
+            ?>
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/Mviande EXTRA.webp" alt="Plat viande EXTRA" loading="lazy">
+                    <img src="./assets/images/<?= htmlspecialchars($item['picture']) ?>" 
+                         alt="<?= htmlspecialchars($item['name']) ?>" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Plat viande EXTRA (avec 3 mezzés)</h4>
+                        <h4 class="item-title"><?= htmlspecialchars($item['name']) ?></h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">19.50 €</span>
+                        <span class="item-price"><?= number_format($item['price'], 2) ?> €</span>
                     </div>
                     <p class="item-description">
-                        2 brochettes de viandes hachée (bœuf) marinée, mélangée avec des oignons, persil, poivron rouge, servi avec riz jaune (ou frites +1€), hommos, caviar d’aubergine, salade, sauce à l’ail et pain Syrien
+                        <?= htmlspecialchars($item['description']) ?>
                     </p>
                 </div>
             </div>
-
-            <!-- Assiette 3 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MKebbeb grillé.webp" alt="Plat Kebbeb grillé" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Plat Kebbeb grillé</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">19.50 €</span>
-                    </div>
-                    <p class="item-description">
-                        2 brochettes de viandes hachée (bœuf) avec boulghur marinée à la menthe séchée, oignon, poivron rouge, servi avec riz jaune (ou frites +1€), salade, hommos, caviar d’aubergine, sauce à l’ail et pain Syrien
-                    </p>
-                </div>
-            </div>
-
-            <!-- Assiette 4 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MChiche Taouk.webp" alt="Plat Chiche Taouk" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Plat Chiche Taouk</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">19.50 €</span>
-                    </div>
-                    <p class="item-description">
-                        2 brochettes de viandes poulet marinée, servi avec riz jaune (ou frites +1€), hommos, caviar d’aubergine, salade, sauce à l’ail et pain Syrien
-                    </p>
-                </div>
-            </div>
-
-            <!-- Assiette 5 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MMenu Alep.webp" alt="Plat Menu Alep" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Plat Menu Alep</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">23.50€</span>
-                    </div>
-                    <p class="item-description">
-                        3 brochettes de viandes au choix, riz jaune, hommos, caviar d’aubergine, salade, sauce à l’ail, pain Syrien avec une boisson au choix
-                    </p>
-                </div>
-            </div>
-
-            <!-- Assiette 6 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MPlatMix.webp" alt="Plat Mix" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Plat Mix</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">19.50 €</span>
-                    </div>
-                    <p class="item-description">
-                        2 brochettes de viandes au choix, servi avec riz jaune (ou frites +1€), hommos, caviar d’aubergine, salade, sauce à l’ail, pain Syrien
-                    </p>
-                </div>
-            </div>
-
-            <!-- Assiette 7 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MFalafel d’Alep.webp" alt="Plat Falafel d’Alep (végétarien)" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Plat Falafel d’Alep (végétarien)  </h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">17.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        4 morceaux de pain farcis avec falafel, tomate, salade, chou,menthe, persil, crème de sésame servi avec hommos et une pièce falafel
-                    </p>
-                </div>
-            </div>
-
-            <!-- Assiette 8 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Mvégétarien.webp" alt="Plat végétarien" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Plat végétarien</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">19.50 €</span>
-                    </div>
-                    <p class="item-description">
-                        Assortiment de 10 mezzés, hommos, caviar d’aubergine, moussaka, salade, falafel, burak fromages, samboussek épinard, labneh
-                    </p>
-                </div>
-            </div>
-
-            <!-- Assiette 9 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Menfant.webp" alt="Plat enfant" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Plat enfant</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">12.50 €</span>
-                    </div>
-                    <p class="item-description">
-                        Une brochette de viande au choix, frites, riz jaune, salade + Jus
-                    </p>
-                </div>
-            </div>
-            
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -489,89 +194,32 @@
         <!-- Container des plats -->
         <div class="menu-items"> 
             <!-- Sandwich 1 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/SChiche4.webp" alt="Sandwich chiche taouk" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Sandwich chiche taouk</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">9.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        Viande de poulet marinée avec tomate, salade, chou, sauce à l'ail
-                    </p>
-                </div>
-            </div>
+            <?php
+            $stmt = $pdo->prepare("SELECT * FROM items WHERE id_categorie = ? ORDER BY display_order ASC");
+            $stmt->execute([11]); // 11 = Sandwiches
+            $items = $stmt->fetchAll();
             
-            <!-- Sandwich 2 -->
+            foreach ($items as $item):
+            ?>
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/SViande1.webp" alt="Sandwich viande Alep"  loading="lazy" >
+                    <img src="./assets/images/<?= htmlspecialchars($item['picture']) ?>" 
+                         alt="<?= htmlspecialchars($item['name']) ?>" loading="lazy">
                 </div>
                 <div class="item-content">
                     <div class="item-header">
-                        <h4 class="item-title">Sandwich viande Alep</h4>
+                        <h4 class="item-title"><?= htmlspecialchars($item['name']) ?></h4>
                         <span class="item-dots"></span>
-                        <span class="item-price">9.00 €</span>
+                        <span class="item-price"><?= number_format($item['price'], 2) ?> €</span>
                     </div>
                     <p class="item-description">
-                        Viande hachée de bœuf marinée avec 7 épices spéciaux d'Alep, tomate, salade, chou, sauce à l'ail, persil
+                        <?= htmlspecialchars($item['description']) ?>
                     </p>
                 </div>
             </div>
-
-            <!-- Sandwich 3 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/Sandwich viande Extera.webp" alt="Sandwich viande EXTRA (Kofta)" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Sandwich viande EXTRA (Kofta)</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">9.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        Viande hachée de bœuf marinée (oignon, persil, 7 épices), tomate, salade, chou, sauce à l'ail
-                    </p>
-                </div>
-            </div>
-
-            <!-- Sandwich 4 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MSFalafel.webp" alt="Sandwich falafel" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Sandwich falafel</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">8.50 €</span>
-                    </div>
-                    <p class="item-description">
-                        Beignets de pois chiches, crème sésame avec tomate, chou, persil, menthe, salade
-                    </p>
-                </div>
-            </div>
-
-            <!-- Sandwich 5 -->
-            <div class="menu-item">
-                <div class="item-image">
-                    <img src="./assets/images/MSFrites.webp" alt="Sandwich frites" loading="lazy">
-                </div>
-                <div class="item-content">
-                    <div class="item-header">
-                        <h4 class="item-title">Sandwich frites</h4>
-                        <span class="item-dots"></span>
-                        <span class="item-price">7.00 €</span>
-                    </div>
-                    <p class="item-description">
-                        Frites, tomate, salade, chou, sauce à l'ail..
-                    </p>
-                </div>
-            </div>
+            <?php endforeach; ?>
+        </div>
+    
 
             <!-- ========================================
                  BARQUETTES DE FRITES
@@ -580,42 +228,48 @@
                 <h4 class="frites-title">Barquettes de Frites</h4>
                 
                 <div class="frites-options">
-                    <div class="frites-option">
-                        <span class="frites-size">Petite</span>
-                        <span class="frites-dots"></span>
-                        <span class="frites-price">3.50 €</span>
-                    </div>
-                    <div class="frites-option">
-                        <span class="frites-size">Grande</span>
-                        <span class="frites-dots"></span>
-                        <span class="frites-price">4.50 €</span>
-                    </div>
-                </div>
-                
-                <div class="frites-image">
-                    <img src="./assets/images/MFritesGrande.webp" alt="Barquettes de frites" loading="lazy">
-                </div>
-            </div>
+                    <?php
+        $stmt = $pdo->query("SELECT * FROM frites_options ORDER BY display_order ASC");
+        $frites = $stmt->fetchAll();
+        
+        foreach ($frites as $frite):
+        ?>
+        <div class="frites-option">
+            <span class="frites-size"><?= htmlspecialchars($frite['size']) ?></span>
+            <span class="frites-dots"></span>
+            <span class="frites-price"><?= number_format($frite['price'], 2) ?> €</span>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    
+    <div class="frites-image">
+        <img src="./assets/images/MFritesGrande.webp" alt="Barquettes de frites" loading="lazy">
+    </div>
+</div>
 
-           <!-- ========================================
+<!-- ========================================
      MENU SPÉCIAL
      ======================================== -->
+<?php
+$stmt = $pdo->query("SELECT * FROM special_offers WHERE is_active = TRUE LIMIT 1");
+$offer = $stmt->fetch();
+
+if ($offer):
+?>
 <div class="menu-special">
     <div class="special-badge">MENU SPÉCIAL</div>
     
     <div class="special-center">
-        <h4 class="special-title">SANDWICH + FRITES + BOISSON</h4>
-        <p class="special-saving">Économisez 2€</p>
+        <h4 class="special-title"><?= htmlspecialchars($offer['title']) ?></h4>
+        <p class="special-saving"><?= htmlspecialchars($offer['savings']) ?></p>
     </div>
     
     <div class="special-right">
         <i class="fas fa-star special-star"></i>
-        <span class="special-price">13€</span>
+        <span class="special-price"><?= number_format($offer['price'], 0) ?>€</span>
     </div>
-  </div>
- 
 </div>
-</div>
+<?php endif; ?>
                 
 </section>
 
@@ -635,99 +289,45 @@
         <div class="menu-items desserts-container">
             
             <!-- ========== DESSERTS ========== -->
+            <?php
+            $subcategories = ['Desserts', 'Boissons', 'Boissons Chaudes'];
+            $images = [
+                'Desserts' => 'Halawat el jubn.webp',
+                'Boissons' => 'coca.webp',
+                'Boissons Chaudes' => 'cafe.webp'
+            ];
+            
+            foreach ($subcategories as $subcat):
+                $stmt = $pdo->prepare("SELECT * FROM items WHERE id_categorie = ? AND subcategory = ? ORDER BY display_order ASC");
+                $stmt->execute([4, $subcat]);
+                $items = $stmt->fetchAll();
+                
+                if (!empty($items)):
+            ?>
             <div class="desserts-category">
                 <div class="category-content">
-                    <h3 class="category-subtitle">Desserts</h3>
+                    <h3 class="category-subtitle"><?= htmlspecialchars($subcat) ?></h3>
                     
+                    <?php foreach ($items as $item): ?>
                     <div class="simple-item">
-                        <span class="simple-name">Halawat el jubn</span>
+                        <span class="simple-name"><?= htmlspecialchars($item['name']) ?></span>
                         <span class="simple-dots"></span>
-                        <span class="simple-price">3.50€</span>
+                        <span class="simple-price"><?= number_format($item['price'], 2) ?>€</span>
                     </div>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Mohallabiya</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">4.00€</span>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
                 
                 <div class="category-image">
-                    <img src="./assets/images/Halawat el jubn.webp" alt="Desserts syriens" loading="lazy" style="margin-top:10px">
+                    <img src="./assets/images/<?= $images[$subcat] ?>" 
+                         alt="<?= htmlspecialchars($subcat) ?>" loading="lazy">
                 </div>
             </div>
+            <?php 
+                endif;
+            endforeach; 
+            ?>
             
-            <!-- ========== BOISSONS ========== -->
-            <div class="desserts-category">
-                <div class="category-content">
-                    <h3 class="category-subtitle">Boissons</h3>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Canettes 33 cl</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">2.50€</span>
-                    </div>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Bouteilles 50 cl</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">3.00€</span>
-                    </div>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Bouteille d'eau 50 cl</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">1.50€</span>
-                    </div>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Ayran</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">2.50€</span>
-                    </div>
-                </div>
-                
-                <div class="category-image">
-                    <img src="./assets/images/coca.webp" alt="Boissons fraîches" loading="lazy">
-                </div>
-            </div>
-            
-            <!-- ========== BOISSONS CHAUDES ========== -->
-            <div class="desserts-category">
-                <div class="category-content">
-                    <h3 class="category-subtitle">Boissons Chaudes</h3>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Café Expresso</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">2.50€</span>
-                    </div>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Café Syrien</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">3.00€</span>
-                    </div>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Thé à la menthe</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">2.50€</span>
-                    </div>
-                    
-                    <div class="simple-item">
-                        <span class="simple-name">Thé rouge</span>
-                        <span class="simple-dots"></span>
-                        <span class="simple-price">2.50€</span>
-                    </div>
-                </div>
-                
-                <div class="category-image">
-                    <img src="./assets/images/cafe.webp" alt="Boissons chaudes" loading="lazy">
-                </div>
-            </div>
-            
-            <!-- ========== GRANDE IMAGE THÉ ========== -->
+            <!-- Grande image thé -->
             <div class="tea-banner">
                 <img src="./assets/images/Thé.webp" alt="Thé syrien traditionnel" loading="lazy">
             </div>
