@@ -116,7 +116,7 @@ $allItems = $stmt->fetchAll();
             ?>
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/<?= htmlspecialchars($item['picture']) ?>" 
+                    <img src="./uploads/<?= htmlspecialchars($item['picture']) ?>" 
                          alt="<?= htmlspecialchars($item['name']) ?>" loading="lazy">
                 </div>
                 <div class="item-content">
@@ -160,7 +160,7 @@ $allItems = $stmt->fetchAll();
             ?>
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/<?= htmlspecialchars($item['picture']) ?>" 
+                    <img src="./uploads/<?= htmlspecialchars($item['picture']) ?>" 
                          alt="<?= htmlspecialchars($item['name']) ?>" loading="lazy">
                 </div>
                 <div class="item-content">
@@ -203,7 +203,7 @@ $allItems = $stmt->fetchAll();
             ?>
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="./assets/images/<?= htmlspecialchars($item['picture']) ?>" 
+                    <img src="./uploads/<?= htmlspecialchars($item['picture']) ?>" 
                          alt="<?= htmlspecialchars($item['name']) ?>" loading="lazy">
                 </div>
                 <div class="item-content">

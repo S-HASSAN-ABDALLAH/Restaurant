@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $description = trim($_POST["description"]);
     $price = $_POST["price"];
     $id_categorie = $_POST["id_categorie"];
+    $subcategory = trim($_POST["subcategory"]); // ✅ جديد
     
     // التحقق من البيانات
     if (empty($nom)) {
@@ -71,8 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // تحديث قاعدة البيانات
     if (empty($erreurs)) {
         try {
-            $stmt = $pdo->prepare("UPDATE items SET name = ?, description = ?, price = ?, picture = ?, id_categorie = ? WHERE id = ?");
-            $stmt->execute([$nom, $description, $price, $picture, $id_categorie, $id]);
+            $stmt = $pdo->prepare("UPDATE items SET name = ?, description = ?, price = ?, picture = ?, id_categorie = ?, subcategory = ? WHERE id = ?"); // ✅ معدّل
+            $stmt->execute([$nom, $description, $price, $picture, $id_categorie, $subcategory, $id]); // ✅ معدّل
             header("Location: show.php?message=updated");
             exit;
         } catch(PDOException $e) {
@@ -137,6 +138,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </option>
                     <?php endforeach; ?>
                 </select>
+            </div>
+            
+            <!-- ✅ Subcategory (جديد) -->
+            <div class="mb-3">
+                <label for="subcategory" class="form-label">Sous-catégorie</label>
+                <select class="form-select" id="subcategory" name="subcategory">
+                    <option value="">-- Aucune --</option>
+                    <option value="Desserts" <?= (($_POST['subcategory'] ?? $plat['subcategory']) == 'Desserts') ? 'selected' : '' ?>>Desserts</option>
+                    <option value="Boissons" <?= (($_POST['subcategory'] ?? $plat['subcategory']) == 'Boissons') ? 'selected' : '' ?>>Boissons</option>
+                    <option value="Boissons Chaudes" <?= (($_POST['subcategory'] ?? $plat['subcategory']) == 'Boissons Chaudes') ? 'selected' : '' ?>>Boissons Chaudes</option>
+                </select>
+                <small class="text-muted">Uniquement pour la catégorie "Desserts & Boissons"</small>
             </div>
             
             <!-- Image actuelle -->

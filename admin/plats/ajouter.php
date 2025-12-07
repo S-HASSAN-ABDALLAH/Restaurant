@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $description = trim($_POST["description"]);
     $price = $_POST["price"];
     $id_categorie = $_POST["id_categorie"];
+    $subcategory = trim($_POST["subcategory"]);
     
     // التحقق من البيانات
     if (empty($nom)) {
@@ -47,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // إدخال في قاعدة البيانات
     if (empty($erreurs)) {
         try {
-            $stmt = $pdo->prepare("INSERT INTO items (name, description, price, picture, id_categorie) VALUES (?, ?, ?, ?, ?)");
-            $stmt->execute([$nom, $description, $price, $picture, $id_categorie]);
+            $stmt = $pdo->prepare("INSERT INTO items (name, description, price, picture, id_categorie, subcategory) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$nom, $description, $price, $picture, $id_categorie, $subcategory]); 
             header("Location: show.php?message=success");
             exit;
         } catch(PDOException $e) {
@@ -113,6 +114,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         </option>
                     <?php endforeach; ?>
                 </select>
+            </div>
+
+            <!-- Subcategory -->
+            <div class="mb-3">
+                <label for="subcategory" class="form-label">Sous-catégorie</label>
+                <select class="form-select" id="subcategory" name="subcategory">
+                    <option value="">-- Aucune --</option>
+                    <option value="Desserts" <?= (isset($_POST['subcategory']) && $_POST['subcategory'] == 'Desserts') ? 'selected' : '' ?>>Desserts</option>
+                    <option value="Boissons" <?= (isset($_POST['subcategory']) && $_POST['subcategory'] == 'Boissons') ? 'selected' : '' ?>>Boissons</option>
+                    <option value="Boissons Chaudes" <?= (isset($_POST['subcategory']) && $_POST['subcategory'] == 'Boissons Chaudes') ? 'selected' : '' ?>>Boissons Chaudes</option>
+                </select>
+                <small class="text-muted">Uniquement pour la catégorie "Desserts & Boissons"</small>
             </div>
             
             <!-- Image -->
