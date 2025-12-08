@@ -1,4 +1,7 @@
 <?php 
+require_once "../include/auth.php"; 
+
+requireLogin();    
 require_once "../config/database.php";
 $erreurs = [];
 
