@@ -35,16 +35,19 @@ $categories = $stmt->fetchAll();
         <h1>Gestion des catégories</h1>
         
         <?php if (isset($_GET["message"])): ?>
-            <div class="alert alert-success">
-                <?php if ($_GET["message"] === "deleted"): ?>
-                    Catégorie supprimée avec succès!
-                <?php elseif ($_GET["message"] === "success"): ?>
-                    Catégorie ajoutée avec succès!
-                <?php elseif ($_GET["message"] === "updated"): ?>
-                    Catégorie modifiée avec succès!
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Succès!',
+        text: '<?php 
+            if ($_GET["message"] === "deleted") echo "Catégorie supprimée avec succès!";
+            elseif ($_GET["message"] === "success") echo "Catégorie ajoutée avec succès!";
+            elseif ($_GET["message"] === "updated") echo "Catégorie modifiée avec succès!";
+        ?>',
+        confirmButtonColor: '#D4A853'
+    });
+</script>
+<?php endif; ?>
         
         <a href="ajouter.php" class="btn btn-primary mb-3">
             Ajouter une catégorie

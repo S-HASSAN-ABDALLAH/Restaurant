@@ -35,16 +35,19 @@ $frites = $stmt->fetchAll();
         <h1>Gestion des Barquettes de Frites</h1>
         
         <?php if (isset($_GET["message"])): ?>
-            <div class="alert alert-success">
-                <?php if ($_GET["message"] === "deleted"): ?>
-                    Option supprimée avec succès!
-                <?php elseif ($_GET["message"] === "success"): ?>
-                    Option ajoutée avec succès!
-                <?php elseif ($_GET["message"] === "updated"): ?>
-                    Option modifiée avec succès!
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Succès!',
+        text: '<?php 
+            if ($_GET["message"] === "deleted") echo "Catégorie supprimée avec succès!";
+            elseif ($_GET["message"] === "success") echo "Catégorie ajoutée avec succès!";
+            elseif ($_GET["message"] === "updated") echo "Catégorie modifiée avec succès!";
+        ?>',
+        confirmButtonColor: '#D4A853'
+    });
+</script>
+<?php endif; ?>
         
         <a href="ajouter.php" class="btn btn-primary mb-3">
             Ajouter une option

@@ -39,17 +39,20 @@ $plats = $stmt->fetchAll();
     <div class="container py-5">
         <h1>Gestion des plats</h1>
         
-        <?php if (isset($_GET["message"])): ?>
-            <div class="alert alert-success">
-                <?php if ($_GET["message"] === "deleted"): ?>
-                    Plat supprimé avec succès!
-                <?php elseif ($_GET["message"] === "success"): ?>
-                    Plat ajouté avec succès!
-                <?php elseif ($_GET["message"] === "updated"): ?>
-                    Plat modifié avec succès!
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
+       <?php if (isset($_GET["message"])): ?>
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Succès!',
+        text: '<?php 
+            if ($_GET["message"] === "deleted") echo "Catégorie supprimée avec succès!";
+            elseif ($_GET["message"] === "success") echo "Catégorie ajoutée avec succès!";
+            elseif ($_GET["message"] === "updated") echo "Catégorie modifiée avec succès!";
+        ?>',
+        confirmButtonColor: '#D4A853'
+    });
+</script>
+<?php endif; ?>
         
         <a href="ajouter.php" class="btn btn-primary mb-3">
             Ajouter un plat

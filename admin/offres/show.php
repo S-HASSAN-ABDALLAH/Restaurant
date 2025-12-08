@@ -35,16 +35,19 @@ $offers = $stmt->fetchAll();
         <h1>Gestion des Offres Spéciales</h1>
         
         <?php if (isset($_GET["message"])): ?>
-            <div class="alert alert-success">
-                <?php if ($_GET["message"] === "deleted"): ?>
-                    Offre supprimée avec succès!
-                <?php elseif ($_GET["message"] === "success"): ?>
-                    Offre ajoutée avec succès!
-                <?php elseif ($_GET["message"] === "updated"): ?>
-                    Offre modifiée avec succès!
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Succès!',
+        text: '<?php 
+            if ($_GET["message"] === "deleted") echo "Offre supprimée avec succès!";
+            elseif ($_GET["message"] === "success") echo "Offre ajoutée avec succès!";
+            elseif ($_GET["message"] === "updated") echo "Offre modifiée avec succès!";
+        ?>',
+        confirmButtonColor: '#D4A853'
+    });
+</script>
+<?php endif; ?>
         
         <a href="ajouter.php" class="btn btn-primary mb-3">
             Ajouter une offre
