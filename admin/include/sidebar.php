@@ -7,7 +7,7 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
 <!-- زر القائمة للموبايل -->
 <div class="mobile-header">
     <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-    <span class="mobile-title">🔥 Barbecue d'Alep</span>
+    <img src="/restaurant/Restaurant/assets/images/Logo.webp" alt="Logo" class="mobile-logo">
 </div>
 
 <!-- Overlay للموبايل -->
@@ -15,11 +15,11 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
 
 <div class="sidebar" id="sidebar">
     <!-- Logo -->
-    <div class="sidebar-header">
-        <h4>🔥 Barbecue d'Alep</h4>
-        <small>Administration</small>
-        <button class="close-btn" onclick="toggleSidebar()">✕</button>
-    </div>
+  <div class="sidebar-header">
+    <img src="/restaurant/Restaurant/assets/images/Logo.webp" alt="Logo" class="sidebar-logo">
+    <small>Administration</small>
+    <button class="close-btn" onclick="toggleSidebar()">✕</button>
+  </div>
     
     <!-- Menu -->
     <nav class="sidebar-nav">
@@ -85,6 +85,18 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
 .sidebar-header h4 {
     margin: 0;
     color: #D4A853;
+}
+
+.sidebar-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.mobile-logo {
+    height: 40px;
+    width: auto;
+    margin-left: 15px;
 }
 
 .sidebar-header small {

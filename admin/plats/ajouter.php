@@ -70,7 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <?php include "../include/header.php"; ?>
+    <?php include "../include/sidebar.php"; ?>
+
+<div class="main-content">
     
     <div class="container py-5">
         <h1>Ajouter un plat</h1>
@@ -144,5 +146,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
 </body>
 </html>
