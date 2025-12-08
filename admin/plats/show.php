@@ -1,4 +1,7 @@
 <?php 
+require_once "../include/auth.php";  // ← أضيفي هذا
+requireLogin(); 
+
 require_once "../config/database.php";
 
 // حذف طبق
