@@ -27,7 +27,9 @@ $categories = $stmt->fetchAll();
     <title>Catégories</title>
 </head>
 <body>
-    <?php include "../include/header.php"; ?>
+    <?php include "../include/sidebar.php"; ?>
+
+<div class="main-content">
     
     <div class="container py-5">
         <h1>Gestion des catégories</h1>
@@ -80,5 +82,6 @@ $categories = $stmt->fetchAll();
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </div><!-- end main-content -->
 </body>
 </html>

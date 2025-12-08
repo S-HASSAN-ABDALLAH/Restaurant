@@ -1,7 +1,7 @@
 <?php 
 require_once "../include/auth.php";  
 requireLogin();  
-  
+
 require_once "../config/database.php";
 
 // حذف
@@ -27,7 +27,9 @@ $offers = $stmt->fetchAll();
     <title>Gestion des Offres Spéciales</title>
 </head>
 <body>
-    <?php include "../include/header.php"; ?>
+    <?php include "../include/sidebar.php"; ?>
+
+<div class="main-content">
     
     <div class="container py-5">
         <h1>Gestion des Offres Spéciales</h1>
@@ -90,5 +92,6 @@ $offers = $stmt->fetchAll();
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
 </body>
 </html>
