@@ -37,6 +37,11 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
            class="nav-item <?= $currentFolder === 'offres' ? 'active' : '' ?>">
             <span class="icon">🏷️</span> Offres
         </a>
+
+        <a href="/restaurant/Restaurant/admin/password.php" 
+           class="nav-item <?= $currentPage === 'password.php' ? 'active' : '' ?>">
+            <span class="icon">🔐</span> Mot de passe
+        </a>
         
         <div class="nav-divider"></div>
         
