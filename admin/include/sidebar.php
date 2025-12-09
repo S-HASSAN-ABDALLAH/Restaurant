@@ -257,6 +257,29 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
         font-size: 1.5rem;
     }
 }
+
+/* ===== Custom Buttons ===== */
+.btn-primary {
+    background-color: #D4A853 !important;
+    border-color: #D4A853 !important;
+    color: #1a1a2e !important;
+}
+
+.btn-primary:hover {
+    background-color: #c49a4a !important;
+    border-color: #c49a4a !important;
+}
+
+.btn-warning {
+    background-color: #3498db !important;
+    border-color: #3498db !important;
+    color: white !important;
+}
+
+.btn-warning:hover {
+    background-color: #2980b9 !important;
+    border-color: #2980b9 !important;
+}
 </style>
 
 <script>

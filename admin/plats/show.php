@@ -45,9 +45,9 @@ $plats = $stmt->fetchAll();
         icon: 'success',
         title: 'Succès!',
         text: '<?php 
-            if ($_GET["message"] === "deleted") echo "Catégorie supprimée avec succès!";
-            elseif ($_GET["message"] === "success") echo "Catégorie ajoutée avec succès!";
-            elseif ($_GET["message"] === "updated") echo "Catégorie modifiée avec succès!";
+            if ($_GET["message"] === "deleted") echo "Plat supprimé avec succès!";
+            elseif ($_GET["message"] === "success") echo "Plat ajouté avec succès!";
+            elseif ($_GET["message"] === "updated") echo "Plat modifié avec succès!";
         ?>',
         confirmButtonColor: '#D4A853'
     });
