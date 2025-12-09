@@ -21,7 +21,7 @@
                        <h4><i class="fa-regular fa-clock"></i> Horaires</h4>
                        <p>Ouvert du mardi au samedi</p>
                        <p>11h30-15h00 / 18h30-22h00</p>
-                       <p>Fermé le dimanche et le lundi</p>
+                       <p>Fermé dimanche & lundi</p>
 
         </div>
         <div class="col-12 col-md-4">
