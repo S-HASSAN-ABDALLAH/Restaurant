@@ -2332,10 +2332,13 @@ body {
 }
 
 .menu-special {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 100px;
   margin-top: 40px;
   padding: 25px 35px;
-  background: rgba(240, 220, 180, 0.4);
+  background: linear-gradient(135deg, rgba(212, 168, 83, 0.25) 0%, rgba(250, 235, 200, 0.85) 50%, rgba(212, 168, 83, 0.25) 100%);
   border: 2px solid #D29748;
   border-radius: 12px;
   display: flex;
@@ -2369,7 +2372,8 @@ body {
 }
 .menu-special .special-center .special-saving {
   font-family: "Playfair", serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 500;
   color: rgba(74, 52, 40, 0.6);
   font-style: italic;
   margin: 0;
@@ -2401,7 +2405,7 @@ body {
     font-size: 1.4rem;
   }
   .menu-special .special-center .special-saving {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
   .menu-special .special-right .special-star {
     font-size: 1.3rem;
@@ -2428,7 +2432,7 @@ body {
     font-size: 1.1rem;
   }
   .menu-special .special-center .special-saving {
-    font-size: 0.85rem;
+    font-size: 0.09rem;
   }
   .menu-special .special-right {
     flex-direction: row;
