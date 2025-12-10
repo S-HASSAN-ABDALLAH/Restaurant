@@ -66,6 +66,7 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
 .sidebar {
     width: 250px;
     height: 100vh;
+    overflow-y: auto;
     background: #1a1a2e;
     position: fixed;
     top: 0;

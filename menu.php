@@ -258,5 +258,58 @@ window.addEventListener('scroll', function() {
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+// Smooth scroll to section after page load
+(function() {
+    // إذا يوجد hash في URL
+    if (window.location.hash) {
+        // احفظي الـ hash
+        const hash = window.location.hash;
+        
+        // امسحي الـ hash مؤقتاً لمنع القفز التلقائي
+        history.replaceState(null, null, window.location.pathname);
+        
+        // ارجعي للأعلى فوراً
+        window.scrollTo(0, 0);
+        
+        // بعد تحميل الصفحة
+        window.addEventListener('load', function() {
+            // انتظري لرؤية Hero
+            setTimeout(function() {
+                const target = document.querySelector(hash);
+                if (target) {
+                    const targetPosition = target.offsetTop;
+                    const startPosition = window.pageYOffset;
+                    const distance = targetPosition - startPosition;
+                    const duration = 3000; // 3 ثواني
+                    let start = null;
+                    
+                    function animation(currentTime) {
+                        if (start === null) start = currentTime;
+                        const timeElapsed = currentTime - start;
+                        const progress = Math.min(timeElapsed / duration, 1);
+                        
+                        const ease = progress < 0.5 
+                            ? 2 * progress * progress 
+                            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+                        
+                        window.scrollTo(0, startPosition + distance * ease);
+                        
+                        if (timeElapsed < duration) {
+                            requestAnimationFrame(animation);
+                        } else {
+                            // أعيدي الـ hash للـ URL
+                            history.replaceState(null, null, hash);
+                        }
+                    }
+                    
+                    requestAnimationFrame(animation);
+                }
+            }, 2000); // 2 ثواني انتظار
+        });
+    }
+})();
+</script>
+
 </body>
 </html>

@@ -1,3 +1,9 @@
+<?php
+// جلب الفئات من قاعدة البيانات
+require_once __DIR__ . '/../config/database.php';
+$stmtCat = $pdo->query("SELECT * FROM categories ORDER BY display_order ASC");
+$headerCategories = $stmtCat->fetchAll();
+?>
 <!-- test -->
 <header>
   <nav class="navbar navbar-expand-lg">
@@ -10,7 +16,6 @@
           <li class="nav-item">
             <a class="nav-link" href="index.php">Accueil</a>
           </li>
-          </li>
           <li class="nav-item">
             <a class="nav-link" href="a-propos.php">À propos</a>
           </li>
@@ -19,17 +24,23 @@
             <a class="navbar-brand" href="index.php">
               <img src="./assets/images/Logo.webp" alt="Logo Restaurant" loading="lazy">
             </a>
+          </li>
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Menu
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="menu.php#menu">MEZZÉS</a></li>
-              <li><a class="dropdown-item" href="menu.php#assiettes">ASSIETTES</a></li>
-              <li><a class="dropdown-item" href="menu.php#sandwiches">SANDWICHS</a></li>
-              <li><a class="dropdown-item" href="menu.php#desserts-boissons">DESSERTS & BOISSONS</a></li>
+              <?php foreach ($headerCategories as $cat): ?>
+              <li>
+                <a class="dropdown-item" href="menu.php#category-<?= $cat['id'] ?>">
+                  <?= htmlspecialchars(strtoupper($cat['name'])) ?>
+                </a>
+              </li>
+              <?php endforeach; ?>
             </ul>
           </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>

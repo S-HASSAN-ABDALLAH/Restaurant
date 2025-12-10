@@ -139,6 +139,10 @@ body {
   border-radius: 0 0 8px 8px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .navbar-toggler {
   border: 2px solid #D29748;
   padding: 0.5rem 0.75rem;
