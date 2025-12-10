@@ -1,5 +1,3 @@
-
-
 <footer>
 <div class="container">
     <div class="row text-center">
@@ -49,14 +47,38 @@
             target="_blank">
             <i class="fa-brands fa-instagram"></i></a>
          </div> 
-        
-    
     </div>
 </div>
-<div class="copyright">
-    <p>©️ 2025 Barbecue d’Alep - Tous droits réservés</p>
 
+<div class="copyright">
+    <p>©️ 2025 Barbecue d'Alep - Tous droits réservés</p>
 </div>
 
+<!-- Back to Top Button -->
+<button id="backToTop" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <script src="https://kit.fontawesome.com/7d16ed7181.js" crossorigin="anonymous" async></script>
- </footer>
+
+<script>
+// Back to Top Button
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        backToTopBtn.classList.add('show');
+    } else {
+        backToTopBtn.classList.remove('show');
+    }
+});
+
+backToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+</script>
+
+</footer>
