@@ -1,5 +1,5 @@
 <?php 
-require_once "../include/auth.php";  // ← أضيفي هذا
+require_once "../include/auth.php";
 requireLogin(); 
 
 require_once "../config/database.php";
@@ -13,13 +13,30 @@ if (isset($_GET["action"]) && $_GET["action"] === "supprimer" && isset($_GET["id
     exit;
 }
 
-// جلب الأطباق مع اسم القسم
-$stmt = $pdo->query("
+// ===== PAGINATION =====
+$perPage = 10; // عدد الأطباق في كل صفحة
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+if ($page < 1) $page = 1;
+
+// حساب العدد الإجمالي
+$stmtCount = $pdo->query("SELECT COUNT(*) FROM items");
+$totalItems = $stmtCount->fetchColumn();
+$totalPages = ceil($totalItems / $perPage);
+
+// حساب OFFSET
+$offset = ($page - 1) * $perPage;
+
+// جلب الأطباق مع Pagination
+$stmt = $pdo->prepare("
     SELECT items.*, categories.name AS category_name 
     FROM items 
     JOIN categories ON items.id_categorie = categories.id 
-    ORDER BY items.id_categorie, items.id ASC
+    ORDER BY categories.display_order, items.display_order ASC
+    LIMIT :limit OFFSET :offset
 ");
+$stmt->bindValue(':limit', $perPage, PDO::PARAM_INT);
+$stmt->bindValue(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
 $plats = $stmt->fetchAll();
 ?>
 
@@ -30,6 +47,24 @@ $plats = $stmt->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Gestion des plats</title>
+    <style>
+        .pagination-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .page-link {
+            color: #D4A853;
+        }
+        .page-link:hover {
+            color: #c49a4a;
+            background-color: #f8f9fa;
+        }
+        .page-item.active .page-link {
+            background-color: #D4A853;
+            border-color: #D4A853;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <?php include "../include/sidebar.php"; ?>
@@ -39,24 +74,29 @@ $plats = $stmt->fetchAll();
     <div class="container py-5">
         <h1>Gestion des plats</h1>
         
-       <?php if (isset($_GET["message"])): ?>
-<script>
-    Swal.fire({
-        icon: 'success',
-        title: 'Succès!',
-        text: '<?php 
-            if ($_GET["message"] === "deleted") echo "Plat supprimé avec succès!";
-            elseif ($_GET["message"] === "success") echo "Plat ajouté avec succès!";
-            elseif ($_GET["message"] === "updated") echo "Plat modifié avec succès!";
-        ?>',
-        confirmButtonColor: '#D4A853'
-    });
-</script>
-<?php endif; ?>
+        <?php if (isset($_GET["message"])): ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Succès!',
+                text: '<?php 
+                    if ($_GET["message"] === "deleted") echo "Plat supprimé avec succès!";
+                    elseif ($_GET["message"] === "success") echo "Plat ajouté avec succès!";
+                    elseif ($_GET["message"] === "updated") echo "Plat modifié avec succès!";
+                ?>',
+                confirmButtonColor: '#D4A853'
+            });
+        </script>
+        <?php endif; ?>
         
         <a href="ajouter.php" class="btn btn-primary mb-3">
             Ajouter un plat
         </a>
+        
+        <!-- معلومات Pagination -->
+        <p class="pagination-info">
+            Affichage de <?= $offset + 1 ?> à <?= min($offset + $perPage, $totalItems) ?> sur <?= $totalItems ?> plats
+        </p>
         
         <table class="table table-striped">
             <thead>
@@ -99,9 +139,34 @@ $plats = $stmt->fetchAll();
                 <?php endforeach; ?>
             </tbody>
         </table>
+        
+        <!-- أزرار Pagination -->
+        <?php if ($totalPages > 1): ?>
+        <nav aria-label="Pagination des plats">
+            <ul class="pagination justify-content-center">
+                <!-- زر السابق -->
+                <li class="page-item <?= $page <= 1 ? 'disabled' : '' ?>">
+                    <a class="page-link" href="?page=<?= $page - 1 ?>">Précédent</a>
+                </li>
+                
+                <!-- أرقام الصفحات -->
+                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                <li class="page-item <?= $i === $page ? 'active' : '' ?>">
+                    <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                </li>
+                <?php endfor; ?>
+                
+                <!-- زر التالي -->
+                <li class="page-item <?= $page >= $totalPages ? 'disabled' : '' ?>">
+                    <a class="page-link" href="?page=<?= $page + 1 ?>">Suivant</a>
+                </li>
+            </ul>
+        </nav>
+        <?php endif; ?>
+        
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    </div><!-- end main-content -->
+</div><!-- end main-content -->
 </body>
 </html>
