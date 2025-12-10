@@ -27,19 +27,28 @@ $headerCategories = $stmtCat->fetchAll();
           </li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Menu
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Menu
+    </a>
+    <ul class="dropdown-menu">
+        <!-- خيار عام لرؤية كل شيء -->
+        <li>
+            <a class="dropdown-item" href="menu.php">
+                🍽️ Voir tout le menu
             </a>
-            <ul class="dropdown-menu">
-              <?php foreach ($headerCategories as $cat): ?>
-              <li>
-                <a class="dropdown-item" href="menu.php#category-<?= $cat['id'] ?>">
-                  <?= htmlspecialchars(strtoupper($cat['name'])) ?>
-                </a>
-              </li>
-              <?php endforeach; ?>
-            </ul>
-          </li>
+        </li>
+        <li><hr class="dropdown-divider"></li>
+        
+        <!-- الفئات المحددة -->
+        <?php foreach ($headerCategories as $cat): ?>
+        <li>
+            <a class="dropdown-item" href="menu.php#category-<?= $cat['id'] ?>">
+                <?= htmlspecialchars(strtoupper($cat['name'])) ?>
+            </a>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</li>
           
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
