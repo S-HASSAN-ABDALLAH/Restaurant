@@ -146,7 +146,7 @@ $baseUrl = '?' . http_build_query($queryParams);
         <?php endif; ?>
         
         <a href="ajouter.php" class="btn btn-primary mb-3">
-            Ajouter un plat
+        <i class="fas fa-plus"></i> Ajouter un plat
         </a>
         
         <!-- ===== SEARCH & FILTER BOX ===== -->
@@ -238,11 +238,11 @@ $baseUrl = '?' . http_build_query($queryParams);
                                 Modifier
                             </a>
                             <button type="button" 
-        class="btn btn-sm btn-danger btn-delete" 
-        data-id="<?= $plat["id"] ?>"
-        data-name="<?= htmlspecialchars($plat["name"]) ?>">
-    Supprimer
-</button>
+                            class="btn btn-sm btn-danger btn-delete" 
+                             data-id="<?= $plat["id"] ?>"
+                            data-name="<?= htmlspecialchars($plat["name"]) ?>">
+                            Supprimer
+                            </button>
                         </td>
                     </tr>
                     <?php endforeach; ?>

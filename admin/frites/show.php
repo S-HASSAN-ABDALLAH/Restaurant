@@ -50,7 +50,7 @@ $frites = $stmt->fetchAll();
 <?php endif; ?>
         
         <a href="ajouter.php" class="btn btn-primary mb-3">
-            Ajouter une option
+        <i class="fas fa-plus"></i> Ajouter une option
         </a>
         
         <table class="table table-striped">
@@ -75,11 +75,11 @@ $frites = $stmt->fetchAll();
                             Modifier
                         </a>
                         <button type="button" 
-        class="btn btn-sm btn-danger btn-delete" 
-        data-id="<?= $frite["id"] ?>"
-        data-name="<?= htmlspecialchars($frite["size"]) ?>">
-    Supprimer
-</button>
+                        class="btn btn-sm btn-danger btn-delete" 
+                        data-id="<?= $frite["id"] ?>"
+                        data-name="<?= htmlspecialchars($frite["size"]) ?>">
+                        Supprimer
+                        </button>
                     </td>
                 </tr>
                 <?php endforeach; ?>

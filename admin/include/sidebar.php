@@ -1,3 +1,5 @@
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <?php
 // الصفحة الحالية
 $currentPage = basename($_SERVER['PHP_SELF']);
@@ -261,14 +263,15 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
 
 /* ===== Custom Buttons ===== */
 .btn-primary {
-    background-color: #D4A853 !important;
-    border-color: #D4A853 !important;
-    color: #1a1a2e !important;
+    background: linear-gradient(135deg, #606c38 0%, #283618 100%) !important;
+    border: none !important;
+    color: white !important;
 }
 
 .btn-primary:hover {
-    background-color: #c49a4a !important;
-    border-color: #c49a4a !important;
+    background: linear-gradient(135deg, #283618 0%, #606c38 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(96, 108, 56, 0.4);
 }
 
 .btn-warning {
