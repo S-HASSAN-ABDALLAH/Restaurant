@@ -82,11 +82,12 @@ $offers = $stmt->fetchAll();
                         <a href="modifier.php?id=<?= $offer["id"] ?>" class="btn btn-sm btn-warning">
                             Modifier
                         </a>
-                        <a href="show.php?action=supprimer&id=<?= $offer["id"] ?>" 
-                           class="btn btn-sm btn-danger"
-                           onclick="return confirm('Voulez-vous supprimer cette offre?')">
-                            Supprimer
-                        </a>
+                        <button type="button" 
+                         class="btn btn-sm btn-danger btn-delete" 
+                            data-id="<?= $offer["id"] ?>"
+                            data-name="<?= htmlspecialchars($offer["title"]) ?>">
+                             Supprimer
+                        </button>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -96,5 +97,30 @@ $offers = $stmt->fetchAll();
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     </div>
+
+    <script>
+// SweetAlert Delete Confirmation
+document.querySelectorAll('.btn-delete').forEach(button => {
+    button.addEventListener('click', function() {
+        const id = this.dataset.id;
+        const name = this.dataset.name;
+        
+        Swal.fire({
+            title: 'Êtes-vous sûr?',
+            text: `Voulez-vous supprimer l'offre "${name}"?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Oui, supprimer!',
+            cancelButtonText: 'Annuler'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = `show.php?action=supprimer&id=${id}`;
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>
