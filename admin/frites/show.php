@@ -72,13 +72,14 @@ $frites = $stmt->fetchAll();
                     <td><?= $frite["display_order"] ?></td>
                     <td>
                         <a href="modifier.php?id=<?= $frite["id"] ?>" class="btn btn-sm btn-warning">
-                            Modifier
+                        <i class="fas fa-edit"></i> Modifier
                         </a>
+
                         <button type="button" 
-                        class="btn btn-sm btn-danger btn-delete" 
-                        data-id="<?= $frite["id"] ?>"
-                        data-name="<?= htmlspecialchars($frite["size"]) ?>">
-                        Supprimer
+                         class="btn btn-sm btn-danger btn-delete" 
+                         data-id="<?= $frite["id"] ?>"
+                         data-name="<?= htmlspecialchars($frite["size"]) ?>">
+                        <i class="fas fa-trash"></i> Supprimer
                         </button>
                     </td>
                 </tr>

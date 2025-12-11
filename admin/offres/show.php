@@ -81,13 +81,14 @@ $offers = $stmt->fetchAll();
                     </td>
                     <td>
                         <a href="modifier.php?id=<?= $offer["id"] ?>" class="btn btn-sm btn-warning">
-                            Modifier
+                        <i class="fas fa-edit"></i> Modifier
                         </a>
+
                         <button type="button" 
                          class="btn btn-sm btn-danger btn-delete" 
-                            data-id="<?= $offer["id"] ?>"
-                            data-name="<?= htmlspecialchars($offer["title"]) ?>">
-                             Supprimer
+                         data-id="<?= $offer["id"] ?>"
+                         data-name="<?= htmlspecialchars($offer["title"]) ?>">
+                        <i class="fas fa-trash"></i> Supprimer
                         </button>
                     </td>
                 </tr>

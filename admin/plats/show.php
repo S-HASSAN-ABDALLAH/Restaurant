@@ -105,16 +105,7 @@ $baseUrl = '?' . http_build_query($queryParams);
             border-radius: 10px;
             margin-bottom: 20px;
         }
-        .btn-search {
-            background-color: #D4A853;
-            border-color: #D4A853;
-            color: #1a1a2e;
-        }
-        .btn-search:hover {
-            background-color: #c49a4a;
-            border-color: #c49a4a;
-            color: #1a1a2e;
-        }
+       
         .btn-reset {
             background-color: #6c757d;
             border-color: #6c757d;
@@ -154,7 +145,7 @@ $baseUrl = '?' . http_build_query($queryParams);
             <form method="GET" action="show.php" class="row g-3 align-items-end">
                 <!-- Recherche par nom -->
                 <div class="col-md-5">
-                    <label for="search" class="form-label">🔍 Rechercher par nom</label>
+                    <label for="search" class="form-label"><i class="fas fa-search"></i> Rechercher par nom</label>
                     <input type="text" 
                            class="form-control" 
                            id="search" 
@@ -165,7 +156,7 @@ $baseUrl = '?' . http_build_query($queryParams);
                 
                 <!-- Filtrer par catégorie -->
                 <div class="col-md-4">
-                    <label for="category" class="form-label">📁 Filtrer par catégorie</label>
+                    <label for="category" class="form-label"><i class="fas fa-filter"></i> Filtrer par catégorie</label>
                     <select class="form-select" id="category" name="category">
                         <option value="0">Toutes les catégories</option>
                         <?php foreach ($allCategories as $cat): ?>
@@ -179,10 +170,10 @@ $baseUrl = '?' . http_build_query($queryParams);
                 <!-- Boutons -->
                 <div class="col-md-3">
                     <button type="submit" class="btn btn-search">
-                        Rechercher
+                         <i class="fas fa-search"></i> Rechercher
                     </button>
                     <a href="show.php" class="btn btn-reset">
-                        Réinitialiser
+                         <i class="fas fa-undo"></i> Réinitialiser
                     </a>
                 </div>
             </form>
@@ -235,13 +226,14 @@ $baseUrl = '?' . http_build_query($queryParams);
                         <td><?= number_format($plat["price"], 2) ?> €</td>
                         <td>
                             <a href="modifier.php?id=<?= $plat["id"] ?>" class="btn btn-sm btn-warning">
-                                Modifier
+                            <i class="fas fa-edit"></i> Modifier
                             </a>
+
                             <button type="button" 
-                            class="btn btn-sm btn-danger btn-delete" 
+                             class="btn btn-sm btn-danger btn-delete" 
                              data-id="<?= $plat["id"] ?>"
-                            data-name="<?= htmlspecialchars($plat["name"]) ?>">
-                            Supprimer
+                             data-name="<?= htmlspecialchars($plat["name"]) ?>">
+                            <i class="fas fa-trash"></i> Supprimer
                             </button>
                         </td>
                     </tr>

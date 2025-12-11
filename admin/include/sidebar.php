@@ -27,38 +27,38 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
     <nav class="sidebar-nav">
         <a href="/restaurant/Restaurant/admin/dashboard.php" 
            class="nav-item <?= $currentPage === 'dashboard.php' ? 'active' : '' ?>">
-            <span class="icon">📊</span> Dashboard
+            <span class="icon"><i class="fas fa-chart-line"></i></span> Dashboard
         </a>
         
         <a href="/restaurant/Restaurant/admin/categorie/show.php" 
            class="nav-item <?= $currentFolder === 'categorie' ? 'active' : '' ?>">
-            <span class="icon">📁</span> Catégories
+            <span class="icon"><i class="fas fa-folder"></i></span> Catégories
         </a>
         
         <a href="/restaurant/Restaurant/admin/plats/show.php" 
            class="nav-item <?= $currentFolder === 'plats' ? 'active' : '' ?>">
-            <span class="icon">🍽️</span> Plats
+            <span class="icon"><i class="fas fa-utensils"></i></span> Plats
         </a>
         
         <a href="/restaurant/Restaurant/admin/frites/show.php" 
            class="nav-item <?= $currentFolder === 'frites' ? 'active' : '' ?>">
-            <span class="icon">🍟</span> Frites
+            <span class="icon"><i class="fas fa-bacon"></i></span> Frites
         </a>
         
         <a href="/restaurant/Restaurant/admin/offres/show.php" 
            class="nav-item <?= $currentFolder === 'offres' ? 'active' : '' ?>">
-            <span class="icon">🏷️</span> Offres
+            <span class="icon"><i class="fas fa-tags"></i></span> Offres
         </a>
         
         <div class="nav-divider"></div>
         
         <a href="/restaurant/Restaurant/admin/password.php" 
            class="nav-item <?= $currentPage === 'password.php' ? 'active' : '' ?>">
-            <span class="icon">🔐</span> Mot de passe
+            <span class="icon"><i class="fas fa-lock"></i></span> Mot de passe
         </a>
         
         <a href="/restaurant/Restaurant/admin/logout.php" class="nav-item logout">
-            <span class="icon">🚪</span> Déconnexion
+            <span class="icon"><i class="fas fa-sign-out-alt"></i></span> Déconnexion
         </a>
     </nav>
 </div>
@@ -263,15 +263,15 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
 
 /* ===== Custom Buttons ===== */
 .btn-primary {
-    background: linear-gradient(135deg, #606c38 0%, #283618 100%) !important;
+    background: linear-gradient(135deg, #D4A853 0%, #B8860B 100%) !important;
     border: none !important;
-    color: white !important;
+    color: #1a1a2e !important;
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #283618 0%, #606c38 100%) !important;
+    background: linear-gradient(135deg, #B8860B 0%, #D4A853 100%) !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(96, 108, 56, 0.4);
+    box-shadow: 0 4px 15px rgba(212, 168, 83, 0.4);
 }
 
 .btn-warning {
@@ -283,6 +283,19 @@ $currentFolder = basename(dirname($_SERVER['PHP_SELF']));
 .btn-warning:hover {
     background-color: #2980b9 !important;
     border-color: #2980b9 !important;
+}
+
+/* Rechercher - Olive Gradient */
+.btn-search {
+    background: linear-gradient(135deg, #606c38 0%, #283618 100%) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-search:hover {
+    background: linear-gradient(135deg, #283618 0%, #606c38 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(96, 108, 56, 0.4);
 }
 </style>
 

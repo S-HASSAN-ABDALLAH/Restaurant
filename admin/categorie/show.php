@@ -69,14 +69,15 @@ $categories = $stmt->fetchAll();
                     <td><?= htmlspecialchars($categorie["name"]) ?></td>
                     <td><?= date("d/m/Y", strtotime($categorie["created_at"])) ?></td>
                     <td>
-                        <a href="modifier.php?id=<?= $categorie["id"] ?>" class="btn btn-sm btn-warning">
-                            Modifier
+                       <a href="modifier.php?id=<?= $categorie["id"] ?>" class="btn btn-sm btn-warning">
+                        <i class="fas fa-edit"></i> Modifier
                         </a>
+
                         <button type="button" 
-                        class="btn btn-sm btn-danger btn-delete" 
+                         class="btn btn-sm btn-danger btn-delete" 
                         data-id="<?= $categorie["id"] ?>"
                         data-name="<?= htmlspecialchars($categorie["name"]) ?>">
-                        Supprimer
+                        <i class="fas fa-trash"></i> Supprimer
                         </button>
                     </td>
                 </tr>

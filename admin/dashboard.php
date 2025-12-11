@@ -20,7 +20,7 @@ $offreCount = $pdo->query("SELECT COUNT(*) FROM special_offers")->fetchColumn();
     <?php include 'include/sidebar.php'; ?>
     
     <div class="main-content">
-        <h1 class="mb-4">📊 Dashboard</h1>
+        <h1 class="mb-4"><i class="fas fa-chart-line"></i> Dashboard</h1>
         
         <div class="row">
             <!-- Catégories -->
@@ -28,7 +28,7 @@ $offreCount = $pdo->query("SELECT COUNT(*) FROM special_offers")->fetchColumn();
                 <div class="card text-center">
                     <div class="card-body">
                         <h1 class="display-4 text-primary"><?= $catCount ?></h1>
-                        <h5>📁 Catégories</h5>
+                        <h5><i class="fas fa-folder"></i> Catégories</h5>
                         <a href="categorie/show.php" class="btn btn-outline-primary btn-sm">Voir</a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ $offreCount = $pdo->query("SELECT COUNT(*) FROM special_offers")->fetchColumn();
                 <div class="card text-center">
                     <div class="card-body">
                         <h1 class="display-4 text-success"><?= $platCount ?></h1>
-                        <h5>🍽️ Plats</h5>
+                        <h5><i class="fas fa-utensils"></i> Plats</h5>
                         <a href="plats/show.php" class="btn btn-outline-success btn-sm">Voir</a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ $offreCount = $pdo->query("SELECT COUNT(*) FROM special_offers")->fetchColumn();
                 <div class="card text-center">
                     <div class="card-body">
                         <h1 class="display-4 text-warning"><?= $offreCount ?></h1>
-                        <h5>🏷️ Offres</h5>
+                        <h5><i class="fas fa-tags"></i> Offres</h5>
                         <a href="offres/show.php" class="btn btn-outline-warning btn-sm">Voir</a>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ $offreCount = $pdo->query("SELECT COUNT(*) FROM special_offers")->fetchColumn();
         <!-- Bienvenue -->
         <div class="card mt-4">
             <div class="card-body">
-                <h5>👋 Bienvenue, <?= htmlspecialchars($_SESSION['admin_email']) ?>!</h5>
+                <h5><i class="fas fa-hand-wave"></i> Bienvenue, <?= htmlspecialchars($_SESSION['admin_email']) ?>!</h5>
                 <p class="text-muted mb-0">Vous êtes connecté à l'espace d'administration.</p>
             </div>
         </div>
