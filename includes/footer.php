@@ -52,6 +52,10 @@
 
 <div class="copyright">
     <p>©️ 2025 Barbecue d'Alep - Tous droits réservés</p>
+    <p class="developer">
+        Conçu et développé par 
+        <a href="https://www.linkedin.com/in/shadah-developpeuse/" target="_blank">Shadah HASSAN-ABDALLAH</a>
+    </p>
 </div>
 
 <!-- Back to Top Button -->

@@ -3170,6 +3170,22 @@ footer {
     margin-bottom: 50px;
 }
 
+.developer {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+    
+    a {
+        color: $color-gold;
+        text-decoration: none;
+        
+        &:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+}
+
 // ==========================================
 // BACK TO TOP BUTTON
 // ==========================================

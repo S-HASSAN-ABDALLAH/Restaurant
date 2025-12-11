@@ -2732,6 +2732,20 @@ footer .sr-only {
   margin-bottom: 50px;
 }
 
+.developer {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 5px;
+}
+.developer a {
+  color: #D29748;
+  text-decoration: none;
+}
+.developer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 #backToTop {
   position: fixed;
   bottom: 30px;
