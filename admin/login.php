@@ -88,6 +88,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border: 1px solid rgba(220, 53, 69, 0.5);
             color: #ff6b6b;
         }
+        .forgot-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .forgot-link a {
+            color: #D4A853;
+            text-decoration: none;
+        }
+        .forgot-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -111,6 +122,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <button type="submit" class="btn btn-login text-dark">Se connecter</button>
         </form>
+        
+        <!-- رابط نسيت كلمة المرور -->
+        <div class="forgot-link">
+            <a href="forgot-password.php">Mot de passe oublié?</a>
+        </div>
     </div>
 </body>
 </html>
