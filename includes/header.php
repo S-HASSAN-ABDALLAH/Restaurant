@@ -34,7 +34,7 @@ $headerCategories = $stmtCat->fetchAll();
         <!-- خيار عام لرؤية كل شيء -->
         <li>
             <a class="dropdown-item" href="menu.php">
-                🍽️ Voir tout le menu
+                Explorer tout le menu
             </a>
         </li>
         <li><hr class="dropdown-divider"></li>
